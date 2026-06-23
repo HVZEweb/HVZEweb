@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, follow">
+    <title>KŌRA — Пример магазина · HVZEweb</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/demo-shop.css">
+</head>
+<body>
+    <div class="shop_chrome">
+        <a href="../index.html#portfolio">← К портфолио</a>
+        <span class="shop_chrome_label">Демо · Магазин</span>
+        <div class="shop_chrome_actions">
+            <a href="example-shop-admin.html" class="shop_chrome_admin">Админ-панель →</a>
+            <a href="../index.html#contacts" class="shop_chrome_cta">Хочу такую же</a>
+        </div>
+    </div>
+
+    <p class="shop_announce">Бесплатная доставка от <strong>3 000 ₽</strong> · Новая коллекция уже в каталоге</p>
+
+    <header class="shop_header">
+        <a href="#" class="shop_logo" onclick="return false">KŌ<span>RA</span></a>
+        <div class="shop_search">
+            <span class="shop_search_icon" aria-hidden="true">⌕</span>
+            <input class="shop_search_input" type="search" id="shop-search" placeholder="Поиск: крем, свеча, набор…" autocomplete="off">
+        </div>
+        <nav class="shop_nav" aria-label="Каталог">
+            <a href="#catalog">Уход</a>
+            <a href="#catalog">Дом</a>
+            <a href="#catalog">Наборы</a>
+            <a href="#catalog">Sale</a>
+        </nav>
+        <div class="shop_header_actions">
+            <button class="shop_icon_btn shop_filter_btn" type="button" id="filter-open" aria-label="Фильтры">☰</button>
+            <button class="shop_icon_btn" type="button" aria-label="Избранное">♡</button>
+            <button class="shop_icon_btn" type="button" id="cart-open" aria-label="Корзина">
+                🛒
+                <span class="shop_cart_count" id="cart-count" hidden>0</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="shop_layout">
+        <aside class="shop_sidebar" aria-label="Фильтры">
+            <div class="shop_filter_group">
+                <h2 class="shop_filter_title">Категория</h2>
+                <ul class="shop_filter_list">
+                    <li><button type="button" class="shop_filter_btn_item is-active" data-filter="all">Все товары</button></li>
+                    <li><button type="button" class="shop_filter_btn_item" data-filter="skincare">Уход за кожей</button></li>
+                    <li><button type="button" class="shop_filter_btn_item" data-filter="home">Для дома</button></li>
+                    <li><button type="button" class="shop_filter_btn_item" data-filter="body">Тело</button></li>
+                    <li><button type="button" class="shop_filter_btn_item" data-filter="sale">Sale</button></li>
+                </ul>
+            </div>
+            <div class="shop_filter_group">
+                <h2 class="shop_filter_title">Цена, ₽</h2>
+                <div class="shop_price_range">
+                    <input type="range" id="price-range" min="500" max="5000" value="5000" step="100">
+                    <div class="shop_price_labels">
+                        <span>500</span>
+                        <span id="price-max-label">до 5 000</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main id="catalog">
+            <div class="shop_toolbar">
+                <p class="shop_results"><strong id="results-count">6</strong> товаров</p>
+                <div class="shop_sort">
+                    <label for="sort-select">Сортировка:</label>
+                    <select id="sort-select">
+                        <option value="popular">Популярные</option>
+                        <option value="price-asc">Дешевле</option>
+                        <option value="price-desc">Дороже</option>
+                        <option value="name">По названию</option>
+                    </select>
+                </div>
+            </div>
+            <div class="shop_grid" id="product-grid"></div>
+        </main>
+    </div>
+
+    <section class="shop_trust" aria-label="Преимущества">
+        <div class="shop_trust_item">
+            <span class="shop_trust_icon">🚚</span>
+            <div>
+                <p class="shop_trust_title">Доставка 1–3 дня</p>
+                <p class="shop_trust_text">По Москве и СПб — на следующий день</p>
+            </div>
+        </div>
+        <div class="shop_trust_item">
+            <span class="shop_trust_icon">↩</span>
+            <div>
+                <p class="shop_trust_title">Возврат 14 дней</p>
+                <p class="shop_trust_text">Без лишних вопросов</p>
+            </div>
+        </div>
+        <div class="shop_trust_item">
+            <span class="shop_trust_icon">🌿</span>
+            <div>
+                <p class="shop_trust_title">100% натурально</p>
+                <p class="shop_trust_text">Сертифицированные составы</p>
+            </div>
+        </div>
+        <div class="shop_trust_item">
+            <span class="shop_trust_icon">💬</span>
+            <div>
+                <p class="shop_trust_title">Поддержка в Telegram</p>
+                <p class="shop_trust_text">Ответим за 15 минут</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="shop_footer">
+        <div class="shop_footer_inner">
+            <span>© 2026 KŌRA · Демо-магазин</span>
+            <a href="example-shop-admin.html">Открыть админ-панель →</a>
+            <a href="../index.html#contacts">Заказать разработку →</a>
+        </div>
+    </footer>
+
+    <!-- Cart -->
+    <div class="shop_overlay" id="cart-overlay"></div>
+    <aside class="shop_cart" id="cart-drawer" aria-label="Корзина">
+        <div class="shop_cart_head">
+            <h2 class="shop_cart_title">Корзина</h2>
+            <button class="shop_cart_close" type="button" id="cart-close" aria-label="Закрыть">×</button>
+        </div>
+        <div class="shop_cart_items" id="cart-items">
+            <p class="shop_cart_empty">Корзина пуста — добавьте что-нибудь приятное</p>
+        </div>
+        <div class="shop_cart_foot" id="cart-foot" hidden>
+            <div class="shop_cart_total">
+                <span>Итого</span>
+                <span id="cart-total">0 ₽</span>
+            </div>
+            <a href="../index.html#contacts" class="shop_cart_checkout">Оформить заказ</a>
+        </div>
+    </aside>
+
+    <!-- Mobile filters -->
+    <div class="shop_overlay" id="filter-overlay"></div>
+    <aside class="shop_filter_drawer" id="filter-drawer">
+        <div class="shop_filter_drawer_head">
+            <span>Фильтры</span>
+            <button type="button" id="filter-close" aria-label="Закрыть">×</button>
+        </div>
+        <div class="shop_filter_group">
+            <h2 class="shop_filter_title">Категория</h2>
+            <ul class="shop_filter_list" id="filter-drawer-list"></ul>
+        </div>
+    </aside>
+
+    <div class="shop_toast" id="shop-toast" role="status"></div>
+
+    <script src="../js/demo-shop.js"></script>
+</body>
+</html>

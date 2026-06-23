@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, follow">
+    <title>KŌRA Admin — Демо панель · HVZEweb</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/demo-shop-admin.css">
+</head>
+<body>
+    <div class="admin_chrome">
+        <a href="example-shop.html">← К магазину</a>
+        <span class="admin_chrome_label">Демо · Админ-панель KŌRA</span>
+        <a href="../index.html#contacts">Заказать разработку →</a>
+    </div>
+
+    <div class="admin">
+        <aside class="admin_sidebar" aria-label="Навигация">
+            <div class="admin_brand">
+                <div class="admin_brand_logo">K</div>
+                <div>
+                    <div class="admin_brand_text">KŌRA Admin</div>
+                    <div class="admin_brand_sub">Панель управления</div>
+                </div>
+            </div>
+
+            <nav class="admin_nav">
+                <span class="admin_nav_label">Основное</span>
+                <button type="button" class="admin_nav_item is-active" data-panel="dashboard">
+                    <span class="admin_nav_icon">◫</span> Dashboard
+                </button>
+                <button type="button" class="admin_nav_item" data-panel="orders">
+                    <span class="admin_nav_icon">☰</span> Заказы
+                    <span class="admin_nav_badge">12</span>
+                </button>
+                <button type="button" class="admin_nav_item" data-panel="products">
+                    <span class="admin_nav_icon">▣</span> Товары
+                </button>
+                <button type="button" class="admin_nav_item" data-panel="customers">
+                    <span class="admin_nav_icon">◎</span> Клиенты
+                </button>
+
+                <span class="admin_nav_label">Аналитика</span>
+                <button type="button" class="admin_nav_item" data-panel="analytics">
+                    <span class="admin_nav_icon">↗</span> Аналитика
+                </button>
+                <button type="button" class="admin_nav_item" data-panel="settings">
+                    <span class="admin_nav_icon">⚙</span> Настройки
+                </button>
+            </nav>
+
+            <div class="admin_sidebar_foot">
+                <div class="admin_user">
+                    <div class="admin_user_avatar" aria-hidden="true"></div>
+                    <div>
+                        <div class="admin_user_name">Анна К.</div>
+                        <div class="admin_user_role">Администратор</div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <div class="admin_main">
+            <header class="admin_topbar">
+                <h1 class="admin_topbar_title" id="panel-title">Dashboard</h1>
+                <div class="admin_topbar_actions">
+                    <input class="admin_search" type="search" placeholder="Поиск заказов, SKU…" aria-label="Поиск">
+                    <button class="admin_icon_btn" type="button" aria-label="Уведомления">🔔<span class="admin_icon_btn_dot"></span></button>
+                    <button class="admin_icon_btn" type="button" aria-label="Экспорт">↓</button>
+                </div>
+            </header>
+
+            <div class="admin_content">
+                <!-- Dashboard -->
+                <div class="admin_panel_view" id="panel-dashboard">
+                    <div class="admin_kpi">
+                        <article class="admin_kpi_card">
+                            <div class="admin_kpi_header">
+                                <span class="admin_kpi_label">Выручка сегодня</span>
+                                <span class="admin_kpi_icon">₽</span>
+                            </div>
+                            <p class="admin_kpi_value">48 290</p>
+                            <p class="admin_kpi_change admin_kpi_change_up">↑ 12.4% к вчера</p>
+                        </article>
+                        <article class="admin_kpi_card">
+                            <div class="admin_kpi_header">
+                                <span class="admin_kpi_label">Заказы</span>
+                                <span class="admin_kpi_icon">📦</span>
+                            </div>
+                            <p class="admin_kpi_value">34</p>
+                            <p class="admin_kpi_change admin_kpi_change_up">↑ 8 новых</p>
+                        </article>
+                        <article class="admin_kpi_card">
+                            <div class="admin_kpi_header">
+                                <span class="admin_kpi_label">Средний чек</span>
+                                <span class="admin_kpi_icon">◎</span>
+                            </div>
+                            <p class="admin_kpi_value">3 420 ₽</p>
+                            <p class="admin_kpi_change admin_kpi_change_up">↑ 3.1%</p>
+                        </article>
+                        <article class="admin_kpi_card">
+                            <div class="admin_kpi_header">
+                                <span class="admin_kpi_label">Конверсия</span>
+                                <span class="admin_kpi_icon">↗</span>
+                            </div>
+                            <p class="admin_kpi_value">4.8%</p>
+                            <p class="admin_kpi_change admin_kpi_change_down">↓ 0.2%</p>
+                        </article>
+                    </div>
+
+                    <div class="admin_grid">
+                        <section class="admin_panel">
+                            <div class="admin_panel_head">
+                                <h2 class="admin_panel_title">Продажи за неделю</h2>
+                                <div class="admin_panel_tabs" role="tablist">
+                                    <button type="button" class="admin_panel_tab is-active" data-chart="week">7 дней</button>
+                                    <button type="button" class="admin_panel_tab" data-chart="month">30 дней</button>
+                                </div>
+                            </div>
+                            <div class="admin_chart" id="sales-chart" aria-hidden="true">
+                                <div class="admin_chart_bar_wrap"><div class="admin_chart_bar" style="height:45%"></div><span class="admin_chart_label">Пн</span></div>
+                                <div class="admin_chart_bar_wrap"><div class="admin_chart_bar" style="height:62%"></div><span class="admin_chart_label">Вт</span></div>
+                                <div class="admin_chart_bar_wrap"><div class="admin_chart_bar" style="height:38%"></div><span class="admin_chart_label">Ср</span></div>
+                                <div class="admin_chart_bar_wrap"><div class="admin_chart_bar" style="height:78%"></div><span class="admin_chart_label">Чт</span></div>
+                                <div class="admin_chart_bar_wrap"><div class="admin_chart_bar" style="height:55%"></div><span class="admin_chart_label">Пт</span></div>
+                                <div class="admin_chart_bar_wrap"><div class="admin_chart_bar" style="height:92%"></div><span class="admin_chart_label">Сб</span></div>
+                                <div class="admin_chart_bar_wrap"><div class="admin_chart_bar" style="height:68%"></div><span class="admin_chart_label">Вс</span></div>
+                            </div>
+                        </section>
+
+                        <section class="admin_panel">
+                            <div class="admin_panel_head">
+                                <h2 class="admin_panel_title">Активность</h2>
+                            </div>
+                            <div class="admin_activity">
+                                <div class="admin_activity_item">
+                                    <span class="admin_activity_dot admin_activity_dot_green"></span>
+                                    <div>
+                                        <p class="admin_activity_text">Заказ <strong>#2847</strong> оплачен — 4 490 ₽</p>
+                                        <p class="admin_activity_time">2 мин назад</p>
+                                    </div>
+                                </div>
+                                <div class="admin_activity_item">
+                                    <span class="admin_activity_dot admin_activity_dot_blue"></span>
+                                    <div>
+                                        <p class="admin_activity_text">Отправлен <strong>#2843</strong> — СДЭК</p>
+                                        <p class="admin_activity_time">18 мин назад</p>
+                                    </div>
+                                </div>
+                                <div class="admin_activity_item">
+                                    <span class="admin_activity_dot admin_activity_dot_orange"></span>
+                                    <div>
+                                        <p class="admin_activity_text">Низкий остаток: <strong>Serum Vitamin C</strong></p>
+                                        <p class="admin_activity_time">1 ч назад</p>
+                                    </div>
+                                </div>
+                                <div class="admin_activity_item">
+                                    <span class="admin_activity_dot admin_activity_dot_green"></span>
+                                    <div>
+                                        <p class="admin_activity_text">Новый клиент — <strong>Мария С.</strong></p>
+                                        <p class="admin_activity_time">2 ч назад</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <section class="admin_panel admin_table_wrap">
+                        <div class="admin_panel_head">
+                            <h2 class="admin_panel_title">Последние заказы</h2>
+                            <button type="button" class="admin_table_btn">Все заказы →</button>
+                        </div>
+                        <table class="admin_table">
+                            <thead>
+                                <tr>
+                                    <th>№</th>
+                                    <th>Клиент</th>
+                                    <th>Товары</th>
+                                    <th>Сумма</th>
+                                    <th>Статус</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>#2847</code></td>
+                                    <td>Елена В.</td>
+                                    <td>Набор «Утро» ×1</td>
+                                    <td>4 490 ₽</td>
+                                    <td><span class="admin_status admin_status_paid">Оплачен</span></td>
+                                    <td><div class="admin_table_actions"><button type="button" class="admin_table_btn">Открыть</button></div></td>
+                                </tr>
+                                <tr>
+                                    <td><code>#2846</code></td>
+                                    <td>Дмитрий К.</td>
+                                    <td>Hydra ×2, Свеча ×1</td>
+                                    <td>6 270 ₽</td>
+                                    <td><span class="admin_status admin_status_shipped">Отправлен</span></td>
+                                    <td><div class="admin_table_actions"><button type="button" class="admin_table_btn">Трек</button></div></td>
+                                </tr>
+                                <tr>
+                                    <td><code>#2845</code></td>
+                                    <td>Анна М.</td>
+                                    <td>Serum C ×1</td>
+                                    <td>1 890 ₽</td>
+                                    <td><span class="admin_status admin_status_pending">Ожидает</span></td>
+                                    <td><div class="admin_table_actions"><button type="button" class="admin_table_btn">Напомнить</button></div></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+
+                    <section class="admin_panel">
+                        <div class="admin_panel_head">
+                            <h2 class="admin_panel_title">Быстрые действия</h2>
+                        </div>
+                        <div class="admin_quick">
+                            <button type="button" class="admin_quick_btn"><span class="admin_quick_icon">+</span> Добавить товар</button>
+                            <button type="button" class="admin_quick_btn"><span class="admin_quick_icon">🏷</span> Создать промо</button>
+                            <button type="button" class="admin_quick_btn"><span class="admin_quick_icon">📊</span> Отчёт PDF</button>
+                            <button type="button" class="admin_quick_btn"><span class="admin_quick_icon">✉</span> Рассылка</button>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Orders panel (hidden by default) -->
+                <div class="admin_panel_view" id="panel-orders" hidden>
+                    <section class="admin_panel admin_table_wrap">
+                        <div class="admin_panel_head">
+                            <h2 class="admin_panel_title">Все заказы</h2>
+                            <div class="admin_panel_tabs">
+                                <button type="button" class="admin_panel_tab is-active">Все</button>
+                                <button type="button" class="admin_panel_tab">Новые</button>
+                                <button type="button" class="admin_panel_tab">В доставке</button>
+                            </div>
+                        </div>
+                        <table class="admin_table">
+                            <thead>
+                                <tr><th>№</th><th>Дата</th><th>Клиент</th><th>Сумма</th><th>Доставка</th><th>Статус</th><th></th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>#2847</td><td>20.06.2026</td><td>Елена В.</td><td>4 490 ₽</td><td>Курьер</td><td><span class="admin_status admin_status_paid">Оплачен</span></td><td><button class="admin_table_btn">Детали</button></td></tr>
+                                <tr><td>#2846</td><td>20.06.2026</td><td>Дмитрий К.</td><td>6 270 ₽</td><td>СДЭК</td><td><span class="admin_status admin_status_shipped">Отправлен</span></td><td><button class="admin_table_btn">Трек</button></td></tr>
+                                <tr><td>#2845</td><td>19.06.2026</td><td>Анна М.</td><td>1 890 ₽</td><td>ПВЗ</td><td><span class="admin_status admin_status_pending">Ожидает</span></td><td><button class="admin_table_btn">Напомнить</button></td></tr>
+                                <tr><td>#2844</td><td>19.06.2026</td><td>Игорь П.</td><td>3 480 ₽</td><td>Почта</td><td><span class="admin_status admin_status_paid">Оплачен</span></td><td><button class="admin_table_btn">Собрать</button></td></tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+
+                <!-- Products panel -->
+                <div class="admin_panel_view" id="panel-products" hidden>
+                    <div class="admin_grid">
+                        <section class="admin_panel">
+                            <div class="admin_panel_head">
+                                <h2 class="admin_panel_title">Каталог товаров</h2>
+                                <button type="button" class="admin_table_btn">+ Новый товар</button>
+                            </div>
+                            <div class="admin_products">
+                                <div class="admin_product_row">
+                                    <div class="admin_product_thumb"></div>
+                                    <div class="admin_product_info">
+                                        <p class="admin_product_name">Крем Hydra</p>
+                                        <p class="admin_product_stock">SKU: KRA-001 · 48 шт.</p>
+                                    </div>
+                                    <div class="admin_stock_bar"><div class="admin_stock_fill" style="width:72%"></div></div>
+                                    <button class="admin_table_btn">Изменить</button>
+                                </div>
+                                <div class="admin_product_row">
+                                    <div class="admin_product_thumb"></div>
+                                    <div class="admin_product_info">
+                                        <p class="admin_product_name">Serum Vitamin C</p>
+                                        <p class="admin_product_stock admin_product_stock_low">SKU: KRA-002 · 6 шт.</p>
+                                    </div>
+                                    <div class="admin_stock_bar"><div class="admin_stock_fill admin_stock_fill_low" style="width:12%"></div></div>
+                                    <button class="admin_table_btn">Пополнить</button>
+                                </div>
+                                <div class="admin_product_row">
+                                    <div class="admin_product_thumb"></div>
+                                    <div class="admin_product_info">
+                                        <p class="admin_product_name">Набор «Утро»</p>
+                                        <p class="admin_product_stock">SKU: KRA-005 · 22 шт.</p>
+                                    </div>
+                                    <div class="admin_stock_bar"><div class="admin_stock_fill" style="width:44%"></div></div>
+                                    <button class="admin_table_btn">Изменить</button>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="admin_panel">
+                            <div class="admin_panel_head"><h2 class="admin_panel_title">Категории</h2></div>
+                            <div class="admin_activity">
+                                <div class="admin_activity_item"><span class="admin_activity_dot admin_activity_dot_green"></span><div><p class="admin_activity_text">Уход за кожей — <strong>24 товара</strong></p></div></div>
+                                <div class="admin_activity_item"><span class="admin_activity_dot admin_activity_dot_blue"></span><div><p class="admin_activity_text">Для дома — <strong>12 товаров</strong></p></div></div>
+                                <div class="admin_activity_item"><span class="admin_activity_dot admin_activity_dot_orange"></span><div><p class="admin_activity_text">Sale — <strong>8 товаров</strong></p></div></div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+                <!-- Placeholder panels -->
+                <div class="admin_panel_view" id="panel-customers" hidden>
+                    <section class="admin_panel">
+                        <div class="admin_panel_head"><h2 class="admin_panel_title">Клиенты</h2></div>
+                        <p style="color:var(--a-muted);padding:24px 0">842 активных клиента · CRM с историей заказов, сегментами и LTV-аналитикой.</p>
+                        <table class="admin_table">
+                            <thead><tr><th>Имя</th><th>Email</th><th>Заказов</th><th>LTV</th></tr></thead>
+                            <tbody>
+                                <tr><td>Елена В.</td><td>elena@mail.ru</td><td>7</td><td>28 400 ₽</td></tr>
+                                <tr><td>Дмитрий К.</td><td>d.k@yandex.ru</td><td>3</td><td>12 100 ₽</td></tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+
+                <div class="admin_panel_view" id="panel-analytics" hidden>
+                    <section class="admin_panel">
+                        <div class="admin_panel_head"><h2 class="admin_panel_title">Аналитика</h2></div>
+                        <div class="admin_kpi" style="margin-top:0">
+                            <article class="admin_kpi_card"><div class="admin_kpi_header"><span class="admin_kpi_label">Трафик</span></div><p class="admin_kpi_value">12.4k</p><p class="admin_kpi_change admin_kpi_change_up">↑ 18%</p></article>
+                            <article class="admin_kpi_card"><div class="admin_kpi_header"><span class="admin_kpi_label">В корзину</span></div><p class="admin_kpi_value">892</p><p class="admin_kpi_change admin_kpi_change_up">↑ 6%</p></article>
+                            <article class="admin_kpi_card"><div class="admin_kpi_header"><span class="admin_kpi_label">Отказы</span></div><p class="admin_kpi_value">32%</p><p class="admin_kpi_change admin_kpi_change_down">↓ 2%</p></article>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="admin_panel_view" id="panel-settings" hidden>
+                    <section class="admin_panel">
+                        <div class="admin_panel_head"><h2 class="admin_panel_title">Настройки магазина</h2></div>
+                        <div class="admin_activity">
+                            <div class="admin_activity_item"><span class="admin_activity_dot admin_activity_dot_green"></span><div><p class="admin_activity_text">Доставка — СДЭК, Boxberry, курьер</p></div></div>
+                            <div class="admin_activity_item"><span class="admin_activity_dot admin_activity_dot_blue"></span><div><p class="admin_activity_text">Оплата — ЮKassa, СБП, при получении</p></div></div>
+                            <div class="admin_activity_item"><span class="admin_activity_dot admin_activity_dot_orange"></span><div><p class="admin_activity_text">Уведомления — Telegram, email</p></div></div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/demo-shop-admin.js"></script>
+</body>
+</html>

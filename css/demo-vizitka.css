@@ -1,0 +1,456 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Geist:wght@300;400;500&display=swap');
+
+:root {
+    --v-bg: #080808;
+    --v-bg-elevated: #111111;
+    --v-text: #f0ebe3;
+    --v-text-muted: #8a8278;
+    --v-accent: #c4a574;
+    --v-accent-soft: rgba(196, 165, 116, 0.15);
+    --v-line: rgba(240, 235, 227, 0.08);
+    --v-font-display: 'Cormorant Garamond', Georgia, serif;
+    --v-font-body: 'Geist', system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--v-font-body);
+    background: var(--v-bg);
+    color: var(--v-text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Chrome bar */
+
+.demo_chrome {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 10px 24px;
+    font-size: 13px;
+    color: #8a8278;
+    background: rgba(8, 8, 8, 0.88);
+    border-bottom: 1px solid var(--v-line);
+    backdrop-filter: blur(16px);
+}
+
+.demo_chrome a {
+    color: var(--v-accent);
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.demo_chrome a:hover {
+    color: var(--v-text);
+}
+
+.demo_chrome_label {
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 11px;
+}
+
+.demo_chrome_cta {
+    padding: 7px 16px;
+    color: var(--v-bg) !important;
+    background: var(--v-accent);
+    border-radius: 100px;
+    font-weight: 500;
+}
+
+.demo_chrome_cta:hover {
+    background: #d4b88a !important;
+    color: var(--v-bg) !important;
+}
+
+/* Page */
+
+.vizitka {
+    position: relative;
+    min-height: 100vh;
+}
+
+.vizitka_noise {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.vizitka_glow {
+    position: fixed;
+    top: -20%;
+    right: -15%;
+    width: 70vmin;
+    height: 70vmin;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(196, 165, 116, 0.12) 0%, transparent 65%);
+    pointer-events: none;
+    z-index: 0;
+    animation: glowPulse 8s ease-in-out infinite alternate;
+}
+
+.vizitka_glow_secondary {
+    position: fixed;
+    bottom: -30%;
+    left: -20%;
+    width: 60vmin;
+    height: 60vmin;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(196, 165, 116, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes glowPulse {
+    from { transform: scale(1) translate(0, 0); opacity: 0.8; }
+    to { transform: scale(1.08) translate(-2%, 2%); opacity: 1; }
+}
+
+.vizitka_inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 100px 32px 80px;
+}
+
+/* Header row */
+
+.vizitka_top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: clamp(64px, 12vh, 120px);
+    opacity: 0;
+    animation: fadeUp 1s ease 0.2s forwards;
+}
+
+.vizitka_status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--v-text-muted);
+}
+
+.vizitka_status_dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #6ee7a0;
+    box-shadow: 0 0 12px rgba(110, 231, 160, 0.5);
+    animation: dotPulse 2s ease infinite;
+}
+
+@keyframes dotPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.vizitka_year {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--v-text-muted);
+}
+
+/* Hero */
+
+.vizitka_hero {
+    margin-bottom: clamp(72px, 10vh, 100px);
+}
+
+.vizitka_eyebrow {
+    display: inline-block;
+    margin-bottom: 24px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--v-accent);
+    opacity: 0;
+    animation: fadeUp 1s ease 0.35s forwards;
+}
+
+.vizitka_title {
+    font-family: var(--v-font-display);
+    font-size: clamp(52px, 10vw, 96px);
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    color: var(--v-text);
+    margin-bottom: 32px;
+    opacity: 0;
+    animation: fadeUp 1.1s ease 0.5s forwards;
+}
+
+.vizitka_title em {
+    font-style: italic;
+    color: var(--v-accent);
+}
+
+.vizitka_lead {
+    max-width: 480px;
+    font-size: clamp(16px, 2vw, 18px);
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--v-text-muted);
+    opacity: 0;
+    animation: fadeUp 1s ease 0.65s forwards;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(28px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Divider */
+
+.vizitka_rule {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, var(--v-accent), var(--v-line) 40%, transparent);
+    margin-bottom: clamp(56px, 8vh, 80px);
+    opacity: 0;
+    animation: fadeUp 1s ease 0.8s forwards;
+}
+
+/* Services strip */
+
+.vizitka_services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--v-line);
+    border: 1px solid var(--v-line);
+    border-radius: 2px;
+    margin-bottom: clamp(64px, 10vh, 96px);
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.9s forwards;
+}
+
+.vizitka_service {
+    padding: 36px 32px;
+    background: var(--v-bg);
+    transition: background 0.4s ease;
+}
+
+.vizitka_service:hover {
+    background: var(--v-bg-elevated);
+}
+
+.vizitka_service_num {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--v-accent);
+    margin-bottom: 16px;
+}
+
+.vizitka_service_title {
+    font-family: var(--v-font-display);
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: var(--v-text);
+}
+
+.vizitka_service_text {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.65;
+    color: var(--v-text-muted);
+}
+
+/* CTA block */
+
+.vizitka_cta_block {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 48px;
+    padding: 48px;
+    background: var(--v-accent-soft);
+    border: 1px solid rgba(196, 165, 116, 0.2);
+    border-radius: 2px;
+    margin-bottom: 64px;
+    opacity: 0;
+    animation: fadeUp 1s ease 1.05s forwards;
+}
+
+.vizitka_cta_text h2 {
+    font-family: var(--v-font-display);
+    font-size: clamp(32px, 5vw, 44px);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 12px;
+}
+
+.vizitka_cta_text p {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--v-text-muted);
+    max-width: 400px;
+}
+
+.vizitka_btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 36px;
+    font-family: var(--v-font-body);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--v-bg);
+    background: var(--v-accent);
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vizitka_btn:hover {
+    background: #d4b88a;
+    transform: translateY(-2px);
+    box-shadow: 0 16px 48px rgba(196, 165, 116, 0.2);
+}
+
+.vizitka_btn_arrow {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.vizitka_btn:hover .vizitka_btn_arrow {
+    transform: translateX(4px);
+}
+
+/* Footer contacts */
+
+.vizitka_footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    padding-top: 40px;
+    border-top: 1px solid var(--v-line);
+    opacity: 0;
+    animation: fadeUp 1s ease 1.2s forwards;
+}
+
+.vizitka_contacts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.vizitka_contact_item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.vizitka_contact_label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--v-text-muted);
+}
+
+.vizitka_contact_value {
+    font-size: 15px;
+    color: var(--v-text);
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+a.vizitka_contact_value:hover {
+    color: var(--v-accent);
+}
+
+.vizitka_signature {
+    font-family: var(--v-font-display);
+    font-size: 14px;
+    font-style: italic;
+    color: var(--v-text-muted);
+}
+
+/* Scroll reveal for JS-enhanced elements */
+
+.vizitka_reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.vizitka_reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+    .vizitka_services {
+        grid-template-columns: 1fr;
+    }
+
+    .vizitka_cta_block {
+        grid-template-columns: 1fr;
+        padding: 32px 28px;
+    }
+
+    .vizitka_inner {
+        padding: 88px 20px 60px;
+    }
+}
+
+@media (max-width: 600px) {
+    .demo_chrome_label {
+        display: none;
+    }
+
+    .vizitka_contacts {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .vizitka_footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <rect width="400" height="500" fill="#f0ece4"/>
+  <rect x="400" width="400" height="500" fill="#141414"/>
+  <text x="32" y="48" font-family="system-ui,sans-serif" font-size="14" font-weight="700" letter-spacing="3" fill="#141414">ATLAS</text>
+  <rect x="680" y="36" width="88" height="28" fill="#141414"/>
+  <text x="32" y="180" font-family="system-ui,sans-serif" font-size="36" font-weight="700" fill="#141414">СТРОИМ</text>
+  <text x="32" y="220" font-family="system-ui,sans-serif" font-size="36" font-weight="700" fill="#141414">ПРОСТРАН</text>
+  <text x="32" y="260" font-family="system-ui,sans-serif" font-size="36" font-weight="700" fill="#141414">СТВА</text>
+  <rect x="32" y="290" width="200" height="8" rx="2" fill="#6b6560" opacity="0.4"/>
+  <rect x="32" y="340" width="120" height="12" fill="#c45c26" opacity="0.8"/>
+  <rect x="440" y="380" width="80" height="32" fill="#f0ece4" opacity="0.15"/>
+  <rect x="540" y="380" width="80" height="32" fill="#f0ece4" opacity="0.1"/>
+  <rect x="640" y="380" width="80" height="32" fill="#f0ece4" opacity="0.1"/>
+  <line x1="600" y1="80" x2="600" y2="280" stroke="#c45c26" stroke-width="1" opacity="0.5"/>
+  <rect x="0" y="420" width="800" height="80" fill="#141414"/>
+  <rect x="32" y="440" width="120" height="40" fill="#1e1e1e" stroke="#f0ece4" stroke-opacity="0.08"/>
+  <rect x="220" y="440" width="120" height="40" fill="#1e1e1e" stroke="#f0ece4" stroke-opacity="0.08"/>
+  <rect x="408" y="440" width="120" height="40" fill="#1e1e1e" stroke="#f0ece4" stroke-opacity="0.08"/>
+  <rect x="596" y="440" width="120" height="40" fill="#1e1e1e" stroke="#f0ece4" stroke-opacity="0.08"/>
+</svg>

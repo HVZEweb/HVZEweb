@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, follow">
+    <title>MAISON — Пример визитки · HVZEweb</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Geist:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/demo-vizitka.css">
+</head>
+<body>
+    <div class="demo_chrome">
+        <a href="../index.html#portfolio">← К портфолио</a>
+        <span class="demo_chrome_label">Демо · Визитка</span>
+        <a href="../index.html#contacts" class="demo_chrome_cta">Хочу такую же</a>
+    </div>
+
+    <div class="vizitka">
+        <div class="vizitka_noise" aria-hidden="true"></div>
+        <div class="vizitka_glow" aria-hidden="true"></div>
+        <div class="vizitka_glow_secondary" aria-hidden="true"></div>
+
+        <div class="vizitka_inner">
+            <header class="vizitka_top">
+                <div class="vizitka_status">
+                    <span class="vizitka_status_dot"></span>
+                    Принимаю заказы
+                </div>
+                <span class="vizitka_year">Est. 2024</span>
+            </header>
+
+            <section class="vizitka_hero">
+                <span class="vizitka_eyebrow">Частный юрист · Москва</span>
+                <h1 class="vizitka_title">Maison<br><em>&amp; Partners</em></h1>
+                <p class="vizitka_lead">
+                    Сопровождение сделок, корпоративное право и защита интересов
+                    частных клиентов и бизнеса. Конфиденциально. Точно. В срок.
+                </p>
+            </section>
+
+            <div class="vizitka_rule" aria-hidden="true"></div>
+
+            <section class="vizitka_services" aria-label="Направления">
+                <article class="vizitka_service">
+                    <span class="vizitka_service_num">01</span>
+                    <h2 class="vizitka_service_title">Сделки</h2>
+                    <p class="vizitka_service_text">Due diligence, договоры, структурирование M&amp;A и сопровождение на всех этапах.</p>
+                </article>
+                <article class="vizitka_service">
+                    <span class="vizitka_service_num">02</span>
+                    <h2 class="vizitka_service_title">Корпоратив</h2>
+                    <p class="vizitka_service_text">Учредительные документы, споры между участниками, compliance и внутренние регламенты.</p>
+                </article>
+                <article class="vizitka_service">
+                    <span class="vizitka_service_num">03</span>
+                    <h2 class="vizitka_service_title">Частным лицам</h2>
+                    <p class="vizitka_service_text">Наследство, недвижимость, семейные вопросы — персональный подход без лишней бюрократии.</p>
+                </article>
+            </section>
+
+            <section class="vizitka_cta_block">
+                <div class="vizitka_cta_text">
+                    <h2>Обсудим вашу задачу</h2>
+                    <p>Первичная консультация — 30 минут. Ответ в течение рабочего дня.</p>
+                </div>
+                <a href="../index.html#contacts" class="vizitka_btn">
+                    Записаться
+                    <span class="vizitka_btn_arrow" aria-hidden="true">→</span>
+                </a>
+            </section>
+
+            <footer class="vizitka_footer">
+                <div class="vizitka_contacts">
+                    <div class="vizitka_contact_item">
+                        <span class="vizitka_contact_label">Telegram</span>
+                        <a href="#" class="vizitka_contact_value" onclick="return false">@maison_law</a>
+                    </div>
+                    <div class="vizitka_contact_item">
+                        <span class="vizitka_contact_label">Email</span>
+                        <a href="mailto:hello@maison.law" class="vizitka_contact_value">hello@maison.law</a>
+                    </div>
+                    <div class="vizitka_contact_item">
+                        <span class="vizitka_contact_label">Город</span>
+                        <span class="vizitka_contact_value">Москва · онлайн</span>
+                    </div>
+                </div>
+                <p class="vizitka_signature">Crafted as a demo by HVZEweb</p>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.vizitka_btn').forEach((btn) => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width - 0.5;
+                const y = (e.clientY - rect.top) / rect.height - 0.5;
+                btn.style.transform = `translate(${x * 4}px, ${y * 4 - 2}px)`;
+            });
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = '';
+            });
+        });
+    </script>
+</body>
+</html>

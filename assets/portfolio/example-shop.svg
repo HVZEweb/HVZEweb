@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <rect width="800" height="500" fill="#faf9f7"/>
+  <rect x="0" y="0" width="800" height="48" fill="#fff" stroke="#e8e4df"/>
+  <text x="32" y="32" font-family="system-ui,sans-serif" font-size="18" font-weight="700" fill="#1a1a1a">KŌ</text>
+  <text x="58" y="32" font-family="system-ui,sans-serif" font-size="18" font-weight="300" fill="#3d5a4c">RA</text>
+  <rect x="200" y="14" width="280" height="20" rx="10" fill="#fff" stroke="#e8e4df"/>
+  <circle cx="720" cy="24" r="10" fill="#3d5a4c"/>
+  <rect x="0" y="48" width="800" height="28" fill="#eef3f0"/>
+  <rect x="32" y="92" width="180" height="360" rx="12" fill="#fff" stroke="#e8e4df"/>
+  <rect x="48" y="112" width="80" height="8" rx="2" fill="#6f6c68" opacity="0.5"/>
+  <rect x="48" y="136" width="120" height="10" rx="4" fill="#eef3f0"/>
+  <rect x="48" y="160" width="100" height="10" rx="4" fill="#fff" stroke="#e8e4df"/>
+  <rect x="48" y="184" width="110" height="10" rx="4" fill="#fff" stroke="#e8e4df"/>
+  <rect x="240" y="92" width="528" height="360" rx="12" fill="#fff" stroke="#e8e4df"/>
+  <rect x="260" y="112" width="120" height="10" rx="2" fill="#6f6c68" opacity="0.4"/>
+  <rect x="260" y="140" width="160" height="140" rx="10" fill="#e8ebe6"/>
+  <rect x="440" y="140" width="160" height="140" rx="10" fill="#f0ebe4"/>
+  <rect x="620" y="140" width="128" height="140" rx="10" fill="#eae8e4"/>
+  <rect x="260" y="300" width="160" height="140" rx="10" fill="#e4ebe8"/>
+  <rect x="440" y="300" width="160" height="140" rx="10" fill="#f2ece6"/>
+  <rect x="620" y="300" width="128" height="140" rx="10" fill="#ebeae8"/>
+  <rect x="272" y="252" width="60" height="8" rx="2" fill="#1a1a1a"/>
+  <rect x="272" y="266" width="40" height="10" rx="2" fill="#3d5a4c"/>
+  <circle cx="400" cy="262" r="14" fill="#3d5a4c"/>
+</svg>

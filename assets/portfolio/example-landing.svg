@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <rect width="800" height="500" fill="#f7f5ff"/>
+  <circle cx="620" cy="120" r="100" fill="#7c3aed" opacity="0.12"/>
+  <circle cx="180" cy="380" r="80" fill="#ec4899" opacity="0.1"/>
+  <text x="48" y="52" font-family="system-ui,sans-serif" font-size="18" font-weight="800" fill="#7c3aed">Pulse</text>
+  <rect x="620" y="38" width="80" height="28" rx="14" fill="#0f0a1a"/>
+  <rect x="48" y="100" width="320" height="36" rx="4" fill="#0f0a1a"/>
+  <rect x="48" y="150" width="280" height="36" rx="4" fill="url(#g)"/>
+  <rect x="48" y="210" width="240" height="10" rx="2" fill="#6b6280" opacity="0.5"/>
+  <rect x="48" y="250" width="130" height="36" rx="18" fill="url(#g)"/>
+  <rect x="190" y="250" width="100" height="36" rx="18" fill="#fff" stroke="#0f0a1a" stroke-opacity="0.08"/>
+  <rect x="440" y="80" width="160" height="320" rx="24" fill="#0f0a1a"/>
+  <rect x="452" y="92" width="136" height="296" rx="20" fill="url(#phone)"/>
+  <rect x="468" y="130" width="100" height="28" rx="8" fill="#fff" opacity="0.15"/>
+  <rect x="468" y="170" width="100" height="28" rx="8" fill="#fff" opacity="0.1"/>
+  <rect x="472" y="230" width="20" height="50" rx="3" fill="#ec4899" opacity="0.8"/>
+  <rect x="498" y="210" width="20" height="70" rx="3" fill="#7c3aed" opacity="0.8"/>
+  <rect x="524" y="190" width="20" height="90" rx="3" fill="#ec4899" opacity="0.8"/>
+  <rect x="48" y="360" width="160" height="60" rx="12" fill="#fff" stroke="#0f0a1a" stroke-opacity="0.06"/>
+  <rect x="220" y="360" width="160" height="60" rx="12" fill="#fff" stroke="#0f0a1a" stroke-opacity="0.06"/>
+  <rect x="392" y="360" width="160" height="60" rx="12" fill="#fff" stroke="#0f0a1a" stroke-opacity="0.06"/>
+  <rect x="564" y="360" width="160" height="60" rx="12" fill="#fff" stroke="#0f0a1a" stroke-opacity="0.06"/>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#7c3aed"/>
+      <stop offset="0.5" stop-color="#ec4899"/>
+      <stop offset="1" stop-color="#f97316"/>
+    </linearGradient>
+    <linearGradient id="phone" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#1a0a2e"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+  </defs>
+</svg>
