@@ -131,7 +131,7 @@ if (portfolioGrid && portfolioToggle) {
     portfolioToggle.addEventListener('click', () => {
         const expanded = portfolioGrid.classList.toggle('is-expanded');
         portfolioToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-        portfolioToggle.textContent = expanded ? 'Скрыть' : 'Показать ещё';
+        portfolioToggle.textContent = expanded ? 'Скрыть' : 'Показать ещё · 6 проектов';
 
         if (expanded) {
             portfolioGrid.querySelectorAll('.portfolio_card_extra.reveal').forEach((el) => {

@@ -14,60 +14,137 @@
 <body>
     <div class="demo_chrome">
         <a href="../index.html#portfolio">← К портфолио</a>
-        <span class="demo_chrome_label">Демо · Лендинг</span>
+        <span class="demo_chrome_label">Демо · Лендинг · Медицина</span>
         <a href="../index.html#contacts" class="demo_chrome_cta">Хочу такую же</a>
     </div>
 
     <div class="clinic">
-        <header class="clinic_nav">
-            <span class="clinic_logo">LUMEN</span>
-            <a href="../index.html#contacts" class="clinic_nav_btn">Записаться</a>
-        </header>
+        <div class="clinic_inner">
+            <header class="clinic_nav">
+                <span class="clinic_logo">LUMEN<span>.</span></span>
+                <nav class="clinic_nav_links" aria-label="Навигация">
+                    <a href="#services">Услуги</a>
+                    <a href="#doctors">Врачи</a>
+                    <a href="#process">Как записаться</a>
+                </nav>
+                <a href="../index.html#contacts" class="clinic_nav_btn">Записаться</a>
+            </header>
 
-        <section class="clinic_hero">
-            <div>
-                <div class="clinic_badge">
-                    <span class="clinic_badge_dot"></span>
-                    Стоматология · Москва
+            <section class="clinic_hero">
+                <div>
+                    <div class="clinic_badge">
+                        <span class="clinic_badge_dot"></span>
+                        Принимаем пациентов · Москва
+                    </div>
+                    <h1 class="clinic_title">Забота о вашей улыбке — спокойно и профессионально</h1>
+                    <p class="clinic_lead">
+                        Современное оборудование, опытные врачи и прозрачные цены.
+                        Лечение, имплантация и эстетика — в одной клинике.
+                    </p>
+                    <div class="clinic_trust">
+                        <span class="clinic_trust_item"><span class="clinic_trust_icon">✓</span> Бесплатная консультация</span>
+                        <span class="clinic_trust_item"><span class="clinic_trust_icon">✓</span> Рассрочка 0%</span>
+                        <span class="clinic_trust_item"><span class="clinic_trust_icon">✓</span> 7 дней в неделю</span>
+                    </div>
                 </div>
-                <h1 class="clinic_title">Забота о вашей улыбке — без стресса</h1>
-                <p class="clinic_lead">
-                    Современное оборудование, опытные врачи и прозрачные цены.
-                    Лечение, имплантация и эстетика — в одном месте.
-                </p>
-                <div class="clinic_features">
-                    <span>✓ Бесплатная консультация</span>
-                    <span>✓ Рассрочка 0%</span>
-                    <span>✓ Работаем 7 дней</span>
+                <div class="clinic_booking">
+                    <p class="clinic_booking_label">Онлайн-запись</p>
+                    <h2>Выберите удобное время</h2>
+                    <p>Первичный приём — 30 минут. Администратор перезвонит за 15 минут.</p>
+                    <div class="clinic_booking_slots">
+                        <span class="clinic_slot">10:00</span>
+                        <span class="clinic_slot clinic_slot_active">14:30</span>
+                        <span class="clinic_slot">18:00</span>
+                    </div>
+                    <a href="../index.html#contacts" class="clinic_booking_btn">Записаться на приём</a>
                 </div>
-            </div>
-            <div class="clinic_card">
-                <p class="clinic_card_label">Онлайн-запись</p>
-                <h2>Выберите удобное время</h2>
-                <p>Первичный приём — 30 минут. Ответ администратора в течение 15 минут.</p>
-                <a href="../index.html#contacts" class="clinic_card_btn">Записаться на приём</a>
-            </div>
-        </section>
+            </section>
 
-        <section class="clinic_services" aria-label="Услуги">
-            <article class="clinic_service">
-                <div class="clinic_service_icon" aria-hidden="true">🦷</div>
-                <h3>Лечение</h3>
-                <p>Кaries, пульпит, профессиональная гигиена и профилактика.</p>
-            </article>
-            <article class="clinic_service">
-                <div class="clinic_service_icon" aria-hidden="true">✨</div>
-                <h3>Эстетика</h3>
-                <p>Отбеливание, виниры, реставрация формы и цвета.</p>
-            </article>
-            <article class="clinic_service">
-                <div class="clinic_service_icon" aria-hidden="true">🔩</div>
-                <h3>Имплантация</h3>
-                <p>Диагностика, установка имплантов, протезирование под ключ.</p>
-            </article>
-        </section>
+            <section id="services">
+                <div class="clinic_section_head">
+                    <p class="clinic_section_label">Услуги</p>
+                    <h2 class="clinic_section_title">Полный спектр стоматологии</h2>
+                </div>
+                <div class="clinic_services">
+                    <article class="clinic_service">
+                        <div class="clinic_service_icon" aria-hidden="true">🦷</div>
+                        <h3>Лечение</h3>
+                        <p>Кaries, пульпит, профессиональная гигиена и профилактика заболеваний.</p>
+                    </article>
+                    <article class="clinic_service">
+                        <div class="clinic_service_icon" aria-hidden="true">✨</div>
+                        <h3>Эстетика</h3>
+                        <p>Отбеливание, виниры, реставрация формы и цвета зубов.</p>
+                    </article>
+                    <article class="clinic_service">
+                        <div class="clinic_service_icon" aria-hidden="true">🔩</div>
+                        <h3>Имплантация</h3>
+                        <p>Диагностика, установка имплантов, протезирование под ключ.</p>
+                    </article>
+                </div>
+            </section>
 
-        <p class="clinic_footer">Crafted as a demo by HVZEweb</p>
+            <section id="doctors">
+                <div class="clinic_section_head">
+                    <p class="clinic_section_label">Команда</p>
+                    <h2 class="clinic_section_title">Врачи с опытом от 10 лет</h2>
+                </div>
+                <div class="clinic_doctors">
+                    <article class="clinic_doctor">
+                        <div class="clinic_doctor_photo" aria-hidden="true"></div>
+                        <p class="clinic_doctor_name">Елена Volkova</p>
+                        <p class="clinic_doctor_spec">Главный врач</p>
+                        <p class="clinic_doctor_exp">15 лет · имплантация</p>
+                    </article>
+                    <article class="clinic_doctor">
+                        <div class="clinic_doctor_photo" aria-hidden="true"></div>
+                        <p class="clinic_doctor_name">Андрей Smirnov</p>
+                        <p class="clinic_doctor_spec">Ортопед</p>
+                        <p class="clinic_doctor_exp">12 лет · протезирование</p>
+                    </article>
+                    <article class="clinic_doctor">
+                        <div class="clinic_doctor_photo" aria-hidden="true"></div>
+                        <p class="clinic_doctor_name">Мария Kozlova</p>
+                        <p class="clinic_doctor_spec">Терапевт</p>
+                        <p class="clinic_doctor_exp">10 лет · эстетика</p>
+                    </article>
+                </div>
+            </section>
+
+            <section id="process">
+                <div class="clinic_section_head">
+                    <p class="clinic_section_label">Процесс</p>
+                    <h2 class="clinic_section_title">Как проходит первый визит</h2>
+                </div>
+                <div class="clinic_steps">
+                    <article class="clinic_step">
+                        <span class="clinic_step_num">1</span>
+                        <h3>Заявка</h3>
+                        <p>Оставьте заявку на сайте или по телефону</p>
+                    </article>
+                    <article class="clinic_step">
+                        <span class="clinic_step_num">2</span>
+                        <h3>Консультация</h3>
+                        <p>Осмотр, диагностика, план лечения</p>
+                    </article>
+                    <article class="clinic_step">
+                        <span class="clinic_step_num">3</span>
+                        <h3>Лечение</h3>
+                        <p>Комфортно, с объяснением каждого шага</p>
+                    </article>
+                    <article class="clinic_step">
+                        <span class="clinic_step_num">4</span>
+                        <h3>Контроль</h3>
+                        <p>Напоминания и поддержка после приёма</p>
+                    </article>
+                </div>
+            </section>
+
+            <footer class="clinic_footer">
+                <span>ул. Тверская, 18 · Москва · +7 (495) 000-00-00</span>
+                <span>Crafted as a demo by HVZEweb</span>
+            </footer>
+        </div>
     </div>
 </body>
 </html>

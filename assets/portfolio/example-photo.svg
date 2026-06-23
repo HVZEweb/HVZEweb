@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <rect width="800" height="500" fill="#faf9f7"/>
+  <text x="400" y="70" text-anchor="middle" font-family="Georgia,serif" font-size="42" fill="#1a1a1a">LUMINA</text>
+  <text x="400" y="100" text-anchor="middle" font-family="Georgia,serif" font-size="14" font-style="italic" fill="#6b6560">Wedding &amp; Portrait</text>
+  <rect x="80" y="130" width="640" height="180" fill="url(#phHero)"/>
+  <rect x="80" y="340" width="190" height="120" fill="#e8e4de"/>
+  <rect x="290" y="360" width="190" height="100" fill="#d8d0c4"/>
+  <rect x="500" y="340" width="220" height="120" fill="#e0dcd4"/>
+  <defs>
+    <linearGradient id="phHero" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#e8e4de"/>
+      <stop offset="1" stop-color="#c9c2b8"/>
+    </linearGradient>
+  </defs>
+</svg>

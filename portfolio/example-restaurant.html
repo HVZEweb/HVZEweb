@@ -8,71 +8,151 @@
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,400&family=Geist:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Geist:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/demo-restaurant.css">
 </head>
 <body>
     <div class="demo_chrome">
         <a href="../index.html#portfolio">← К портфолио</a>
-        <span class="demo_chrome_label">Демо · Лендинг</span>
+        <span class="demo_chrome_label">Демо · Лендинг · HoReCa</span>
         <a href="../index.html#contacts" class="demo_chrome_cta">Хочу такую же</a>
     </div>
 
     <div class="rest">
-        <header class="rest_nav">
-            <span class="rest_logo">NOVA</span>
-            <nav class="rest_nav_links" aria-label="Навигация">
-                <span>Меню</span>
-                <span>О нас</span>
-                <span>Бронь</span>
-            </nav>
-        </header>
+        <div class="rest_glow rest_glow_1" aria-hidden="true"></div>
+        <div class="rest_glow rest_glow_2" aria-hidden="true"></div>
 
-        <section class="rest_hero">
-            <div>
-                <p class="rest_eyebrow">Ресторан · Санкт-Петербург</p>
-                <h1 class="rest_title">Вкус<br><em>сезона</em></h1>
-                <p class="rest_lead">
-                    Авторская кухня из локальных продуктов. Уютный зал,
-                    открытая кухня и винная карта от sommelier.
-                </p>
-                <a href="../index.html#contacts" class="rest_btn">Забронировать стол →</a>
-            </div>
-            <div class="rest_hero_visual">
-                <span class="rest_hero_tag">Открыто · 12:00–23:00</span>
-            </div>
-        </section>
+        <div class="rest_inner">
+            <header class="rest_nav">
+                <span class="rest_logo">NOVA</span>
+                <nav class="rest_nav_links" aria-label="Навигация">
+                    <a href="#menu">Меню</a>
+                    <a href="#about">О нас</a>
+                    <a href="#reserve">Бронь</a>
+                </nav>
+                <a href="../index.html#contacts" class="rest_nav_cta">Забронировать</a>
+            </header>
 
-        <section>
-            <h2 class="rest_section_title">Из меню</h2>
-            <div class="rest_menu">
-                <article class="rest_dish">
-                    <p class="rest_dish_price">890 ₽</p>
-                    <h3>Тартар из говядины</h3>
-                    <p>Каперсы, желток, трюфельное масло, хрустящий багет.</p>
-                </article>
-                <article class="rest_dish">
-                    <p class="rest_dish_price">1 240 ₽</p>
-                    <h3>Утка confit</h3>
-                    <p>Пюре из сельдерея, вишнёвый соус, микрозелень.</p>
-                </article>
-                <article class="rest_dish">
-                    <p class="rest_dish_price">620 ₽</p>
-                    <h3>Тирамisu NOVA</h3>
-                    <p>Классический рецепт с амaretto и какао.</p>
-                </article>
-            </div>
-        </section>
+            <section class="rest_hero">
+                <div>
+                    <p class="rest_eyebrow">
+                        <span class="rest_eyebrow_line"></span>
+                        Ресторан · Санкт-Петербург
+                    </p>
+                    <h1 class="rest_title">Вкус<br><em>сезона</em></h1>
+                    <p class="rest_lead">
+                        Авторская кухня из локальных продуктов. Открытая кухня,
+                        винная карта от sommelier и атмосфера для особых вечеров.
+                    </p>
+                    <div class="rest_hero_actions">
+                        <a href="../index.html#contacts" class="rest_btn">Забронировать стол →</a>
+                        <a href="#menu" class="rest_btn rest_btn_ghost">Смотреть меню</a>
+                    </div>
+                </div>
+                <div class="rest_hero_visual">
+                    <div class="rest_hero_img" aria-hidden="true"></div>
+                    <div class="rest_hero_badge">
+                        <div class="rest_hero_badge_item">
+                            <span class="rest_hero_badge_label">Сегодня</span>
+                            <span class="rest_hero_badge_value">12:00 – 23:00</span>
+                        </div>
+                        <div class="rest_hero_badge_item">
+                            <span class="rest_hero_badge_label">Michelin Guide</span>
+                            <span class="rest_hero_badge_value">Recommended</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-        <section class="rest_cta">
-            <div>
-                <h2>Частные ужины и банкеты</h2>
-                <p>До 40 гостей · персональное меню · декор зала.</p>
+            <div class="rest_stats" id="about">
+                <div class="rest_stat">
+                    <span class="rest_stat_value">12</span>
+                    <span class="rest_stat_label">лет на рынке</span>
+                </div>
+                <div class="rest_stat">
+                    <span class="rest_stat_value">48</span>
+                    <span class="rest_stat_label">блюд в меню</span>
+                </div>
+                <div class="rest_stat">
+                    <span class="rest_stat_value">4.9</span>
+                    <span class="rest_stat_label">рейтинг гостей</span>
+                </div>
+                <div class="rest_stat">
+                    <span class="rest_stat_value">40</span>
+                    <span class="rest_stat_label">мест в зале</span>
+                </div>
             </div>
-            <a href="../index.html#contacts" class="rest_btn">Оставить заявку</a>
-        </section>
 
-        <p class="rest_footer">Crafted as a demo by HVZEweb</p>
+            <section id="menu">
+                <div class="rest_section_head">
+                    <p class="rest_section_label">Меню</p>
+                    <h2 class="rest_section_title">Избранное от шефа</h2>
+                </div>
+                <div class="rest_menu">
+                    <article class="rest_dish">
+                        <div class="rest_dish_visual" aria-hidden="true"></div>
+                        <div class="rest_dish_body">
+                            <div class="rest_dish_meta">
+                                <span class="rest_dish_tag">Закуски</span>
+                                <span class="rest_dish_price">890 ₽</span>
+                            </div>
+                            <h3>Тартар из говядины</h3>
+                            <p>Каперсы, желток, трюфельное масло, хрустящий багет из нашей печи.</p>
+                        </div>
+                    </article>
+                    <article class="rest_dish">
+                        <div class="rest_dish_visual" aria-hidden="true"></div>
+                        <div class="rest_dish_body">
+                            <div class="rest_dish_meta">
+                                <span class="rest_dish_tag">Горячее</span>
+                                <span class="rest_dish_price">1 240 ₽</span>
+                            </div>
+                            <h3>Утка confit</h3>
+                            <p>Пюре из сельдерея, вишнёвый соус, микрозелень с собственной теплицы.</p>
+                        </div>
+                    </article>
+                    <article class="rest_dish">
+                        <div class="rest_dish_visual" aria-hidden="true"></div>
+                        <div class="rest_dish_body">
+                            <div class="rest_dish_meta">
+                                <span class="rest_dish_tag">Десерты</span>
+                                <span class="rest_dish_price">620 ₽</span>
+                            </div>
+                            <h3>Tiramisu NOVA</h3>
+                            <p>Классический рецепт с amaretto, mascarpone и какао высшего сорта.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <blockquote class="rest_quote">
+                <span class="rest_quote_mark" aria-hidden="true">"</span>
+                <div>
+                    <p class="rest_quote_text">
+                        Мы не просто готовим — мы рассказываем историю продукта,
+                        сезона и людей, которые его создают.
+                    </p>
+                    <p class="rest_quote_author">
+                        <strong>Алексей Morozov</strong>
+                        Шеф-повар · NOVA
+                    </p>
+                </div>
+            </blockquote>
+
+            <section class="rest_cta" id="reserve">
+                <div class="rest_cta_bg" aria-hidden="true"></div>
+                <div class="rest_cta_inner">
+                    <h2>Частные ужины и банкеты</h2>
+                    <p>До 40 гостей · персональное меню · декор зала · живая музыка</p>
+                    <a href="../index.html#contacts" class="rest_btn">Оставить заявку</a>
+                </div>
+            </section>
+
+            <footer class="rest_footer">
+                <span>Наб. реки Фонтанки, 42 · Санкт-Петербург</span>
+                <span>Crafted as a demo by HVZEweb</span>
+            </footer>
+        </div>
     </div>
 </body>
 </html>

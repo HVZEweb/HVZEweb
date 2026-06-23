@@ -8,70 +8,125 @@
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Geist:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Geist:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/demo-barber.css">
 </head>
 <body>
     <div class="demo_chrome">
         <a href="../index.html#portfolio">← К портфолио</a>
-        <span class="demo_chrome_label">Демо · Визитка</span>
+        <span class="demo_chrome_label">Демо · Визитка · Beauty</span>
         <a href="../index.html#contacts" class="demo_chrome_cta">Хочу такую же</a>
     </div>
 
     <div class="barber">
-        <div class="barber_frame">
-            <header class="barber_top">
-                <span class="barber_logo">FRAME</span>
-                <span class="barber_status">Запись открыта</span>
-            </header>
+        <div class="barber_noise" aria-hidden="true"></div>
+        <div class="barber_glow" aria-hidden="true"></div>
 
-            <section class="barber_hero">
-                <div>
-                    <h1 class="barber_title">Барбершоп<br>для тех, кто ценит детали</h1>
+        <div class="barber_inner">
+            <div class="barber_frame">
+                <header class="barber_top">
+                    <div class="barber_status">
+                        <span class="barber_status_dot"></span>
+                        Запись открыта
+                    </div>
+                    <span class="barber_logo">FRAME</span>
+                    <span class="barber_year">Est. 2019</span>
+                </header>
+
+                <section class="barber_hero">
+                    <p class="barber_eyebrow">Barbershop · Казань</p>
+                    <h1 class="barber_title">Барбершоп для тех,<br>кто ценит детали</h1>
                     <p class="barber_lead">
                         Классические стрижки, борода, бритие опасной бритвой.
-                        Мужской зал в центре города — без суеты, с характером.
+                        Мужской зал с характером — без суеты, с вниманием к каждому.
                     </p>
-                    <a href="../index.html#contacts" class="barber_btn">Записаться</a>
-                </div>
-                <div class="barber_visual" aria-hidden="true"></div>
-            </section>
+                    <a href="../index.html#contacts" class="barber_btn">Записаться →</a>
+                </section>
 
-            <section class="barber_services" aria-label="Услуги">
-                <article class="barber_service">
-                    <p class="barber_service_price">1 800 ₽</p>
-                    <h3>Стрижка</h3>
-                    <p>Моделирование, укладка, консультация по уходу.</p>
-                </article>
-                <article class="barber_service">
-                    <p class="barber_service_price">1 400 ₽</p>
-                    <h3>Борода</h3>
-                    <p>Коррекция, оформление, масло и горячее полотенце.</p>
-                </article>
-                <article class="barber_service">
-                    <p class="barber_service_price">2 400 ₽</p>
-                    <h3>Комплекс</h3>
-                    <p>Стрижка + борода + камуфляж седины по желанию.</p>
-                </article>
-            </section>
+                <div class="barber_gallery" aria-hidden="true">
+                    <div class="barber_gallery_item"></div>
+                    <div class="barber_gallery_item"></div>
+                    <div class="barber_gallery_item"></div>
+                </div>
 
-            <footer class="barber_footer">
-                <div>
-                    <span class="barber_contact_label">Адрес</span>
-                    <span>Казань · ул. Баумана, 12</span>
-                </div>
-                <div>
-                    <span class="barber_contact_label">Telegram</span>
-                    <a href="#" onclick="return false">@frame_barber</a>
-                </div>
-                <div>
-                    <span class="barber_contact_label">Часы</span>
-                    <span>10:00 — 21:00</span>
-                </div>
-            </footer>
+                <section class="barber_services" aria-label="Услуги">
+                    <h2 class="barber_services_title">Прайс</h2>
+                    <div class="barber_services_grid">
+                        <article class="barber_service">
+                            <span class="barber_service_num">01</span>
+                            <div>
+                                <h3>Стрижка</h3>
+                                <p>Моделирование, укладка, консультация по уходу.</p>
+                            </div>
+                            <span class="barber_service_price">1 800 ₽</span>
+                        </article>
+                        <article class="barber_service">
+                            <span class="barber_service_num">02</span>
+                            <div>
+                                <h3>Борода</h3>
+                                <p>Коррекция, оформление, масло и горячее полотенце.</p>
+                            </div>
+                            <span class="barber_service_price">1 400 ₽</span>
+                        </article>
+                        <article class="barber_service">
+                            <span class="barber_service_num">03</span>
+                            <div>
+                                <h3>Комплекс</h3>
+                                <p>Стрижка + борода + камуфляж седины по желанию.</p>
+                            </div>
+                            <span class="barber_service_price">2 400 ₽</span>
+                        </article>
+                    </div>
+                </section>
 
-            <p class="barber_signature">Crafted as a demo by HVZEweb</p>
+                <section class="barber_masters" aria-label="Мастера">
+                    <article class="barber_master">
+                        <div class="barber_master_avatar" aria-hidden="true"></div>
+                        <p class="barber_master_name">Дамир</p>
+                        <p class="barber_master_role">Top Barber · 8 лет</p>
+                    </article>
+                    <article class="barber_master">
+                        <div class="barber_master_avatar" aria-hidden="true"></div>
+                        <p class="barber_master_name">Артём</p>
+                        <p class="barber_master_role">Fade &amp; Classic</p>
+                    </article>
+                    <article class="barber_master">
+                        <div class="barber_master_avatar" aria-hidden="true"></div>
+                        <p class="barber_master_name">Илья</p>
+                        <p class="barber_master_role">Борода · Бритие</p>
+                    </article>
+                </section>
+
+                <footer class="barber_footer">
+                    <div>
+                        <span class="barber_contact_label">Адрес</span>
+                        <span class="barber_contact_value">ул. Баумана, 12</span>
+                    </div>
+                    <div>
+                        <span class="barber_contact_label">Telegram</span>
+                        <a href="#" class="barber_contact_value" onclick="return false">@frame_barber</a>
+                    </div>
+                    <div>
+                        <span class="barber_contact_label">Часы</span>
+                        <span class="barber_contact_value">10:00 — 21:00</span>
+                    </div>
+                    <p class="barber_signature">Crafted as a demo by HVZEweb</p>
+                </footer>
+            </div>
         </div>
     </div>
+
+    <script>
+        document.querySelector('.barber_btn')?.addEventListener('mousemove', (e) => {
+            const btn = e.currentTarget;
+            const rect = btn.getBoundingClientRect();
+            const x = (e.clientX - rect.left) / rect.width - 0.5;
+            const y = (e.clientY - rect.top) / rect.height - 0.5;
+            btn.style.transform = `translate(${x * 4}px, ${y * 4 - 2}px)`;
+        });
+        document.querySelector('.barber_btn')?.addEventListener('mouseleave', (e) => {
+            e.currentTarget.style.transform = '';
+        });
+    </script>
 </body>
 </html>
