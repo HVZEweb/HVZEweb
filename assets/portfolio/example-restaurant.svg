@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <rect width="800" height="500" fill="#1a120e"/>
+  <circle cx="650" cy="400" r="120" fill="#c45c3e" opacity="0.15"/>
+  <text x="48" y="52" font-family="system-ui,sans-serif" font-size="20" font-weight="700" fill="#f5ebe0">NOVA</text>
+  <rect x="48" y="90" width="360" height="44" rx="4" fill="#f5ebe0"/>
+  <rect x="48" y="150" width="280" height="12" rx="2" fill="#a08070" opacity="0.6"/>
+  <rect x="48" y="175" width="220" height="12" rx="2" fill="#a08070" opacity="0.4"/>
+  <rect x="48" y="220" width="140" height="40" rx="20" fill="#c45c3e"/>
+  <rect x="420" y="60" width="320" height="280" rx="16" fill="#2a1f18"/>
+  <rect x="440" y="80" width="280" height="160" rx="8" fill="#c45c3e" opacity="0.3"/>
+  <rect x="48" y="320" width="220" height="140" rx="12" fill="#2a1f18"/>
+  <rect x="290" y="320" width="220" height="140" rx="12" fill="#2a1f18"/>
+  <rect x="532" y="360" width="220" height="100" rx="12" fill="#2a1f18"/>
+</svg>

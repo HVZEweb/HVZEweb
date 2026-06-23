@@ -532,6 +532,15 @@ body.menu-open {
     gap: 24px;
 }
 
+.portfolio_grid:not(.is-expanded) .portfolio_card_extra {
+    display: none;
+}
+
+.portfolio_actions {
+    margin-top: 32px;
+    text-align: center;
+}
+
 .portfolio_card {
     background-color: var(--bg-card);
     border: 1px solid var(--border);

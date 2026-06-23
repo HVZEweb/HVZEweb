@@ -124,6 +124,23 @@ if (revealElements.length) {
     revealElements.forEach((el) => revealObserver.observe(el));
 }
 
+const portfolioGrid = document.getElementById('portfolio-grid');
+const portfolioToggle = document.getElementById('portfolio-toggle');
+
+if (portfolioGrid && portfolioToggle) {
+    portfolioToggle.addEventListener('click', () => {
+        const expanded = portfolioGrid.classList.toggle('is-expanded');
+        portfolioToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+        portfolioToggle.textContent = expanded ? 'Скрыть' : 'Показать ещё';
+
+        if (expanded) {
+            portfolioGrid.querySelectorAll('.portfolio_card_extra.reveal').forEach((el) => {
+                el.classList.add('is-visible');
+            });
+        }
+    });
+}
+
 function trackGoal(goalName) {
     if (typeof ym === 'function' && config.yandexMetrikaId) {
         ym(config.yandexMetrikaId, 'reachGoal', goalName);

@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Geist:wght@400;500&display=swap');
+
+:root {
+    --b-bg: #0d0d0d;
+    --b-card: #161616;
+    --b-text: #e8e4dc;
+    --b-muted: #777;
+    --b-accent: #c9a962;
+    --b-line: rgba(232, 228, 220, 0.1);
+    --b-font-display: 'Cormorant Garamond', Georgia, serif;
+    --b-font-body: 'Geist', system-ui, sans-serif;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: var(--b-font-body);
+    background: var(--b-bg);
+    color: var(--b-text);
+    line-height: 1.6;
+}
+
+.demo_chrome {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 10px 24px;
+    font-size: 13px;
+    color: var(--b-muted);
+    background: rgba(13, 13, 13, 0.92);
+    border-bottom: 1px solid var(--b-line);
+    backdrop-filter: blur(12px);
+}
+
+.demo_chrome a { color: var(--b-text); text-decoration: none; }
+.demo_chrome a:hover { color: var(--b-accent); }
+.demo_chrome_cta {
+    padding: 8px 16px;
+    color: var(--b-bg) !important;
+    background: var(--b-accent);
+    border-radius: 0;
+    font-weight: 500;
+}
+
+.barber {
+    padding: 72px 24px 48px;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.barber_frame {
+    border: 1px solid var(--b-line);
+    padding: 48px;
+}
+
+.barber_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 48px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--b-line);
+}
+
+.barber_logo {
+    font-family: var(--b-font-display);
+    font-size: 48px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+}
+
+.barber_status {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--b-accent);
+}
+
+.barber_hero {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 40px;
+    margin-bottom: 48px;
+}
+
+.barber_title {
+    font-family: var(--b-font-display);
+    font-size: clamp(32px, 4vw, 44px);
+    font-weight: 500;
+    line-height: 1.15;
+    margin-bottom: 16px;
+}
+
+.barber_lead {
+    color: var(--b-muted);
+    font-size: 16px;
+    margin-bottom: 28px;
+    max-width: 380px;
+}
+
+.barber_btn {
+    display: inline-block;
+    padding: 14px 32px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--b-bg);
+    background: var(--b-accent);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.barber_btn:hover { opacity: 0.88; }
+
+.barber_visual {
+    min-height: 280px;
+    background: linear-gradient(160deg, var(--b-card) 0%, #1f1f1f 100%);
+    border: 1px solid var(--b-line);
+}
+
+.barber_services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--b-line);
+    margin-bottom: 48px;
+}
+
+.barber_service {
+    padding: 24px;
+    background: var(--b-bg);
+}
+
+.barber_service_price {
+    font-size: 14px;
+    color: var(--b-accent);
+    margin-bottom: 6px;
+}
+
+.barber_service h3 {
+    font-family: var(--b-font-display);
+    font-size: 22px;
+    margin-bottom: 6px;
+}
+
+.barber_service p {
+    font-size: 13px;
+    color: var(--b-muted);
+}
+
+.barber_footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+    font-size: 14px;
+}
+
+.barber_contact_label {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--b-muted);
+    margin-bottom: 4px;
+}
+
+.barber_signature {
+    width: 100%;
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--b-line);
+    font-size: 12px;
+    color: var(--b-muted);
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .barber_frame { padding: 24px; }
+    .barber_hero, .barber_services { grid-template-columns: 1fr; }
+}
