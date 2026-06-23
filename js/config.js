@@ -1,6 +1,6 @@
 // Настройки сайта — замените значения на свои перед публикацией
 window.SITE_CONFIG = {
-    siteUrl: 'https://hvzeweb.ru',
+    siteUrl: 'https://hvzeweb.netlify.app',
     telegram: '@hvzeweb',
     telegramUrl: 'https://t.me/hvzeweb',
     email: 'hello@hvzeweb.ru',

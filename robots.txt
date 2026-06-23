@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://hvzeweb.ru/sitemap.xml
+Sitemap: https://hvzeweb.netlify.app/sitemap.xml
