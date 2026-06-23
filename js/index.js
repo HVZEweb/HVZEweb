@@ -5,9 +5,11 @@ const mobileLinks = document.querySelectorAll('.mobile_menu_item');
 const allMenuLinks = [...desktopLinks, ...mobileLinks];
 const sections = document.querySelectorAll('section[id]');
 const contactForm = document.getElementById('contact-form');
-const formNoteSuccess = document.getElementById('form-note-success');
 const formNoteError = document.getElementById('form-note-error');
 const formSubmitBtn = document.getElementById('form-submit');
+const formSuccessModal = document.getElementById('form-success-modal');
+const formSuccessTitle = document.getElementById('form-success-title');
+const formSuccessText = document.getElementById('form-success-text');
 const revealElements = document.querySelectorAll('.reveal');
 const goalElements = document.querySelectorAll('[data-goal]');
 
@@ -136,13 +138,68 @@ goalElements.forEach((el) => {
 });
 
 function hideFormMessages() {
-    if (formNoteSuccess) formNoteSuccess.hidden = true;
     if (formNoteError) formNoteError.hidden = true;
 }
 
-function showFormSuccess() {
+function openSuccessModal(title, message) {
+    if (!formSuccessModal) return;
+
+    if (formSuccessTitle) formSuccessTitle.textContent = title;
+    if (formSuccessText) formSuccessText.textContent = message;
+
+    formSuccessModal.hidden = false;
+    formSuccessModal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('form-modal-open');
+
+    requestAnimationFrame(() => {
+        formSuccessModal.classList.add('is-visible');
+    });
+
+    const closeBtn = formSuccessModal.querySelector('[data-modal-close]');
+    closeBtn?.focus();
+}
+
+function closeSuccessModal() {
+    if (!formSuccessModal || formSuccessModal.hidden) return;
+
+    formSuccessModal.classList.remove('is-visible');
+    formSuccessModal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('form-modal-open');
+
+    window.setTimeout(() => {
+        formSuccessModal.hidden = true;
+    }, 300);
+
+    formSubmitBtn?.focus();
+}
+
+if (formSuccessModal) {
+    formSuccessModal.querySelectorAll('[data-modal-close]').forEach((el) => {
+        el.addEventListener('click', closeSuccessModal);
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && !formSuccessModal.hidden) {
+            closeSuccessModal();
+        }
+    });
+}
+
+function showFormSuccess(isTelegramFallback = false) {
     hideFormMessages();
-    if (formNoteSuccess) formNoteSuccess.hidden = false;
+
+    if (isTelegramFallback) {
+        openSuccessModal(
+            'Откройте Telegram',
+            'Мы подготовили сообщение с вашей заявкой — отправьте его в чат, и мы ответим в ближайшее время.'
+        );
+        return;
+    }
+
+    openSuccessModal(
+        'Заявка отправлена',
+        'Спасибо! Мы получили ваше сообщение и свяжемся с вами в течение рабочего дня.'
+    );
 }
 
 function showFormError(message) {
@@ -208,11 +265,11 @@ if (contactForm) {
 
         if (result.ok) {
             contactForm.reset();
-            showFormSuccess();
+            showFormSuccess(false);
             trackGoal('form_submit');
         } else if (result.fallback) {
             openTelegramFallback(name, contact, message);
-            showFormSuccess();
+            showFormSuccess(true);
             contactForm.reset();
         } else {
             showFormError(`Не удалось отправить. Напишите нам в Telegram: ${config.telegram || '@HVZEweb'}`);

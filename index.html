@@ -396,7 +396,6 @@
                             <span>Согласен с <a href="privacy.html" target="_blank">политикой конфиденциальности</a></span>
                         </label>
                         <button type="submit" class="btn btn_primary btn_full" id="form-submit">Отправить заявку</button>
-                        <p class="form_note form_note_success" id="form-note-success" hidden>Спасибо! Мы свяжемся с вами в ближайшее время.</p>
                         <p class="form_note form_note_error" id="form-note-error" hidden></p>
                     </form>
                 </div>
@@ -418,6 +417,27 @@
     <a href="#contacts" class="floating_cta" aria-label="Написать нам" data-goal="floating_cta">
         <span>Написать</span>
     </a>
+
+    <div class="form_modal" id="form-success-modal" hidden aria-hidden="true">
+        <div class="form_modal_overlay" data-modal-close tabindex="-1"></div>
+        <div class="form_modal_dialog" role="dialog" aria-modal="true" aria-labelledby="form-success-title">
+            <button type="button" class="form_modal_close" data-modal-close aria-label="Закрыть">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <div class="form_modal_icon" aria-hidden="true">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <path d="M8 16.5l5 5 11-11.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <h3 class="form_modal_title" id="form-success-title">Заявка отправлена</h3>
+            <p class="form_modal_text" id="form-success-text">
+                Спасибо! Мы получили ваше сообщение и свяжемся с вами в течение рабочего дня.
+            </p>
+            <button type="button" class="btn btn_primary btn_full" data-modal-close>Отлично</button>
+        </div>
+    </div>
 
     <script src="js/config.js"></script>
     <script src="js/index.js"></script>
