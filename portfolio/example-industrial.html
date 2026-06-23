@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/demo-industrial.css">
+    <link rel="stylesheet" href="../css/demo-base.css">
 </head>
 <body>
     <div class="demo_chrome">
@@ -20,7 +21,11 @@
     <div class="ind">
         <header class="ind_nav">
             <span class="ind_logo">FORGE<span>®</span></span>
-            <nav class="ind_nav_links" aria-label="Навигация"><span>Продукция</span><span>Проекты</span><span>О заводе</span></nav>
+            <nav class="ind_nav_links" aria-label="Навигация">
+                <a href="#products">Продукция</a>
+                <a href="#projects">Проекты</a>
+                <a href="#about">О заводе</a>
+            </nav>
             <a href="../index.html#contacts" class="ind_nav_btn">Запрос КП</a>
         </header>
         <section class="ind_hero">
@@ -36,7 +41,7 @@
                 <div class="ind_stat"><strong>ISO</strong><span>9001 / 14001</span></div>
             </div>
         </section>
-        <section class="ind_products" aria-label="Продукция">
+        <section id="products" class="ind_products" aria-label="Продукция">
             <article class="ind_product">
                 <p class="ind_product_tag">Серия A</p>
                 <h3>Несущие конструкции</h3>
@@ -53,16 +58,17 @@
                 <p>Выезд бригад, пусконаладка, гарантийное обслуживание.</p>
             </article>
         </section>
-        <div class="ind_clients">
+        <div id="projects" class="ind_clients">
             <span>Нефтегаз</span>
             <span>Логистика</span>
             <span>Энергетика</span>
             <span>Строительство</span>
         </div>
-        <footer class="ind_footer">
+        <footer id="about" class="ind_footer">
             <span>Екатеринбург · forge-ind.ru · +7 (343) 000-00-00</span>
             <span>Crafted as a demo by HVZEweb</span>
         </footer>
     </div>
+    <script src="../js/demo-base.js" defer></script>
 </body>
 </html>

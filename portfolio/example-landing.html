@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/demo-landing.css">
+    <link rel="stylesheet" href="../css/demo-base.css">
 </head>
 <body>
     <div class="landing_chrome">
@@ -23,9 +24,9 @@
             <nav class="landing_nav">
                 <span class="landing_logo">Pulse</span>
                 <div class="landing_nav_links">
-                    <span>Возможности</span>
-                    <span>Тарифы</span>
-                    <span>Отзывы</span>
+                    <a href="#features">Возможности</a>
+                    <a href="#pricing">Тарифы</a>
+                    <a href="#reviews">Отзывы</a>
                 </div>
                 <a href="../index.html#contacts" class="landing_nav_cta">Скачать</a>
             </nav>
@@ -186,14 +187,12 @@
                 </div>
             </section>
 
-            <blockquote class="landing_quote landing_reveal">
+            <blockquote id="reviews" class="landing_quote landing_reveal">
                 <p class="landing_quote_text">«За 3 месяца с Pulse я сбросил 8 кг и наконец полюбил утренние пробежки. Интерфейс — огонь.»</p>
                 <footer class="landing_quote_author"><strong>Максим Р.</strong> · пользователь Pro</footer>
             </blockquote>
 
-            <section class="landing_reveal">
-                <div class="landing_section_head">
-                    <span class="landing_section_label">Тарифы</span>
+            <section id="pricing" class="landing_reveal">
                     <h2 class="landing_section_title">Выбери свой план</h2>
                 </div>
                 <div class="landing_pricing">
@@ -234,9 +233,9 @@
                 <div class="landing_cta_band_inner">
                     <h2>Готов изменить привычки?</h2>
                     <p>7 дней Pro бесплатно — без привязки карты.</p>
-                    <form class="landing_form" onsubmit="return false">
-                        <input class="landing_form_input" type="email" placeholder="your@email.com" readonly>
-                        <button type="button" class="landing_btn_primary">Получить доступ</button>
+                    <form class="landing_form" data-demo-form>
+                        <input class="landing_form_input" type="email" placeholder="your@email.com" name="email" required>
+                        <button type="submit" class="landing_btn_primary">Получить доступ</button>
                     </form>
                 </div>
             </section>
@@ -249,6 +248,7 @@
         </div>
     </div>
 
+    <script src="../js/demo-base.js" defer></script>
     <script>
         const reveals = document.querySelectorAll('.landing_reveal');
         const observer = new IntersectionObserver(

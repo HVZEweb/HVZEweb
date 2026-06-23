@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/demo-shop.css">
+    <link rel="stylesheet" href="../css/demo-base.css">
 </head>
 <body>
     <div class="shop_chrome">
@@ -37,7 +38,7 @@
         </nav>
         <div class="shop_header_actions">
             <button class="shop_icon_btn shop_filter_btn" type="button" id="filter-open" aria-label="Фильтры">☰</button>
-            <button class="shop_icon_btn" type="button" aria-label="Избранное">♡</button>
+            <button class="shop_icon_btn" type="button" data-demo-wishlist aria-label="Избранное">♡</button>
             <button class="shop_icon_btn" type="button" id="cart-open" aria-label="Корзина">
                 🛒
                 <span class="shop_cart_count" id="cart-count" hidden>0</span>
@@ -70,6 +71,7 @@
         </aside>
 
         <main id="catalog">
+            <h1 class="demo_sr-only">KŌRA — каталог косметики и товаров для дома</h1>
             <div class="shop_toolbar">
                 <p class="shop_results"><strong id="results-count">6</strong> товаров</p>
                 <div class="shop_sort">
@@ -160,5 +162,6 @@
     <div class="shop_toast" id="shop-toast" role="status"></div>
 
     <script src="../js/demo-shop.js"></script>
+    <script src="../js/demo-base.js" defer></script>
 </body>
 </html>

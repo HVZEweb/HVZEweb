@@ -118,7 +118,15 @@ body {
     gap: 32px;
     font-size: 14px;
     font-weight: 500;
+}
+
+.landing_nav_links a {
     color: var(--l-text-muted);
+    text-decoration: none;
+}
+
+.landing_nav_links a:hover {
+    color: var(--l-text);
 }
 
 .landing_nav_cta {

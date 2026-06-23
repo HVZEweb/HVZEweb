@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, follow">
+    <meta name="description" content="Демо сайта салона красоты GLOW — услуги, мастера, онлайн-запись.">
     <title>GLOW — Пример салона · HVZEweb</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/demo-salon.css">
+    <link rel="stylesheet" href="../css/demo-base.css">
 </head>
 <body>
     <div class="demo_chrome">
@@ -17,17 +19,22 @@
         <span class="demo_chrome_label">Демо · Визитка · Beauty</span>
         <a href="../index.html#contacts" class="demo_chrome_cta">Хочу такую же</a>
     </div>
-    <div class="salon">
+    <div class="salon" data-demo-main>
         <header class="salon_header">
             <h1 class="salon_logo">GLOW</h1>
             <p class="salon_tagline">Beauty Studio · Москва</p>
+            <nav class="salon_nav" aria-label="Навигация">
+                <a href="#services">Услуги</a>
+                <a href="#masters">Мастера</a>
+                <a href="#booking">Запись</a>
+            </nav>
         </header>
         <div class="salon_hero_img" aria-hidden="true"></div>
         <section class="salon_intro">
             <h2>Пространство, где вы — главная</h2>
             <p>Маникюр, уход за лицом, брови и ресницы. Премиальная косметика и мастера с опытом от 5 лет.</p>
         </section>
-        <section class="salon_services" aria-label="Услуги">
+        <section id="services" class="salon_services" aria-label="Услуги">
             <article class="salon_service">
                 <div><h3>Маникюр</h3><p>Комплекс · гель-лак · дизайн</p></div>
                 <span class="salon_service_price">от 2 200 ₽</span>
@@ -45,12 +52,21 @@
                 <span class="salon_service_price">от 6 900 ₽</span>
             </article>
         </section>
-        <section class="salon_cta">
+        <section id="masters" class="salon_masters demo_reveal">
+            <h2>Наши мастера</h2>
+            <div class="salon_masters_grid">
+                <article><div class="salon_master_photo" aria-hidden="true"></div><h3>Алина</h3><p>Маникюр · 8 лет</p></article>
+                <article><div class="salon_master_photo" aria-hidden="true"></div><h3>Мария</h3><p>Косметолог · 6 лет</p></article>
+                <article><div class="salon_master_photo" aria-hidden="true"></div><h3>Ксения</h3><p>Brows &amp; Lashes · 5 лет</p></article>
+            </div>
+        </section>
+        <section id="booking" class="salon_cta">
             <h2>Запишитесь онлайн</h2>
-            <p>Свободные окна — сегодня и завтра</p>
+            <p>Свободные окна — сегодня и завтра · ул. Тверская, 18 · Пн–Вс 10:00–21:00</p>
             <a href="../index.html#contacts" class="salon_btn">Записаться</a>
         </section>
         <p class="salon_footer">Crafted as a demo by HVZEweb</p>
     </div>
+    <script src="../js/demo-base.js" defer></script>
 </body>
 </html>

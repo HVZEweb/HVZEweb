@@ -188,6 +188,7 @@ body {
 }
 
 .re_card {
+    cursor: pointer;
     background: var(--re-surface);
     border: 1px solid var(--re-line);
     border-radius: 12px;

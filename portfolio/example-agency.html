@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, follow">
+    <meta name="description" content="Демо корпоративного сайта digital-агентства NEXUS — кейсы, услуги, команда.">
     <title>NEXUS — Пример агентства · HVZEweb</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/demo-agency.css">
+    <link rel="stylesheet" href="../css/demo-base.css">
 </head>
 <body>
     <div class="demo_chrome">
@@ -17,30 +19,54 @@
         <span class="demo_chrome_label">Демо · Корпоратив · IT</span>
         <a href="../index.html#contacts" class="demo_chrome_cta">Хочу такую же</a>
     </div>
-    <div class="agency">
+    <div class="agency" data-demo-main>
         <header class="agency_nav">
             <span class="agency_logo">NEXUS<span>.</span></span>
-            <nav class="agency_nav_links" aria-label="Навигация"><span>Работы</span><span>Услуги</span><span>О нас</span></nav>
+            <nav class="agency_nav_links" aria-label="Навигация">
+                <a href="#work">Работы</a>
+                <a href="#services">Услуги</a>
+                <a href="#about">О нас</a>
+                <a href="#contact">Контакты</a>
+            </nav>
         </header>
         <section class="agency_hero">
             <span class="agency_hero_tag">Digital Agency · 2018</span>
-            <h1 class="agency_title">We build<br><span>digital products</span><br>that scale</h1>
+            <h1 class="agency_title">Создаём<br><span>цифровые продукты</span>,<br>которые растут</h1>
             <p class="agency_lead">Стратегия, дизайн и разработка для стартапов и enterprise. От MVP до миллионов пользователей.</p>
             <a href="../index.html#contacts" class="agency_btn">Обсудить проект →</a>
         </section>
-        <section class="agency_work" aria-label="Проекты">
-            <article class="agency_project"><span class="agency_project_tag">Fintech</span><h3>PayFlow App</h3></article>
-            <article class="agency_project"><span class="agency_project_tag">E-commerce</span><h3>Market Hub</h3></article>
-            <article class="agency_project"><span class="agency_project_tag">SaaS</span><h3>CloudDesk</h3></article>
-            <article class="agency_project"><span class="agency_project_tag">Health</span><h3>VitaTrack</h3></article>
+        <section id="work" class="agency_work demo_reveal" aria-label="Проекты">
+            <article class="agency_project" data-demo-listing tabindex="0"><span class="agency_project_tag">Fintech</span><h3>PayFlow App</h3><p>Мобильный банк · 500K+ пользователей</p></article>
+            <article class="agency_project" data-demo-listing tabindex="0"><span class="agency_project_tag">E-commerce</span><h3>Market Hub</h3><p>Маркетплейс · +340% GMV за год</p></article>
+            <article class="agency_project" data-demo-listing tabindex="0"><span class="agency_project_tag">SaaS</span><h3>CloudDesk</h3><p>B2B-платформа · ARR $2M</p></article>
+            <article class="agency_project" data-demo-listing tabindex="0"><span class="agency_project_tag">Health</span><h3>VitaTrack</h3><p>Telemedicine · 120K визитов/мес</p></article>
         </section>
-        <div class="agency_stats">
+        <section id="services" class="agency_services demo_reveal">
+            <h2>Услуги</h2>
+            <div class="agency_services_grid">
+                <article><span>01</span><h3>Product Strategy</h3><p>Исследования, CJM, roadmap и метрики роста.</p></article>
+                <article><span>02</span><h3>UI/UX Design</h3><p>Дизайн-системы, прототипы, usability-тесты.</p></article>
+                <article><span>03</span><h3>Development</h3><p>Web, mobile, API — React, Node, Flutter.</p></article>
+            </div>
+        </section>
+        <div class="agency_stats demo_reveal">
             <div class="agency_stat"><strong>80+</strong><span>проектов</span></div>
             <div class="agency_stat"><strong>12</strong><span>наград</span></div>
             <div class="agency_stat"><strong>40</strong><span>специалистов</span></div>
             <div class="agency_stat"><strong>6</strong><span>лет на рынке</span></div>
         </div>
+        <section id="about" class="agency_about demo_reveal">
+            <h2>О нас</h2>
+            <p>NEXUS — команда product-дизайнеров и инженеров. Работаем прозрачно: спринты, демо каждые 2 недели, доступ к Figma и таск-трекеру с первого дня.</p>
+            <div class="agency_clients"><span>Yandex</span><span>Tinkoff</span><span>Sber</span><span>VK</span></div>
+        </section>
+        <section id="contact" class="agency_contact demo_reveal">
+            <h2>Начнём проект?</h2>
+            <p>Расскажите о задаче — ответим в течение рабочего дня.</p>
+            <a href="../index.html#contacts" class="agency_btn">Написать нам →</a>
+        </section>
         <p class="agency_footer">Crafted as a demo by HVZEweb</p>
     </div>
+    <script src="../js/demo-base.js" defer></script>
 </body>
 </html>

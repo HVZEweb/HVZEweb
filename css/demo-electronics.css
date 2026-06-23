@@ -41,14 +41,19 @@ body { font-family: var(--v-font); background: var(--v-bg); color: var(--v-text)
     flex: 1; max-width: 420px; padding: 10px 16px; font-size: 13px; color: var(--v-muted);
     background: var(--v-card); border: 1px solid var(--v-line); border-radius: 10px;
 }
-.volt_actions { display: flex; gap: 16px; font-size: 18px; }
-.volt_cart em { display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; margin-left: 4px; font-style: normal; font-size: 11px; font-weight: 700; color: var(--v-bg); background: var(--v-accent); border-radius: 50%; vertical-align: middle; }
+.volt_actions { display: flex; gap: 16px; align-items: center; }
+.volt_icon_btn { font-size: 18px; background: none; border: none; color: var(--v-text); cursor: pointer; padding: 4px; }
+.volt_icon_btn.is-active { color: var(--v-sale); }
+.volt_cart [data-demo-cart-count] { display: inline-flex; align-items: center; justify-content: center; min-width: 18px; height: 18px; margin-left: 4px; font-style: normal; font-size: 11px; font-weight: 700; color: var(--v-bg); background: var(--v-accent); border-radius: 50%; vertical-align: middle; padding: 0 4px; }
 
 .volt_main { display: grid; grid-template-columns: 200px 1fr; gap: 32px; max-width: 1140px; margin: 0 auto; padding: 32px 24px 64px; }
 .volt_sidebar h2 { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--v-muted); margin-bottom: 16px; }
-.volt_sidebar ul { list-style: none; }
-.volt_sidebar li { padding: 10px 14px; font-size: 14px; color: var(--v-muted); border-radius: 8px; cursor: default; }
-.volt_sidebar li.is-active { color: var(--v-text); background: var(--v-card); border: 1px solid var(--v-line); }
+.volt_filters { display: flex; flex-direction: column; gap: 4px; }
+.volt_filters button {
+    padding: 10px 14px; font-size: 14px; font-family: inherit; text-align: left;
+    color: var(--v-muted); background: transparent; border: 1px solid transparent; border-radius: 8px; cursor: pointer;
+}
+.volt_filters button.is-active { color: var(--v-text); background: var(--v-card); border-color: var(--v-line); }
 
 .volt_toolbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; font-size: 14px; color: var(--v-muted); }
 .volt_toolbar strong { color: var(--v-text); }

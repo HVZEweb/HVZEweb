@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/demo-realestate.css">
+    <link rel="stylesheet" href="../css/demo-base.css">
 </head>
 <body>
     <div class="demo_chrome">
@@ -49,7 +50,7 @@
                     <h2 class="re_section_title">Избранные объекты</h2>
                 </div>
                 <div class="re_listings">
-                    <article class="re_card">
+                    <article class="re_card" data-demo-listing tabindex="0" role="button">
                         <div class="re_card_img" aria-hidden="true"></div>
                         <div class="re_card_body">
                             <p class="re_card_price">89 500 000 ₽</p>
@@ -57,7 +58,7 @@
                             <p class="re_card_meta">285 м² · 4 спальни · вид на Москва-Сiti</p>
                         </div>
                     </article>
-                    <article class="re_card">
+                    <article class="re_card" data-demo-listing tabindex="0" role="button">
                         <div class="re_card_img" aria-hidden="true"></div>
                         <div class="re_card_body">
                             <p class="re_card_price">42 000 000 ₽</p>
@@ -65,7 +66,7 @@
                             <p class="re_card_meta">156 м² · 3 спальни · дизайнерский ремонт</p>
                         </div>
                     </article>
-                    <article class="re_card">
+                    <article class="re_card" data-demo-listing tabindex="0" role="button">
                         <div class="re_card_img" aria-hidden="true"></div>
                         <div class="re_card_body">
                             <p class="re_card_price">125 000 000 ₽</p>
@@ -101,5 +102,6 @@
             </footer>
         </div>
     </div>
+    <script src="../js/demo-base.js" defer></script>
 </body>
 </html>

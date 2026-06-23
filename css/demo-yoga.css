@@ -26,8 +26,11 @@ body { font-family: var(--y-font-body); background: var(--y-bg); color: var(--y-
 .demo_chrome_cta { padding: 8px 18px; color: #fff !important; background: var(--y-sage-dark); border-radius: 100px; font-weight: 600; }
 
 .yoga { padding: 80px 24px 64px; max-width: 1080px; margin: 0 auto; }
-.yoga_nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 64px; }
 .yoga_logo { font-family: var(--y-font-display); font-size: 32px; font-weight: 500; }
+.yoga_nav_links { display: flex; gap: 24px; font-size: 14px; }
+.yoga_nav_links a { color: var(--y-muted); text-decoration: none; }
+.yoga_nav_links a:hover { color: var(--y-sage-dark); }
+.yoga_nav { display: flex; justify-content: space-between; align-items: center; gap: 20px; margin-bottom: 64px; flex-wrap: wrap; }
 .yoga_nav_btn { padding: 12px 24px; font-size: 14px; font-weight: 600; color: #fff; background: var(--y-sage-dark); border-radius: 100px; text-decoration: none; }
 .yoga_hero { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; margin-bottom: 80px; }
 .yoga_badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; font-size: 13px; font-weight: 600; color: var(--y-sage-dark); background: var(--y-sage-soft); border-radius: 100px; margin-bottom: 20px; }
@@ -45,5 +48,15 @@ body { font-family: var(--y-font-body); background: var(--y-bg); color: var(--y-
 .yoga_schedule h2 { font-family: var(--y-font-display); font-size: 28px; margin-bottom: 12px; }
 .yoga_schedule p { opacity: 0.85; margin-bottom: 24px; }
 .yoga_schedule_btn { display: inline-block; padding: 14px 32px; font-size: 14px; font-weight: 600; color: var(--y-sage-dark); background: #fff; border-radius: 100px; text-decoration: none; }
+.yoga_table { margin-bottom: 72px; }
+.yoga_table h2, .yoga_instructors h2 { font-family: var(--y-font-display); font-size: 28px; margin-bottom: 24px; text-align: center; }
+.yoga_table table { width: 100%; border-collapse: collapse; background: var(--y-white); border-radius: 16px; overflow: hidden; }
+.yoga_table th, .yoga_table td { padding: 14px 18px; text-align: left; border-bottom: 1px solid var(--y-line); font-size: 14px; }
+.yoga_table th { background: var(--y-sage-soft); color: var(--y-sage-dark); font-weight: 600; }
+.yoga_instructors { margin-bottom: 72px; }
+.yoga_instructors_grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.yoga_instructors_grid article { padding: 28px; background: var(--y-white); border-radius: 20px; border: 1px solid var(--y-line); text-align: center; }
+.yoga_instructors_grid h3 { font-family: var(--y-font-display); font-size: 20px; margin-bottom: 6px; }
+.yoga_instructors_grid p { font-size: 14px; color: var(--y-muted); }
 .yoga_footer { text-align: center; font-size: 12px; color: var(--y-muted); }
-@media (max-width: 768px) { .yoga_hero, .yoga_classes { grid-template-columns: 1fr; } .yoga_visual { max-width: 280px; margin: 0 auto; } }
+@media (max-width: 768px) { .yoga_hero, .yoga_classes, .yoga_instructors_grid { grid-template-columns: 1fr; } .yoga_visual { max-width: 280px; margin: 0 auto; } .yoga_nav_links { display: none; } }

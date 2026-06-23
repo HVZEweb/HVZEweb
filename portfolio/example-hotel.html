@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, follow">
+    <meta name="description" content="Демо сайта бутик-отеля AMBER — номера, бронирование, amenities.">
     <title>AMBER — Пример отеля · HVZEweb</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/demo-hotel.css">
+    <link rel="stylesheet" href="../css/demo-base.css">
 </head>
 <body>
     <div class="demo_chrome">
@@ -17,23 +19,32 @@
         <span class="demo_chrome_label">Демо · Лендинг · HoReCa</span>
         <a href="../index.html#contacts" class="demo_chrome_cta">Хочу такую же</a>
     </div>
-    <div class="hotel">
+    <div class="hotel" data-demo-main>
+        <header class="hotel_nav">
+            <span class="hotel_logo">AMBER</span>
+            <nav class="hotel_nav_links" aria-label="Навигация">
+                <a href="#rooms">Номера</a>
+                <a href="#amenities">Удобства</a>
+                <a href="#booking">Бронирование</a>
+            </nav>
+        </header>
         <section class="hotel_hero">
             <div class="hotel_hero_inner">
-                <p class="hotel_stars">★ ★ ★ ★ ★</p>
+                <p class="hotel_stars" aria-label="5 звёзд">★ ★ ★ ★ ★</p>
                 <h1 class="hotel_title">AMBER<br><em>Retreat</em></h1>
                 <p class="hotel_lead">Бутик-отель у моря. 24 номера, spa, ресторан и вид на закат с каждой террасы.</p>
-                <a href="../index.html#contacts" class="hotel_btn">Забронировать номер</a>
+                <a href="#booking" class="hotel_btn">Забронировать номер</a>
             </div>
         </section>
         <div class="hotel_inner">
-            <div class="hotel_rooms">
+            <div id="rooms" class="hotel_rooms">
                 <article class="hotel_room">
                     <div class="hotel_room_img" aria-hidden="true"></div>
                     <div class="hotel_room_body">
                         <p class="hotel_room_price">от 12 000 ₽ / ночь</p>
                         <h3>Classic Room</h3>
                         <p>28 м² · вид на сад · king-size · завтрак включён</p>
+                        <a href="#booking" class="hotel_room_btn">Забронировать</a>
                     </div>
                 </article>
                 <article class="hotel_room">
@@ -42,6 +53,7 @@
                         <p class="hotel_room_price">от 18 500 ₽ / ночь</p>
                         <h3>Sea View Suite</h3>
                         <p>42 м² · терраса · ванна · мини-бар</p>
+                        <a href="#booking" class="hotel_room_btn">Забронировать</a>
                     </div>
                 </article>
                 <article class="hotel_room">
@@ -50,17 +62,31 @@
                         <p class="hotel_room_price">от 32 000 ₽ / ночь</p>
                         <h3>Penthouse</h3>
                         <p>85 м² · панорамный вид · джакузи · butler service</p>
+                        <a href="#booking" class="hotel_room_btn">Забронировать</a>
                     </div>
                 </article>
             </div>
-            <div class="hotel_amenities">
-                <div class="hotel_amenity"><div class="hotel_amenity_icon">🏊</div><span>Бассейн</span></div>
-                <div class="hotel_amenity"><div class="hotel_amenity_icon">💆</div><span>Spa</span></div>
-                <div class="hotel_amenity"><div class="hotel_amenity_icon">🍽</div><span>Ресторан</span></div>
-                <div class="hotel_amenity"><div class="hotel_amenity_icon">🚗</div><span>Парковка</span></div>
+            <div id="amenities" class="hotel_amenities">
+                <div class="hotel_amenity"><div class="hotel_amenity_icon" aria-hidden="true">🏊</div><span>Бассейн</span></div>
+                <div class="hotel_amenity"><div class="hotel_amenity_icon" aria-hidden="true">💆</div><span>Spa</span></div>
+                <div class="hotel_amenity"><div class="hotel_amenity_icon" aria-hidden="true">🍽</div><span>Ресторан</span></div>
+                <div class="hotel_amenity"><div class="hotel_amenity_icon" aria-hidden="true">🚗</div><span>Парковка</span></div>
             </div>
+            <section id="booking" class="hotel_booking demo_reveal">
+                <h2>Онлайн-бронирование</h2>
+                <p>Сочи, ул. Морская, 12 · check-in 15:00 · check-out 12:00</p>
+                <form class="hotel_booking_form" data-demo-form>
+                    <div class="hotel_booking_row">
+                        <label>Заезд<input type="date" name="checkin" required></label>
+                        <label>Выезд<input type="date" name="checkout" required></label>
+                        <label>Гости<input type="number" name="guests" value="2" min="1" max="6"></label>
+                    </div>
+                    <button type="submit">Проверить доступность</button>
+                </form>
+            </section>
             <p class="hotel_footer">Crafted as a demo by HVZEweb</p>
         </div>
     </div>
+    <script src="../js/demo-base.js" defer></script>
 </body>
 </html>

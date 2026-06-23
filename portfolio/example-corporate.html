@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/demo-corporate.css">
+    <link rel="stylesheet" href="../css/demo-base.css">
 </head>
 <body>
     <div class="corp_chrome">
@@ -237,14 +238,14 @@
                         <p>Москва, Пресненская наб., 12<br>Пн–Пт, 9:00–18:00</p>
                     </div>
                 </div>
-                <form class="corp_form" onsubmit="return false">
+                <form class="corp_form" data-demo-form>
                     <div class="corp_form_row">
-                        <input class="corp_input" type="text" placeholder="Имя" readonly>
-                        <input class="corp_input" type="text" placeholder="Компания" readonly>
+                        <input class="corp_input" type="text" placeholder="Имя" name="name" required>
+                        <input class="corp_input" type="text" placeholder="Компания" name="company">
                     </div>
-                    <input class="corp_input corp_input_full" type="text" placeholder="Email или телефон" readonly>
-                    <textarea class="corp_input corp_input_full corp_textarea" placeholder="Опишите объект: тип, площадь, город, сроки" readonly></textarea>
-                    <button type="button" class="corp_submit">Отправить заявку</button>
+                    <input class="corp_input corp_input_full" type="text" placeholder="Email или телефон" name="contact" required>
+                    <textarea class="corp_input corp_input_full corp_textarea" placeholder="Опишите объект: тип, площадь, город, сроки" name="message"></textarea>
+                    <button type="submit" class="corp_submit">Отправить заявку</button>
                 </form>
             </div>
         </section>
@@ -271,5 +272,6 @@
         );
         reveals.forEach((el) => observer.observe(el));
     </script>
+    <script src="../js/demo-base.js" defer></script>
 </body>
 </html>

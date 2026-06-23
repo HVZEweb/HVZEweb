@@ -52,6 +52,7 @@ body { font-family: var(--p-font); background: var(--p-bg); color: var(--p-text)
     color: var(--p-muted); background: var(--p-surface); border: 2px solid var(--p-line); border-radius: 999px; cursor: pointer;
 }
 .paws_cats button.is-active { color: #fff; background: var(--p-teal); border-color: var(--p-teal); }
+.paws_results { font-size: 14px; color: var(--p-muted); margin-bottom: 20px; }
 
 .paws_grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .paws_card {

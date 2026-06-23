@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/demo-clinic.css">
+    <link rel="stylesheet" href="../css/demo-base.css">
 </head>
 <body>
     <div class="demo_chrome">
@@ -51,10 +52,10 @@
                     <p class="clinic_booking_label">Онлайн-запись</p>
                     <h2>Выберите удобное время</h2>
                     <p>Первичный приём — 30 минут. Администратор перезвонит за 15 минут.</p>
-                    <div class="clinic_booking_slots">
-                        <span class="clinic_slot">10:00</span>
-                        <span class="clinic_slot clinic_slot_active">14:30</span>
-                        <span class="clinic_slot">18:00</span>
+                    <div class="clinic_booking_slots" data-demo-slots>
+                        <button type="button" class="clinic_slot" data-demo-slot aria-pressed="false">10:00</button>
+                        <button type="button" class="clinic_slot clinic_slot_active" data-demo-slot aria-pressed="true">14:30</button>
+                        <button type="button" class="clinic_slot" data-demo-slot aria-pressed="false">18:00</button>
                     </div>
                     <a href="../index.html#contacts" class="clinic_booking_btn">Записаться на приём</a>
                 </div>
@@ -146,5 +147,6 @@
             </footer>
         </div>
     </div>
+    <script src="../js/demo-base.js" defer></script>
 </body>
 </html>

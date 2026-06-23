@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, follow">
+    <meta name="description" content="Демо зоомагазина PAWS — каталог кормов и аксессуаров для питомцев.">
     <title>PAWS — Пример зоомагазина · HVZEweb</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/demo-pets.css">
+    <link rel="stylesheet" href="../css/demo-base.css">
 </head>
 <body>
     <div class="demo_chrome">
@@ -19,9 +21,9 @@
     </div>
 
     <header class="paws_header">
-        <span class="paws_logo">🐾 PAWS</span>
-        <div class="paws_search">Найти корм, игрушку, амуницию…</div>
-        <span class="paws_cart">🛒 4</span>
+        <span class="paws_logo"><span aria-hidden="true">🐾</span> PAWS</span>
+        <div class="paws_search" role="search">Найти корм, игрушку, амуницию…</div>
+        <span class="paws_cart" aria-live="polite"><span aria-hidden="true">🛒</span> <span data-demo-cart-count>0</span></span>
     </header>
 
     <section class="paws_promo">
@@ -33,55 +35,58 @@
         <div class="paws_promo_pets" aria-hidden="true">🐕 🐈 🐾</div>
     </section>
 
-    <main class="paws_main">
-        <div class="paws_cats">
-            <button type="button" class="is-active">🐕 Собаки</button>
-            <button type="button">🐈 Кошки</button>
-            <button type="button">🐹 Грызуны</button>
-            <button type="button">🐠 Аквариум</button>
+    <main class="paws_main" data-demo-catalog data-demo-main>
+        <div class="paws_cats" data-demo-filters>
+            <button type="button" class="is-active" data-filter="all">🐕 Все</button>
+            <button type="button" data-filter="dogs">🐕 Собаки</button>
+            <button type="button" data-filter="cats">🐈 Кошки</button>
+            <button type="button" data-filter="rodents">🐹 Грызуны</button>
+            <button type="button" data-filter="fish">🐠 Аквариум</button>
         </div>
-        <div class="paws_grid">
-            <article class="paws_card">
+        <p class="paws_results"><span data-demo-count>6</span> товаров</p>
+        <div class="paws_grid" data-demo-grid>
+            <article class="paws_card" data-demo-card data-category="dogs">
                 <div class="paws_card_img"></div>
                 <span class="paws_badge">Хит</span>
                 <h3>Grandorf Adult Lamb</h3>
                 <p>Корм 12 кг · для средних пород</p>
-                <div class="paws_row"><strong>4 890 ₽</strong><button type="button">Купить</button></div>
+                <div class="paws_row"><strong>4 890 ₽</strong><button type="button" data-demo-add>Купить</button></div>
             </article>
-            <article class="paws_card">
+            <article class="paws_card" data-demo-card data-category="dogs">
                 <div class="paws_card_img paws_card_img_alt"></div>
                 <h3>Игрушка Kong Classic</h3>
                 <p>Large · натуральный каучук</p>
-                <div class="paws_row"><strong>1 290 ₽</strong><button type="button">Купить</button></div>
+                <div class="paws_row"><strong>1 290 ₽</strong><button type="button" data-demo-add>Купить</button></div>
             </article>
-            <article class="paws_card">
+            <article class="paws_card" data-demo-card data-category="cats">
                 <div class="paws_card_img paws_card_img_alt2"></div>
                 <span class="paws_badge paws_badge_new">New</span>
                 <h3>Royal Canin Kitten</h3>
                 <p>Корм 4 кг · для котят до 12 мес.</p>
-                <div class="paws_row"><strong>3 450 ₽</strong><button type="button">Купить</button></div>
+                <div class="paws_row"><strong>3 450 ₽</strong><button type="button" data-demo-add>Купить</button></div>
             </article>
-            <article class="paws_card">
+            <article class="paws_card" data-demo-card data-category="dogs">
                 <div class="paws_card_img paws_card_img_alt3"></div>
                 <h3>Leash &amp; Collar Set</h3>
                 <p>Комплект · размер M · 5 цветов</p>
-                <div class="paws_row"><strong>2 100 ₽</strong><button type="button">Купить</button></div>
+                <div class="paws_row"><strong>2 100 ₽</strong><button type="button" data-demo-add>Купить</button></div>
             </article>
-            <article class="paws_card">
+            <article class="paws_card" data-demo-card data-category="cats">
                 <div class="paws_card_img paws_card_img_alt4"></div>
                 <h3>Когтеточка «Башня»</h3>
                 <p>120 см · sisal · 3 уровня</p>
-                <div class="paws_row"><strong>5 600 ₽</strong><button type="button">Купить</button></div>
+                <div class="paws_row"><strong>5 600 ₽</strong><button type="button" data-demo-add>Купить</button></div>
             </article>
-            <article class="paws_card">
+            <article class="paws_card" data-demo-card data-category="rodents">
                 <div class="paws_card_img paws_card_img_alt5"></div>
                 <span class="paws_badge paws_badge_sale">−20%</span>
                 <h3>Vitamin Complex</h3>
                 <p>120 таблеток · для иммунитета</p>
-                <div class="paws_row"><strong>890 ₽</strong><button type="button">Купить</button></div>
+                <div class="paws_row"><strong>890 ₽</strong><button type="button" data-demo-add>Купить</button></div>
             </article>
         </div>
     </main>
     <p class="paws_footer">Crafted as a demo by HVZEweb</p>
+    <script src="../js/demo-base.js" defer></script>
 </body>
 </html>

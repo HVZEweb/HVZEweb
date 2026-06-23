@@ -27,7 +27,10 @@ body { font-family: var(--s-font-body); background: var(--s-bg); color: var(--s-
 .salon { padding: 88px 24px 64px; max-width: 920px; margin: 0 auto; }
 .salon_header { text-align: center; margin-bottom: 56px; }
 .salon_logo { font-family: var(--s-font-display); font-size: 56px; letter-spacing: 0.15em; margin-bottom: 8px; }
-.salon_tagline { font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--s-rose-deep); }
+.salon_tagline { font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--s-rose-deep); margin-bottom: 20px; }
+.salon_nav { display: flex; justify-content: center; gap: 24px; font-size: 14px; }
+.salon_nav a { color: var(--s-muted); text-decoration: none; }
+.salon_nav a:hover { color: var(--s-rose-deep); }
 .salon_hero_img { aspect-ratio: 21/9; margin-bottom: 56px; background: linear-gradient(135deg, var(--s-blush) 0%, var(--s-rose) 50%, #e8d0ce 100%); border-radius: 2px; }
 .salon_intro { text-align: center; max-width: 560px; margin: 0 auto 56px; }
 .salon_intro h2 { font-family: var(--s-font-display); font-size: 32px; margin-bottom: 16px; }
@@ -38,9 +41,15 @@ body { font-family: var(--s-font-body); background: var(--s-bg); color: var(--s-
 .salon_service h3 { font-family: var(--s-font-display); font-size: 22px; font-weight: 400; }
 .salon_service p { font-size: 13px; color: var(--s-muted); margin-top: 4px; }
 .salon_service_price { font-size: 16px; font-weight: 500; color: var(--s-rose-deep); white-space: nowrap; margin-left: 16px; }
+.salon_masters { margin-bottom: 56px; }
+.salon_masters h2 { font-family: var(--s-font-display); font-size: 28px; text-align: center; margin-bottom: 28px; }
+.salon_masters_grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.salon_master_photo { aspect-ratio: 3/4; margin-bottom: 12px; background: linear-gradient(160deg, var(--s-blush), var(--s-rose)); }
+.salon_masters_grid h3 { font-family: var(--s-font-display); font-size: 22px; margin-bottom: 4px; }
+.salon_masters_grid p { font-size: 13px; color: var(--s-muted); }
 .salon_cta { text-align: center; padding: 40px; background: var(--s-blush); border-radius: 2px; }
 .salon_cta h2 { font-family: var(--s-font-display); font-size: 28px; margin-bottom: 12px; }
 .salon_cta p { color: var(--s-muted); margin-bottom: 20px; }
 .salon_btn { display: inline-block; padding: 14px 32px; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: #fff; background: var(--s-rose-deep); text-decoration: none; border-radius: 100px; }
 .salon_footer { margin-top: 40px; text-align: center; font-size: 12px; color: var(--s-muted); }
-@media (max-width: 600px) { .salon_services { grid-template-columns: 1fr; } .salon_service { flex-direction: column; gap: 8px; } }
+@media (max-width: 600px) { .salon_services, .salon_masters_grid { grid-template-columns: 1fr; } .salon_service { flex-direction: column; gap: 8px; } .salon_nav { flex-wrap: wrap; } }

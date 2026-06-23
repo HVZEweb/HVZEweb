@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, follow">
+    <meta name="description" content="Демо винного интернет-магазина VINUM — каталог, фильтры, корзина.">
     <title>VINUM — Пример винного магазина · HVZEweb</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/demo-wine.css">
+    <link rel="stylesheet" href="../css/demo-base.css">
 </head>
 <body>
     <div class="demo_chrome">
@@ -20,8 +22,13 @@
 
     <header class="wine_header">
         <span class="wine_logo">VINUM</span>
-        <nav class="wine_nav" aria-label="Каталог"><span>Красное</span><span>Белое</span><span>Игристое</span><span>Наборы</span></nav>
-        <span class="wine_cart">Корзина · 3</span>
+        <nav class="wine_nav" aria-label="Каталог">
+            <a href="#catalog">Красное</a>
+            <a href="#catalog">Белое</a>
+            <a href="#catalog">Игристое</a>
+            <a href="#catalog">Наборы</a>
+        </nav>
+        <span class="wine_cart" aria-live="polite">Корзина · <span data-demo-cart-count>0</span></span>
     </header>
 
     <section class="wine_hero">
@@ -30,58 +37,62 @@
         <p class="wine_lead">1200+ позиций из Франции, Италии, Грузии и России. Консультация сомелье — бесплатно.</p>
     </section>
 
-    <main class="wine_main">
-        <div class="wine_filters">
-            <button type="button" class="is-active">Все</button>
-            <button type="button">Красное</button>
-            <button type="button">Белое</button>
-            <button type="button">Premium</button>
+    <main class="wine_main" id="catalog" data-demo-catalog data-demo-main>
+        <div class="wine_filters" data-demo-filters>
+            <button type="button" class="is-active" data-filter="all">Все</button>
+            <button type="button" data-filter="red">Красное</button>
+            <button type="button" data-filter="white">Белое</button>
+            <button type="button" data-filter="sparkling">Игристое</button>
+            <button type="button" data-filter="premium">Premium</button>
+            <button type="button" data-filter="gift">Наборы</button>
         </div>
-        <div class="wine_grid">
-            <article class="wine_card">
+        <p class="wine_results"><span data-demo-count>6</span> позиций в каталоге</p>
+        <div class="wine_grid" data-demo-grid>
+            <article class="wine_card" data-demo-card data-category="red premium">
                 <div class="wine_card_img"></div>
                 <p class="wine_region">Bordeaux · France</p>
                 <h3>Château Margaux 2018</h3>
                 <p class="wine_note">Каберне, бархатные танины</p>
-                <div class="wine_meta"><span class="wine_price">18 900 ₽</span><button type="button">+</button></div>
+                <div class="wine_meta"><span class="wine_price">18 900 ₽</span><button type="button" data-demo-add aria-label="В корзину">+</button></div>
             </article>
-            <article class="wine_card">
+            <article class="wine_card" data-demo-card data-category="red premium">
                 <div class="wine_card_img wine_card_img_alt"></div>
                 <p class="wine_region">Tuscany · Italy</p>
                 <h3>Brunello di Montalcino</h3>
-                <p class="wine_note">Сангiovese, 24 мес. в бочке</p>
-                <div class="wine_meta"><span class="wine_price">6 450 ₽</span><button type="button">+</button></div>
+                <p class="wine_note">Sangiovese, 24 мес. в бочке</p>
+                <div class="wine_meta"><span class="wine_price">6 450 ₽</span><button type="button" data-demo-add aria-label="В корзину">+</button></div>
             </article>
-            <article class="wine_card">
+            <article class="wine_card" data-demo-card data-category="red">
                 <div class="wine_card_img wine_card_img_alt2"></div>
                 <p class="wine_region">Kakheti · Georgia</p>
                 <h3>Saperavi Reserve</h3>
                 <p class="wine_note">Классика в квеври</p>
-                <div class="wine_meta"><span class="wine_price">2 890 ₽</span><button type="button">+</button></div>
+                <div class="wine_meta"><span class="wine_price">2 890 ₽</span><button type="button" data-demo-add aria-label="В корзину">+</button></div>
             </article>
-            <article class="wine_card">
+            <article class="wine_card" data-demo-card data-category="sparkling">
                 <div class="wine_card_img wine_card_img_alt3"></div>
                 <p class="wine_region">Champagne · France</p>
                 <h3>Moët &amp; Chandon Brut</h3>
                 <p class="wine_note">Игристое · подарочная упаковка</p>
-                <div class="wine_meta"><span class="wine_price">5 990 ₽</span><button type="button">+</button></div>
+                <div class="wine_meta"><span class="wine_price">5 990 ₽</span><button type="button" data-demo-add aria-label="В корзину">+</button></div>
             </article>
-            <article class="wine_card">
+            <article class="wine_card" data-demo-card data-category="red white">
                 <div class="wine_card_img wine_card_img_alt4"></div>
                 <p class="wine_region">Rioja · Spain</p>
                 <h3>Marqués de Riscal</h3>
                 <p class="wine_note">Tempranillo, Reserva</p>
-                <div class="wine_meta"><span class="wine_price">3 200 ₽</span><button type="button">+</button></div>
+                <div class="wine_meta"><span class="wine_price">3 200 ₽</span><button type="button" data-demo-add aria-label="В корзину">+</button></div>
             </article>
-            <article class="wine_card">
+            <article class="wine_card" data-demo-card data-category="gift">
                 <div class="wine_card_img wine_card_img_alt5"></div>
                 <p class="wine_region">Gift Set</p>
                 <h3>Дегустационный набор</h3>
                 <p class="wine_note">6 бутылок · сомелье выбрал</p>
-                <div class="wine_meta"><span class="wine_price">8 500 ₽</span><button type="button">+</button></div>
+                <div class="wine_meta"><span class="wine_price">8 500 ₽</span><button type="button" data-demo-add aria-label="В корзину">+</button></div>
             </article>
         </div>
     </main>
     <p class="wine_footer">Crafted as a demo by HVZEweb · 18+</p>
+    <script src="../js/demo-base.js" defer></script>
 </body>
 </html>

@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, follow">
+    <meta name="description" content="Демо корпоративного сайта бухгалтерской компании LEDGER.">
     <title>LEDGER — Пример финансов · HVZEweb</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/demo-finance.css">
+    <link rel="stylesheet" href="../css/demo-base.css">
 </head>
 <body>
     <div class="demo_chrome">
@@ -17,17 +19,22 @@
         <span class="demo_chrome_label">Демо · Корпоратив · Финансы</span>
         <a href="../index.html#contacts" class="demo_chrome_cta">Хочу такую же</a>
     </div>
-    <div class="fin">
+    <div class="fin" data-demo-main>
         <header class="fin_nav">
             <span class="fin_logo">LEDGER</span>
-            <a href="../index.html#contacts" class="fin_nav_btn">Консультация</a>
+            <nav class="fin_nav_links" aria-label="Навигация">
+                <a href="#services">Услуги</a>
+                <a href="#pricing">Тарифы</a>
+                <a href="#contact">Контакты</a>
+            </nav>
+            <a href="#contact" class="fin_nav_btn">Консультация</a>
         </header>
         <section class="fin_hero">
             <div>
                 <p class="fin_hero_label">Бухгалтерия · налоги · ИП и ООО</p>
                 <h1 class="fin_title">Финансы под контролем — вы занимаетесь бизнесом</h1>
                 <p class="fin_lead">Полное бухгалтерское сопровождение, отчётность, оптимизация налогов и консультации для малого бизнеса.</p>
-                <div class="fin_trust"><span>✓ 500+ клиентов</span><span>✓ 12 лет опыта</span></div>
+                <div class="fin_trust"><span>✓ 500+ клиентов</span><span>✓ 12 лет опыта</span><span>✓ Ответ за 2 часа</span></div>
             </div>
             <div class="fin_card">
                 <h3>Ваш dashboard</h3>
@@ -36,7 +43,7 @@
                 <div class="fin_card_item"><span>Касса</span><span>124 500 ₽</span></div>
             </div>
         </section>
-        <section class="fin_services">
+        <section id="services" class="fin_services demo_reveal">
             <article class="fin_service">
                 <p class="fin_service_num">01</p>
                 <h3>Бухгалтерия</h3>
@@ -53,10 +60,31 @@
                 <p>ИП, ООО, смена системы, ликвидация.</p>
             </article>
         </section>
+        <section id="pricing" class="fin_pricing demo_reveal">
+            <h2>Тарифы</h2>
+            <div class="fin_pricing_grid">
+                <article><h3>Старт</h3><p class="fin_price">от 5 000 ₽/мес</p><p>ИП · УСН · до 30 операций</p></article>
+                <article class="fin_pricing_featured"><h3>Бизнес</h3><p class="fin_price">от 12 000 ₽/мес</p><p>ООО · зарплата · отчётность</p></article>
+                <article><h3>Корпорат</h3><p class="fin_price">от 25 000 ₽/мес</p><p>Несколько юрлиц · персональный менеджер</p></article>
+            </div>
+        </section>
+        <section id="contact" class="fin_contact demo_reveal">
+            <div>
+                <h2>Бесплатная консультация</h2>
+                <p>Оставьте контакты — перезвоним и подберём тариф.</p>
+                <p class="fin_contact_info"><a href="tel:+74950000000">+7 (495) 000-00-00</a> · Москва · ledger.pro</p>
+            </div>
+            <form class="fin_contact_form" data-demo-form>
+                <input type="text" name="name" placeholder="Имя" required>
+                <input type="tel" name="phone" placeholder="Телефон" required>
+                <button type="submit">Отправить заявку</button>
+            </form>
+        </section>
         <footer class="fin_footer">
             <span>Москва · ledger.pro · +7 (495) 000-00-00</span>
             <span>Crafted as a demo by HVZEweb</span>
         </footer>
     </div>
+    <script src="../js/demo-base.js" defer></script>
 </body>
 </html>

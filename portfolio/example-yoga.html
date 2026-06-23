@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, follow">
+    <meta name="description" content="Демо сайта йога-студии AURA — расписание, занятия, инструкторы.">
     <title>AURA — Пример йога-студии · HVZEweb</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Nunito:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/demo-yoga.css">
+    <link rel="stylesheet" href="../css/demo-base.css">
 </head>
 <body>
     <div class="demo_chrome">
@@ -17,39 +19,66 @@
         <span class="demo_chrome_label">Демо · Лендинг · Wellness</span>
         <a href="../index.html#contacts" class="demo_chrome_cta">Хочу такую же</a>
     </div>
-    <div class="yoga">
+    <div class="yoga" data-demo-main>
         <header class="yoga_nav">
             <span class="yoga_logo">AURA</span>
+            <nav class="yoga_nav_links" aria-label="Навигация">
+                <a href="#classes">Занятия</a>
+                <a href="#schedule">Расписание</a>
+                <a href="#instructors">Инструкторы</a>
+            </nav>
             <a href="../index.html#contacts" class="yoga_nav_btn">Пробное занятие</a>
         </header>
         <section class="yoga_hero">
             <div>
-                <div class="yoga_badge">🧘 Yoga &amp; Mindfulness</div>
+                <div class="yoga_badge"><span aria-hidden="true">🧘</span> Yoga &amp; Mindfulness</div>
                 <h1 class="yoga_title">Найди баланс<br>тела и разума</h1>
                 <p class="yoga_lead">Йога, медитация и пилатес в центре города. Группы до 12 человек, опытные инструкторы, уютное пространство.</p>
                 <a href="../index.html#contacts" class="yoga_nav_btn">Записаться бесплатно</a>
             </div>
             <div class="yoga_visual" aria-hidden="true"></div>
         </section>
-        <section class="yoga_classes" aria-label="Занятия">
+        <section id="classes" class="yoga_classes" aria-label="Занятия">
             <article class="yoga_class">
-                <div class="yoga_class_icon">🌅</div>
+                <div class="yoga_class_icon" aria-hidden="true">🌅</div>
                 <h3>Утренняя йога</h3>
                 <p class="yoga_class_time">Пн, Ср, Пт · 7:30</p>
                 <p>Hatha · мягкое пробуждение тела</p>
             </article>
             <article class="yoga_class">
-                <div class="yoga_class_icon">🔥</div>
+                <div class="yoga_class_icon" aria-hidden="true">🔥</div>
                 <h3>Vinyasa Flow</h3>
                 <p class="yoga_class_time">Вт, Чт · 19:00</p>
                 <p>Динамичная практика · все уровни</p>
             </article>
             <article class="yoga_class">
-                <div class="yoga_class_icon">🌙</div>
+                <div class="yoga_class_icon" aria-hidden="true">🌙</div>
                 <h3>Медитация</h3>
                 <p class="yoga_class_time">Сб · 11:00</p>
                 <p>Осознанность · дыхание · покой</p>
             </article>
+        </section>
+        <section id="schedule" class="yoga_table demo_reveal">
+            <h2>Расписание на неделю</h2>
+            <table>
+                <thead><tr><th>День</th><th>Утро</th><th>Вечер</th></tr></thead>
+                <tbody>
+                    <tr><td>Пн</td><td>Hatha 7:30</td><td>—</td></tr>
+                    <tr><td>Вт</td><td>—</td><td>Vinyasa 19:00</td></tr>
+                    <tr><td>Ср</td><td>Hatha 7:30</td><td>Pilates 18:30</td></tr>
+                    <tr><td>Чт</td><td>—</td><td>Vinyasa 19:00</td></tr>
+                    <tr><td>Пт</td><td>Hatha 7:30</td><td>—</td></tr>
+                    <tr><td>Сб</td><td>Медитация 11:00</td><td>Yin 17:00</td></tr>
+                </tbody>
+            </table>
+        </section>
+        <section id="instructors" class="yoga_instructors demo_reveal">
+            <h2>Инструкторы</h2>
+            <div class="yoga_instructors_grid">
+                <article><h3>Анна</h3><p>Hatha · 10 лет практики</p></article>
+                <article><h3>Дмитрий</h3><p>Vinyasa · сертификат RYT-500</p></article>
+                <article><h3>Елена</h3><p>Медитация · mindfulness-coach</p></article>
+            </div>
         </section>
         <section class="yoga_schedule">
             <h2>Первое занятие — бесплатно</h2>
@@ -58,5 +87,6 @@
         </section>
         <p class="yoga_footer">Crafted as a demo by HVZEweb</p>
     </div>
+    <script src="../js/demo-base.js" defer></script>
 </body>
 </html>

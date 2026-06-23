@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, follow">
+    <meta name="description" content="Демо магазина электроники VOLT — каталог, фильтры, корзина.">
     <title>VOLT — Пример магазина электроники · HVZEweb</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/demo-electronics.css">
+    <link rel="stylesheet" href="../css/demo-base.css">
 </head>
 <body>
     <div class="demo_chrome">
@@ -22,77 +24,80 @@
 
     <header class="volt_header">
         <span class="volt_logo">VOLT<span>.</span></span>
-        <div class="volt_search"><span aria-hidden="true">⌕</span> Поиск: iPhone, MacBook, Sony…</div>
+        <div class="volt_search" role="search"><span aria-hidden="true">⌕</span> Поиск: iPhone, MacBook, Sony…</div>
         <div class="volt_actions">
-            <span>♡</span>
-            <span class="volt_cart">🛒 <em>2</em></span>
+            <button type="button" class="volt_icon_btn" data-demo-wishlist aria-label="Избранное">♡</button>
+            <span class="volt_cart" aria-live="polite">🛒 <em data-demo-cart-count>0</em></span>
         </div>
     </header>
 
-    <main class="volt_main">
+    <div class="volt_main" data-demo-catalog data-demo-main>
         <aside class="volt_sidebar" aria-label="Категории">
             <h2>Категории</h2>
-            <ul>
-                <li class="is-active">Смартфоны</li>
-                <li>Ноутбуки</li>
-                <li>Наушники</li>
-                <li>Умный дом</li>
-                <li>Аксессуары</li>
-            </ul>
+            <div class="volt_filters" data-demo-filters>
+                <button type="button" class="is-active" data-filter="all">Все товары</button>
+                <button type="button" data-filter="phones">Смартфоны</button>
+                <button type="button" data-filter="laptops">Ноутбуки</button>
+                <button type="button" data-filter="headphones">Наушники</button>
+                <button type="button" data-filter="wearables">Wearables</button>
+                <button type="button" data-filter="tablets">Планшеты</button>
+            </div>
         </aside>
-        <section class="volt_catalog" aria-label="Каталог">
+        <main class="volt_catalog" aria-label="Каталог">
+            <h1 class="demo_sr-only">VOLT — каталог электроники</h1>
             <div class="volt_toolbar">
-                <p><strong>24</strong> товара</p>
+                <p><strong data-demo-count>6</strong> товаров</p>
                 <span>Сортировка: популярные</span>
             </div>
-            <div class="volt_grid">
-                <article class="volt_card">
+            <div class="volt_grid" data-demo-grid>
+                <article class="volt_card" data-demo-card data-category="phones">
                     <div class="volt_card_img"></div>
                     <span class="volt_badge">Хит</span>
                     <h3>iPhone 15 Pro</h3>
                     <p>256 GB · Titanium</p>
                     <div class="volt_price"><strong>119 990 ₽</strong></div>
-                    <button type="button">В корзину</button>
+                    <button type="button" data-demo-add>В корзину</button>
                 </article>
-                <article class="volt_card">
+                <article class="volt_card" data-demo-card data-category="laptops">
                     <div class="volt_card_img volt_card_img_alt"></div>
                     <h3>MacBook Air M3</h3>
                     <p>13" · 16/512 GB</p>
                     <div class="volt_price"><strong>134 990 ₽</strong></div>
-                    <button type="button">В корзину</button>
+                    <button type="button" data-demo-add>В корзину</button>
                 </article>
-                <article class="volt_card">
+                <article class="volt_card" data-demo-card data-category="headphones">
                     <div class="volt_card_img volt_card_img_alt2"></div>
                     <span class="volt_badge volt_badge_sale">−15%</span>
                     <h3>Sony WH-1000XM5</h3>
                     <p>Black · Noise Cancel</p>
                     <div class="volt_price"><s>34 990 ₽</s><strong>29 740 ₽</strong></div>
-                    <button type="button">В корзину</button>
+                    <button type="button" data-demo-add>В корзину</button>
                 </article>
-                <article class="volt_card">
+                <article class="volt_card" data-demo-card data-category="phones">
                     <div class="volt_card_img volt_card_img_alt3"></div>
                     <h3>Samsung Galaxy S24</h3>
                     <p>512 GB · AI Camera</p>
                     <div class="volt_price"><strong>89 990 ₽</strong></div>
-                    <button type="button">В корзину</button>
+                    <button type="button" data-demo-add>В корзину</button>
                 </article>
-                <article class="volt_card">
+                <article class="volt_card" data-demo-card data-category="tablets">
                     <div class="volt_card_img volt_card_img_alt4"></div>
                     <h3>iPad Pro 11"</h3>
                     <p>M4 · Wi-Fi · 256 GB</p>
                     <div class="volt_price"><strong>99 990 ₽</strong></div>
-                    <button type="button">В корзину</button>
+                    <button type="button" data-demo-add>В корзину</button>
                 </article>
-                <article class="volt_card">
+                <article class="volt_card" data-demo-card data-category="wearables">
                     <div class="volt_card_img volt_card_img_alt5"></div>
                     <h3>Apple Watch Ultra 2</h3>
                     <p>Titanium · GPS</p>
                     <div class="volt_price"><strong>79 990 ₽</strong></div>
-                    <button type="button">В корзину</button>
+                    <button type="button" data-demo-add>В корзину</button>
                 </article>
             </div>
-        </section>
-    </main>
+        </main>
+    </div>
     <p class="volt_footer">Crafted as a demo by HVZEweb</p>
+    <script src="../js/demo-base.js" defer></script>
 </body>
 </html>
