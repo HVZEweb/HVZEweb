@@ -157,7 +157,7 @@ function openTelegramFallback(name, contact, message) {
     const text = encodeURIComponent(
         `Заявка с сайта HVZEweb\n\nИмя: ${name}\nКонтакт: ${contact}\n\n${message}`
     );
-    const url = config.telegramUrl || 'https://t.me/hvzeweb';
+    const url = config.telegramUrl || 'https://t.me/HVZEweb';
     window.open(`${url}?text=${text}`, '_blank');
 }
 
@@ -215,7 +215,7 @@ if (contactForm) {
             showFormSuccess();
             contactForm.reset();
         } else {
-            showFormError(`Не удалось отправить. Напишите нам в Telegram: ${config.telegram || '@hvzeweb'}`);
+            showFormError(`Не удалось отправить. Напишите нам в Telegram: ${config.telegram || '@HVZEweb'}`);
         }
 
         if (formSubmitBtn) {
