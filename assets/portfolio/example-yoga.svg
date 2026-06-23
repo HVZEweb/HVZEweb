@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <rect width="800" height="500" fill="#f5f0eb"/>
+  <text x="48" y="48" font-family="Georgia,serif" font-size="28" fill="#2c2a26">AURA</text>
+  <rect x="48" y="80" width="340" height="48" rx="4" fill="#2c2a26"/>
+  <rect x="48" y="145" width="280" height="11" rx="2" fill="#6b6560" opacity="0.5"/>
+  <circle cx="600" cy="200" r="120" fill="url(#yCircle)" stroke="#fffcf8" stroke-width="4"/>
+  <rect x="48" y="300" width="220" height="150" rx="16" fill="#fffcf8" stroke="rgba(44,42,38,0.08)"/>
+  <rect x="290" y="300" width="220" height="150" rx="16" fill="#fffcf8" stroke="rgba(44,42,38,0.08)"/>
+  <rect x="532" y="300" width="220" height="150" rx="16" fill="#fffcf8" stroke="rgba(44,42,38,0.08)"/>
+  <defs><radialGradient id="yCircle"><stop stop-color="#e8e4dc"/><stop offset="1" stop-color="#7d8b6a"/></radialGradient></defs>
+</svg>

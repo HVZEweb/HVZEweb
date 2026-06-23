@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <rect width="800" height="500" fill="#0a0c10"/>
+  <rect x="0" y="41" width="800" height="28" fill="rgba(0,212,170,0.12)"/>
+  <rect x="0" y="69" width="800" height="52" fill="#12151c"/>
+  <text x="32" y="102" font-family="system-ui,sans-serif" font-size="20" font-weight="700" fill="#f0f2f5">VOLT</text>
+  <text x="88" y="102" font-family="system-ui,sans-serif" font-size="20" font-weight="700" fill="#00d4aa">.</text>
+  <rect x="200" y="86" width="280" height="22" rx="8" fill="#181c24" stroke="rgba(240,242,245,0.08)"/>
+  <circle cx="720" cy="97" r="12" fill="#00d4aa"/>
+  <rect x="32" y="140" width="160" height="320" rx="12" fill="#12151c" stroke="rgba(240,242,245,0.08)"/>
+  <rect x="48" y="160" width="80" height="8" rx="2" fill="#7a8494" opacity="0.5"/>
+  <rect x="48" y="184" width="120" height="12" rx="6" fill="#181c24" stroke="#00d4aa"/>
+  <rect x="216" y="140" width="552" height="320" rx="12" fill="#12151c" stroke="rgba(240,242,245,0.08)"/>
+  <rect x="236" y="160" width="160" height="140" rx="10" fill="#181c24"/>
+  <rect x="416" y="160" width="160" height="140" rx="10" fill="#1e2430"/>
+  <rect x="596" y="160" width="152" height="140" rx="10" fill="#222028"/>
+  <rect x="236" y="320" width="160" height="120" rx="10" fill="#1a2228"/>
+  <rect x="416" y="320" width="160" height="120" rx="10" fill="#202428"/>
+  <rect x="596" y="320" width="152" height="120" rx="10" fill="#1e2028"/>
+  <rect x="248" y="268" width="60" height="8" rx="2" fill="#f0f2f5"/>
+  <rect x="248" y="282" width="50" height="10" rx="2" fill="#00d4aa"/>
+</svg>

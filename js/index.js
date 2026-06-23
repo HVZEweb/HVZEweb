@@ -126,12 +126,20 @@ if (revealElements.length) {
 
 const portfolioGrid = document.getElementById('portfolio-grid');
 const portfolioToggle = document.getElementById('portfolio-toggle');
+const portfolioExtraCount = document.querySelectorAll('.portfolio_card_extra').length;
+
+function getPortfolioToggleLabel(expanded) {
+    if (expanded) return 'Скрыть';
+    return portfolioExtraCount > 0 ? `Показать ещё · ${portfolioExtraCount} проектов` : 'Показать ещё';
+}
 
 if (portfolioGrid && portfolioToggle) {
+    portfolioToggle.textContent = getPortfolioToggleLabel(false);
+
     portfolioToggle.addEventListener('click', () => {
         const expanded = portfolioGrid.classList.toggle('is-expanded');
         portfolioToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-        portfolioToggle.textContent = expanded ? 'Скрыть' : 'Показать ещё · 6 проектов';
+        portfolioToggle.textContent = getPortfolioToggleLabel(expanded);
 
         if (expanded) {
             portfolioGrid.querySelectorAll('.portfolio_card_extra.reveal').forEach((el) => {

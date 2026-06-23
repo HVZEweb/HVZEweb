@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <rect width="800" height="500" fill="#fff9f5"/>
+  <rect x="0" y="41" width="800" height="52" fill="#fff" stroke="#f0e6dc"/>
+  <text x="32" y="76" font-family="system-ui,sans-serif" font-size="18" font-weight="800" fill="#00b894">=> PAWS</text>
+  <rect x="200" y="60" width="300" height="24" rx="12" fill="#fff9f5" stroke="#f0e6dc"/>
+  <rect x="680" y="58" width="88" height="28" rx="14" fill="#fdcb6e"/>
+  <rect x="32" y="110" width="480" height="12" fill="#ff7675" opacity="0.6"/>
+  <text x="32" y="170" font-family="system-ui,sans-serif" font-size="28" font-weight="800" fill="#2d3436">AQ 4;O :>H5:</text>
+  <text x="32" y="205" font-family="system-ui,sans-serif" font-size="28" font-weight="800" fill="#2d3436">8 A>10:</text>
+  <rect x="32" y="230" width="80" height="28" rx="14" fill="#00b894"/>
+  <rect x="120" y="230" width="100" height="28" rx="14" fill="#fff" stroke="#f0e6dc"/>
+  <rect x="32" y="290" width="240" height="170" rx="16" fill="#fff" stroke="#f0e6dc"/>
+  <rect x="32" y="290" width="240" height="90" rx="16" fill="#ffeaa7"/>
+  <rect x="288" y="290" width="240" height="170" rx="16" fill="#fff" stroke="#f0e6dc"/>
+  <rect x="288" y="290" width="240" height="90" rx="16" fill="#81ecec"/>
+  <rect x="544" y="290" width="224" height="170" rx="16" fill="#fff" stroke="#f0e6dc"/>
+  <rect x="544" y="290" width="224" height="90" rx="16" fill="#a29bfe"/>
+  <rect x="48" y="400" width="60" height="10" rx="2" fill="#00b894"/>
+  <rect x="180" y="396" width="72" height="20" rx="10" fill="#00b894"/>
+</svg>

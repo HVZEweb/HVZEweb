@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <rect width="800" height="500" fill="#050505"/>
+  <text x="48" y="48" font-family="system-ui,sans-serif" font-size="18" font-weight="700" fill="#fafafa">NEXUS<span fill="#c8ff00">.</span></text>
+  <rect x="48" y="80" width="500" height="80" rx="2" fill="#fafafa"/>
+  <rect x="48" y="180" width="320" height="12" rx="2" fill="#737373"/>
+  <rect x="48" y="220" width="160" height="40" rx="4" fill="#c8ff00"/>
+  <rect x="48" y="300" width="350" height="160" rx="6" fill="#1a1a2e" stroke="rgba(200,255,0,0.2)"/>
+  <rect x="420" y="300" width="350" height="160" rx="6" fill="#1a2e1a" stroke="rgba(250,250,250,0.08)"/>
+</svg>

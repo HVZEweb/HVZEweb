@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <rect width="800" height="500" fill="#f8fafc"/>
+  <text x="48" y="48" font-family="Georgia,serif" font-size="22" font-weight="700" fill="#0f2744">LEDGER</text>
+  <rect x="48" y="80" width="360" height="44" rx="4" fill="#0f2744"/>
+  <rect x="48" y="140" width="300" height="11" rx="2" fill="#64748b" opacity="0.5"/>
+  <rect x="440" y="70" width="310" height="200" rx="12" fill="#0f2744"/>
+  <rect x="460" y="100" width="270" height="24" rx="2" fill="rgba(255,255,255,0.1)"/>
+  <rect x="460" y="140" width="270" height="24" rx="2" fill="rgba(255,255,255,0.1)"/>
+  <rect x="48" y="300" width="220" height="150" rx="8" fill="#fff" stroke="#e2e8f0"/>
+  <rect x="290" y="300" width="220" height="150" rx="8" fill="#fff" stroke="#e2e8f0"/>
+  <rect x="532" y="300" width="220" height="150" rx="8" fill="#fff" stroke="#e2e8f0"/>
+</svg>

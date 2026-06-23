@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --v-bg: #0a0c10;
+    --v-surface: #12151c;
+    --v-card: #181c24;
+    --v-text: #f0f2f5;
+    --v-muted: #7a8494;
+    --v-accent: #00d4aa;
+    --v-accent-hover: #00b894;
+    --v-sale: #ff6b4a;
+    --v-line: rgba(240, 242, 245, 0.08);
+    --v-font: 'Inter', system-ui, sans-serif;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: var(--v-font); background: var(--v-bg); color: var(--v-text); line-height: 1.5; }
+
+.demo_chrome {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    padding: 10px 24px; font-size: 13px; color: var(--v-muted);
+    background: rgba(10, 12, 16, 0.94); border-bottom: 1px solid var(--v-line); backdrop-filter: blur(16px);
+}
+.demo_chrome a { color: var(--v-text); text-decoration: none; }
+.demo_chrome_cta { padding: 8px 18px; color: var(--v-bg) !important; background: var(--v-accent); border-radius: 8px; font-weight: 600; }
+
+.volt_banner {
+    margin-top: 41px; padding: 10px 24px; text-align: center; font-size: 13px;
+    background: linear-gradient(90deg, rgba(0, 212, 170, 0.15), rgba(0, 212, 170, 0.05));
+    border-bottom: 1px solid var(--v-line);
+}
+
+.volt_header {
+    display: flex; align-items: center; justify-content: space-between; gap: 20px;
+    padding: 16px 24px; background: var(--v-surface); border-bottom: 1px solid var(--v-line);
+}
+.volt_logo { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; }
+.volt_logo span { color: var(--v-accent); }
+.volt_search {
+    flex: 1; max-width: 420px; padding: 10px 16px; font-size: 13px; color: var(--v-muted);
+    background: var(--v-card); border: 1px solid var(--v-line); border-radius: 10px;
+}
+.volt_actions { display: flex; gap: 16px; font-size: 18px; }
+.volt_cart em { display: inline-flex; align-items: center; justify-content: center; width: 18px; height: 18px; margin-left: 4px; font-style: normal; font-size: 11px; font-weight: 700; color: var(--v-bg); background: var(--v-accent); border-radius: 50%; vertical-align: middle; }
+
+.volt_main { display: grid; grid-template-columns: 200px 1fr; gap: 32px; max-width: 1140px; margin: 0 auto; padding: 32px 24px 64px; }
+.volt_sidebar h2 { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--v-muted); margin-bottom: 16px; }
+.volt_sidebar ul { list-style: none; }
+.volt_sidebar li { padding: 10px 14px; font-size: 14px; color: var(--v-muted); border-radius: 8px; cursor: default; }
+.volt_sidebar li.is-active { color: var(--v-text); background: var(--v-card); border: 1px solid var(--v-line); }
+
+.volt_toolbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; font-size: 14px; color: var(--v-muted); }
+.volt_toolbar strong { color: var(--v-text); }
+.volt_grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+.volt_card {
+    position: relative; padding: 16px; background: var(--v-card); border: 1px solid var(--v-line);
+    border-radius: 14px; transition: border-color 0.2s, transform 0.2s;
+}
+.volt_card:hover { border-color: rgba(0, 212, 170, 0.4); transform: translateY(-2px); }
+.volt_card_img { height: 140px; margin-bottom: 14px; border-radius: 10px; background: linear-gradient(145deg, #1e2430, #2a3344); }
+.volt_card_img_alt { background: linear-gradient(145deg, #1a2030, #252d3d); }
+.volt_card_img_alt2 { background: linear-gradient(145deg, #222028, #2e2a38); }
+.volt_card_img_alt3 { background: linear-gradient(145deg, #1a2228, #243038); }
+.volt_card_img_alt4 { background: linear-gradient(145deg, #202428, #2c3238); }
+.volt_card_img_alt5 { background: linear-gradient(145deg, #1e2028, #282c38); }
+.volt_badge { position: absolute; top: 24px; left: 24px; padding: 4px 10px; font-size: 11px; font-weight: 600; color: var(--v-bg); background: var(--v-accent); border-radius: 6px; }
+.volt_badge_sale { background: var(--v-sale); color: #fff; }
+.volt_card h3 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+.volt_card p { font-size: 12px; color: var(--v-muted); margin-bottom: 12px; }
+.volt_price { margin-bottom: 14px; font-size: 16px; }
+.volt_price s { font-size: 13px; color: var(--v-muted); margin-right: 8px; }
+.volt_card button {
+    width: 100%; padding: 10px; font-size: 13px; font-weight: 600; font-family: inherit;
+    color: var(--v-bg); background: var(--v-accent); border: none; border-radius: 8px; cursor: pointer;
+}
+.volt_card button:hover { background: var(--v-accent-hover); }
+
+.volt_footer { text-align: center; font-size: 12px; color: var(--v-muted); padding: 24px; border-top: 1px solid var(--v-line); }
+
+@media (max-width: 900px) {
+    .volt_main { grid-template-columns: 1fr; }
+    .volt_sidebar { display: none; }
+    .volt_grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 540px) { .volt_grid { grid-template-columns: 1fr; } .volt_search { display: none; } }
