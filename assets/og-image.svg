@@ -5,7 +5,7 @@
   <circle cx="200" cy="500" r="200" fill="#B8A88A" opacity="0.05"/>
   <text x="100" y="280" font-family="system-ui,sans-serif" font-size="72" font-weight="600" fill="#FAFAFA">HVZE</text>
   <text x="320" y="280" font-family="system-ui,sans-serif" font-size="48" font-weight="400" fill="#B8A88A">web</text>
-  <text x="100" y="360" font-family="system-ui,sans-serif" font-size="32" fill="#737373"> 07@01>B:0 A09B>2 4;O 187=5A0</text>
+  <text x="100" y="360" font-family="system-ui,sans-serif" font-size="32" fill="#737373">Разработка сайтов для бизнеса</text>
   <defs>
     <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
       <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1F1F1F" stroke-width="1"/>

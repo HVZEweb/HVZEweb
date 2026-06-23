@@ -75,8 +75,7 @@ portfolio/
 ├── portfolio/          # Демо-проекты
 ├── netlify/
 │   └── functions/      # Serverless: форма → Telegram
-├── api/                # Vercel-версия (альтернатива)
-├── netlify.toml        # Конфиг Netlify
+├── netlify.toml        # Конфиг Netlify (headers, redirects)
 └── privacy.html        # Политика конфиденциальности
 ```
 
