@@ -83,10 +83,9 @@
         const el = document.createElement('article');
         el.className = 'tg_alert';
         el.innerHTML = `
-            <p class="tg_alert_label">Новая заявка</p>
-            <p class="tg_alert_title">${title}</p>
+            <p class="tg_alert_label">${title}</p>
             <p class="tg_alert_body">${body}</p>
-            <p class="tg_alert_time">${nowTime()} · demo webhook</p>
+            <p class="tg_alert_time">${nowTime()} · Cloudflare Workers</p>
         `;
         adminFeed.prepend(el);
     }
@@ -166,18 +165,18 @@
 
         if (step === 'contact' || step === 'contact_only') {
             lead.contact = value;
-            await botReply('✅ Заявка принята! Менеджер свяжется в течение рабочего дня.\n\n<i>Демо: уведомление отправлено в панель справа.</i>', 800);
+            await botReply('✅ Заявка принята! Менеджер свяжется в течение рабочего дня.\n\nСпасибо, что написали в <b>ServiceDesk Bot</b> — демо HVZEweb.', 800);
 
             const isQuick = step === 'contact_only';
             pushAdminAlert(
-                isQuick ? 'Сообщение от клиента' : 'Заявка с бота',
+                isQuick ? '✉️ Сообщение из Telegram-бота' : '🆕 Новая заявка из Telegram-бота',
                 isQuick
-                    ? `Контакт: ${value}\nИсточник: Telegram bot demo`
-                    : `Имя: ${lead.name}\nЗадача: ${lead.service}\nКонтакт: ${value}`
+                    ? `📬 Контакт: ${value}\n🔗 Источник: portfolio_demo`
+                    : `👤 Имя: ${lead.name}\n📋 Задача: ${lead.service}\n📬 Контакт: ${value}\n🔗 Источник: portfolio_demo`
             );
 
             if (window.demoToast) {
-                window.demoToast('Заявка отправлена админу — это демо');
+                window.demoToast('Заявка отправлена — в Telegram уходит так же');
             }
 
             lead = { name: '', service: '', contact: '' };

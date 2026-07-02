@@ -576,6 +576,12 @@ body.menu-open {
     border-radius: 100px;
 }
 
+.portfolio_badge_live {
+    color: #fff;
+    background: linear-gradient(135deg, #2aabee 0%, #229ed9 100%);
+    box-shadow: 0 4px 14px rgba(42, 171, 238, 0.35);
+}
+
 .portfolio_preview {
     display: block;
     width: 100%;

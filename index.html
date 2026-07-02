@@ -101,7 +101,7 @@
                 <div class="hero_actions reveal">
                     <a href="#contacts" class="btn btn_primary" data-goal="cta_hero" data-i18n="hero.cta1">Start a project</a>
                     <a href="#portfolio" class="btn btn_secondary" data-i18n="hero.cta2">View work</a>
-                    <a href="https://t.me/HVZEweb?start=site" class="btn btn_secondary btn_telegram" target="_blank" rel="noopener noreferrer" data-i18n="hero.tgBtn" data-goal="cta_telegram_bot">Try bot in Telegram</a>
+                    <a href="https://t.me/HVZEwebDemoBot?start=site" id="hero-tg-link" class="btn btn_secondary btn_telegram" target="_blank" rel="noopener noreferrer" data-i18n="hero.tgBtn" data-goal="cta_telegram_bot">Try bot in Telegram</a>
                 </div>
                 <ul class="hero_stats reveal">
                     <li class="hero_stat">
@@ -319,8 +319,8 @@
 
                     <article class="portfolio_card portfolio_card_case reveal">
                         <a href="portfolio/example-telegram-bot.html" class="portfolio_preview_link" target="_blank" rel="noopener noreferrer">
-                            <img class="portfolio_preview" src="assets/portfolio/previews/example-telegram-bot.jpg" alt="ServiceDesk Telegram bot demo" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='assets/portfolio/example-telegram-bot.svg'">
-                            <span class="portfolio_badge" data-i18n="case.demo">Demo</span>
+                            <img class="portfolio_preview" src="assets/portfolio/previews/example-telegram-bot.jpg" alt="ServiceDesk Telegram bot — live portfolio example" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='assets/portfolio/example-telegram-bot.svg'">
+                            <span class="portfolio_badge portfolio_badge_live" data-i18n="case.live">Live</span>
                         </a>
                         <div class="portfolio_content">
                             <span class="portfolio_tag" data-i18n="c6.tag">Telegram bot · from $190</span>
@@ -328,10 +328,13 @@
                             <dl class="portfolio_case">
                                 <div><dt data-i18n="case.problem">Challenge</dt><dd data-i18n="c6.problem">Leads from DMs and site forms were lost without 24/7 first response.</dd></div>
                                 <div><dt data-i18n="case.solution">Solution</dt><dd data-i18n="c6.solution">Bot with menu, FAQ, step-by-step booking and instant manager alerts.</dd></div>
-                                <div><dt data-i18n="case.stack">Stack</dt><dd data-i18n="c6.stack">Telegram Bot API · webhook · n8n</dd></div>
+                                <div><dt data-i18n="case.stack">Stack</dt><dd data-i18n="c6.stack">Telegram Bot API · Cloudflare Workers · webhook</dd></div>
                                 <div><dt data-i18n="case.result">Outcome</dt><dd data-i18n="c6.result">Always-on intake and structured lead handoff</dd></div>
                             </dl>
-                            <a href="portfolio/example-telegram-bot.html" class="portfolio_link" target="_blank" rel="noopener noreferrer" data-i18n="case.view">Open demo →</a>
+                            <div class="portfolio_links">
+                                <a href="portfolio/example-telegram-bot.html" class="portfolio_link" target="_blank" rel="noopener noreferrer" data-i18n="case.interactive">Interactive demo →</a>
+                                <a href="https://t.me/HVZEwebDemoBot?start=portfolio_demo" id="bot-case-tg-link" class="portfolio_link portfolio_link_secondary" target="_blank" rel="noopener noreferrer" data-i18n="case.telegram">Open in Telegram →</a>
+                            </div>
                         </div>
                     </article>
 
@@ -472,7 +475,7 @@
                         </ul>
                         <div class="pricing_actions">
                             <a href="portfolio/example-telegram-bot.html" class="pricing_example" target="_blank" rel="noopener noreferrer" data-i18n="case.bot">Bot demo →</a>
-                            <a href="https://t.me/HVZEweb?start=site" class="pricing_example pricing_example_secondary" target="_blank" rel="noopener noreferrer" data-i18n="hero.tgBtn">Try in Telegram</a>
+                            <a href="https://t.me/HVZEwebDemoBot?start=site" class="pricing_example pricing_example_secondary js-pricing-tg-link" target="_blank" rel="noopener noreferrer" data-i18n="hero.tgBtn">Try in Telegram</a>
                             <a href="#contacts" class="btn btn_secondary btn_full" data-goal="pricing_bot" data-package="bot" data-i18n="pr.choose">Get started</a>
                         </div>
                     </article>
@@ -589,7 +592,7 @@
                             </li>
                             <li class="contacts_item">
                                 <span class="contacts_item_label" data-i18n="contacts.tg">Telegram</span>
-                                <a href="https://t.me/HVZEweb" class="contacts_item_value" target="_blank" rel="noopener noreferrer">@HVZEweb</a>
+                                <a href="https://t.me/HVZEwebDemoBot" id="contacts-tg-link" class="contacts_item_value" target="_blank" rel="noopener noreferrer"><span id="contacts-tg-label">@HVZEwebDemoBot</span></a>
                             </li>
                         </ul>
                     </div>

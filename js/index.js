@@ -30,6 +30,28 @@ const t = (key) => L.t(key);
     document.getElementById('felker-pitch-link')?.setAttribute('href', pitch);
 })();
 
+(function initSiteTelegramLinks() {
+    const tgUrl = config.telegramUrl || 'https://t.me/HVZEwebDemoBot';
+    const tgStart = config.telegramStartUrl || tgUrl;
+    const tgPortfolio = config.telegramPortfolioStartUrl || `${tgUrl}?start=portfolio_demo`;
+    const tgHandle = config.telegram || '@HVZEwebDemoBot';
+
+    [
+        ['hero-tg-link', tgStart],
+        ['contacts-tg-link', tgUrl],
+        ['bot-case-tg-link', tgPortfolio],
+    ].forEach(([id, href]) => {
+        document.getElementById(id)?.setAttribute('href', href);
+    });
+
+    const contactsLabel = document.getElementById('contacts-tg-label');
+    if (contactsLabel) contactsLabel.textContent = tgHandle;
+
+    document.querySelectorAll('.js-pricing-tg-link').forEach((el) => {
+        el.setAttribute('href', tgStart);
+    });
+})();
+
 function updateBurgerLabel() {
     if (!burger) return;
     const open = mobileMenu?.classList.contains('is-open');
