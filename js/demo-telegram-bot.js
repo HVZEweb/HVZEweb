@@ -11,6 +11,11 @@
 
     if (!chat || !keyboard) return;
 
+    const bot = window.SERVICEDESK_BOT || {};
+    const COPY = bot.COPY || {};
+    const MENUS = bot.MENUS || { main: [], info: [], cancel: [] };
+    const DEMO_SOURCE = 'portfolio_demo';
+
     let step = 'menu';
     let lead = { name: '', service: '', contact: '' };
 
@@ -19,6 +24,10 @@
     function nowTime() {
         const d = new Date();
         return d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    }
+
+    function mskTime() {
+        return new Date().toLocaleString('ru-RU', { timeZone: 'Europe/Moscow' });
     }
 
     function scrollChat() {
@@ -92,6 +101,8 @@
             const el = document.createElement('button');
             el.type = 'button';
             el.className = 'tg_key' + (btn.full ? ' tg_key_full' : '');
+            if (btn.action === 'cancel') el.classList.add('tg_key_cancel');
+            if (btn.action === 'menu') el.classList.add('tg_key_muted');
             el.textContent = btn.label;
             el.addEventListener('click', () => handleAction(btn.action, btn.label));
             keyboard.appendChild(el);
@@ -114,67 +125,82 @@
         el.innerHTML = `
             <p class="tg_alert_label">${title}</p>
             <p class="tg_alert_body">${body}</p>
-            <p class="tg_alert_time">${nowTime()} · Cloudflare Workers</p>
+            <p class="tg_alert_time">${mskTime()} MSK · Cloudflare Workers</p>
         `;
         adminFeed.prepend(el);
     }
 
     async function handleAction(action, label) {
-        if (label) addMessage(label, 'out');
+        if (label && action !== 'menu') addMessage(label, 'out');
 
         switch (action) {
-            case 'services':
-                await botReply('Мы делаем:\n\n• Лендинги и сайты\n• WordPress под ключ\n• Интернет-магазины\n• Telegram-боты и автоматизация\n\nВыберите действие 👇', 700);
-                showMenu();
+            case 'svc':
+                await botReply(COPY.services || '', 700);
+                setKeyboard(MENUS.info);
                 break;
 
             case 'faq':
-                await botReply('❓ <b>FAQ</b>\n\n<b>Сроки:</b> лендинг 5–7 дней, бот 3–5 дней.\n<b>Оплата:</b> 50% старт, 50% сдача.\n<b>Поддержка:</b> 30 дней в премиум-пакете.', 800);
-                showMenu();
+                await botReply(COPY.faq || '', 800);
+                setKeyboard(MENUS.info);
                 break;
 
             case 'price':
-                await botReply('💰 Стартовые цены:\n\nВизитка — от 7 000 ₽\nЛендинг — от 10 000 ₽\nБот — от 15 000 ₽\n\nТочная смета после брифа.', 700);
-                showMenu();
+                await botReply(COPY.prices || '', 700);
+                setKeyboard(MENUS.info);
                 break;
 
             case 'book':
                 step = 'name';
                 updateSteps();
-                await botReply('Отлично! Как к вам обращаться?', 600);
-                setKeyboard([]);
+                await botReply(COPY.step1 || '', 600);
+                setKeyboard(MENUS.cancel);
                 setInputMode(true, 'Ваше имя');
                 break;
 
             case 'contact':
                 step = 'contact_only';
                 updateSteps();
-                await botReply('Напишите email или @username в Telegram — менеджер ответит в рабочий день.', 600);
-                setKeyboard([]);
+                await botReply(COPY.quickContact || '', 600);
+                setKeyboard(MENUS.cancel);
                 setInputMode(true, 'Email или @username');
                 break;
 
+            case 'menu':
+                step = 'menu';
+                updateSteps();
+                await botReply(COPY.menu || '', 500);
+                showMainMenu();
+                break;
+
+            case 'cancel':
+                step = 'menu';
+                lead = { name: '', service: '', contact: '' };
+                updateSteps();
+                setInputMode(false);
+                await botReply(COPY.cancelled || '', 500);
+                showMainMenu();
+                break;
+
             default:
-                showMenu();
+                showMainMenu();
         }
     }
 
-    function showMenu() {
+    function showMainMenu() {
         step = 'menu';
         updateSteps();
         setInputMode(false);
-        setKeyboard([
-            { label: '📋 Услуги', action: 'services' },
-            { label: '📅 Оставить заявку', action: 'book' },
-            { label: '❓ FAQ', action: 'faq' },
-            { label: '💰 Цены', action: 'price' },
-            { label: '✉️ Написать менеджеру', action: 'contact', full: true },
-        ]);
+        setKeyboard(MENUS.main);
     }
 
     async function handleUserText(text) {
         const value = text.trim();
         if (!value) return;
+
+        if (step !== 'menu' && (value === '❌ Отмена' || value === '/cancel')) {
+            await handleAction('cancel');
+            return;
+        }
 
         addMessage(value, 'out');
         input.value = '';
@@ -183,7 +209,8 @@
             lead.name = value;
             step = 'service';
             updateSteps();
-            await botReply(`Приятно познакомиться, <b>${value}</b>! Какая задача у вас?`, 650);
+            await botReply(COPY.step2 ? COPY.step2(value) : '', 650);
+            setKeyboard(MENUS.cancel);
             setInputMode(true, 'Опишите задачу');
             return;
         }
@@ -192,7 +219,8 @@
             lead.service = value;
             step = 'contact';
             updateSteps();
-            await botReply('Куда отправить ответ — email или Telegram (@username)?', 600);
+            await botReply(COPY.step3 || '', 600);
+            setKeyboard(MENUS.cancel);
             setInputMode(true, 'email@… или @username');
             return;
         }
@@ -202,13 +230,13 @@
             const isQuick = step === 'contact_only';
             step = 'done';
             updateSteps();
-            await botReply('✅ Заявка принята! Менеджер свяжется в течение рабочего дня.\n\nСпасибо, что написали в <b>ServiceDesk Bot</b> — демо HVZEweb.', 800);
+            await botReply(COPY.success || '', 800);
 
             pushAdminAlert(
-                isQuick ? '✉️ Сообщение из Telegram-бота' : '🆕 Новая заявка из Telegram-бота',
+                isQuick ? '✉️ Сообщение из бота' : '🆕 Новая заявка',
                 isQuick
-                    ? `📬 Контакт: ${value}\n🔗 Источник: portfolio_demo`
-                    : `👤 Имя: ${lead.name}\n📋 Задача: ${lead.service}\n📬 Контакт: ${value}\n🔗 Источник: portfolio_demo`
+                    ? COPY.adminQuick?.(value, DEMO_SOURCE) || `📬 Контакт: ${value}`
+                    : COPY.adminLead?.(lead, DEMO_SOURCE) || `${lead.name} · ${value}`
             );
 
             if (window.demoToast) {
@@ -218,13 +246,13 @@
             lead = { name: '', service: '', contact: '' };
             step = 'menu';
             setInputMode(false);
-            showMenu();
+            showMainMenu();
         }
     }
 
     async function initChat() {
-        await botReply('👋 Добро пожаловать в <b>ServiceDesk Bot</b>!\n\nПомогаю принимать заявки 24/7: меню, FAQ, запись и мгновенные уведомления менеджеру.', 900);
-        showMenu();
+        await botReply(COPY.welcome ? COPY.welcome(DEMO_SOURCE) : '', 900);
+        showMainMenu();
     }
 
     function resetDemo() {

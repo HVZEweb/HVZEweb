@@ -255,7 +255,7 @@ function openTelegramFallback(name, contact, message, pkg) {
     const text = encodeURIComponent(
         `Заявка с сайта HVZEweb\n\nИмя: ${name}\nКонтакт: ${contact}\n${pkgLine}\n${message}`
     );
-    const url = config.telegramUrl || 'https://t.me/HVZEweb';
+    const url = config.telegramUrl || 'https://t.me/HVZEwebDemoBot';
     window.open(`${url}?text=${text}`, '_blank');
 }
 
@@ -315,7 +315,7 @@ if (contactForm) {
             showFormSuccess(true);
             contactForm.reset();
         } else {
-            showFormError(`${t('form.errorGeneric')} ${config.telegram || '@HVZEweb'}`);
+            showFormError(`${t('form.errorGeneric')} ${config.telegram || '@HVZEwebDemoBot'}`);
         }
 
         if (formSubmitBtn) {

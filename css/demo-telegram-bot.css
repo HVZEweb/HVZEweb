@@ -780,6 +780,27 @@ html {
     grid-column: 1 / -1;
 }
 
+.tg_key_cancel {
+    color: #fca5a5;
+    background: rgba(248, 113, 113, 0.08);
+    border-color: rgba(248, 113, 113, 0.25);
+}
+
+.tg_key_cancel:hover {
+    background: rgba(248, 113, 113, 0.14);
+}
+
+.tg_key_muted {
+    color: var(--tg-muted);
+    background: rgba(255, 255, 255, 0.04);
+    border-color: var(--tg-border);
+}
+
+.tg_key_muted:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+}
+
 /* ── Input ── */
 
 .tg_input_row {
