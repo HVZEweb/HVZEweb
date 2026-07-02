@@ -58,6 +58,7 @@
                 </nav>
 
                 <div class="header_actions">
+                    <a href="#contacts" class="header_cta btn btn_primary" data-i18n="nav.consult" data-goal="cta_header">Free consultation</a>
                     <div class="lang_switch" role="group" aria-label="Language">
                         <button type="button" class="lang_switch_btn is-active" data-lang="en">EN</button>
                         <button type="button" class="lang_switch_btn" data-lang="ru">RU</button>
@@ -78,6 +79,10 @@
             <a href="#portfolio" class="mobile_menu_item" data-i18n="nav.portfolio">Work</a>
             <a href="#pricing" class="mobile_menu_item" data-i18n="nav.pricing">Pricing</a>
             <a href="#contacts" class="mobile_menu_item" data-i18n="nav.contacts">Contact</a>
+            <div class="mobile_menu_lang lang_switch" role="group" aria-label="Language">
+                <button type="button" class="lang_switch_btn is-active" data-lang="en">EN</button>
+                <button type="button" class="lang_switch_btn" data-lang="ru">RU</button>
+            </div>
         </nav>
     </div>
 
@@ -96,6 +101,7 @@
                 <div class="hero_actions reveal">
                     <a href="#contacts" class="btn btn_primary" data-goal="cta_hero" data-i18n="hero.cta1">Start a project</a>
                     <a href="#portfolio" class="btn btn_secondary" data-i18n="hero.cta2">View work</a>
+                    <a href="https://t.me/HVZEweb?start=site" class="btn btn_secondary btn_telegram" target="_blank" rel="noopener noreferrer" data-i18n="hero.tgBtn" data-goal="cta_telegram_bot">Try bot in Telegram</a>
                 </div>
                 <ul class="hero_stats reveal">
                     <li class="hero_stat">
@@ -111,6 +117,30 @@
                         <span class="hero_stat_label" data-i18n="hero.stat3.label">mobile-ready layouts</span>
                     </li>
                 </ul>
+            </div>
+        </section>
+
+        <section id="why" class="section section_why">
+            <div class="container">
+                <p class="section_label reveal" data-i18n="why.label">Why HVZEweb</p>
+                <h2 class="section_title reveal" data-i18n="why.title">Built for small business speed</h2>
+                <div class="why_grid">
+                    <article class="why_card reveal">
+                        <span class="why_icon" aria-hidden="true">⚡</span>
+                        <h3 class="why_title" data-i18n="why.w1.title">Fast delivery</h3>
+                        <p class="why_text" data-i18n="why.w1.text">Business card in 2–3 days, landing in 5–7. Clear timeline from day one.</p>
+                    </article>
+                    <article class="why_card reveal">
+                        <span class="why_icon" aria-hidden="true">✈</span>
+                        <h3 class="why_title" data-i18n="why.w2.title">Telegram-first</h3>
+                        <p class="why_text" data-i18n="why.w2.text">Every form can notify your team in Telegram — no lost leads in email spam.</p>
+                    </article>
+                    <article class="why_card reveal">
+                        <span class="why_icon" aria-hidden="true">₽</span>
+                        <h3 class="why_title" data-i18n="why.w3.title">Fixed starting price</h3>
+                        <p class="why_text" data-i18n="why.w3.text">Packages from $90 with no hidden fees. Final quote after a 15-minute brief.</p>
+                    </article>
+                </div>
             </div>
         </section>
 
@@ -196,7 +226,7 @@
                 <div class="portfolio_grid" id="portfolio-grid">
                     <article class="portfolio_card portfolio_card_case reveal">
                         <a href="portfolio/example-vizitka.html" class="portfolio_preview_link" target="_blank" rel="noopener noreferrer">
-                            <img class="portfolio_preview" src="assets/portfolio/example-vizitka.svg" alt="" width="800" height="500" loading="lazy">
+                            <img class="portfolio_preview" src="assets/portfolio/previews/example-vizitka.jpg" alt="Maison business card demo" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='assets/portfolio/example-vizitka.svg'">
                             <span class="portfolio_badge" data-i18n="case.demo">Demo</span>
                         </a>
                         <div class="portfolio_content">
@@ -214,7 +244,7 @@
 
                     <article class="portfolio_card portfolio_card_case reveal">
                         <a href="portfolio/example-landing.html" class="portfolio_preview_link" target="_blank" rel="noopener noreferrer">
-                            <img class="portfolio_preview" src="assets/portfolio/example-landing.svg" alt="" width="800" height="500" loading="lazy">
+                            <img class="portfolio_preview" src="assets/portfolio/previews/example-landing.jpg" alt="Pulse landing page demo" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='assets/portfolio/example-landing.svg'">
                             <span class="portfolio_badge" data-i18n="case.demo">Demo</span>
                         </a>
                         <div class="portfolio_content">
@@ -232,7 +262,7 @@
 
                     <article class="portfolio_card portfolio_card_case reveal">
                         <a href="portfolio/example-corporate.html" class="portfolio_preview_link" target="_blank" rel="noopener noreferrer">
-                            <img class="portfolio_preview" src="assets/portfolio/example-corporate.svg" alt="" width="800" height="500" loading="lazy">
+                            <img class="portfolio_preview" src="assets/portfolio/previews/example-corporate.jpg" alt="ATLAS corporate site demo" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='assets/portfolio/example-corporate.svg'">
                             <span class="portfolio_badge" data-i18n="case.demo">Demo</span>
                         </a>
                         <div class="portfolio_content">
@@ -250,7 +280,7 @@
 
                     <article class="portfolio_card portfolio_card_case reveal">
                         <a href="portfolio/example-shop.html" class="portfolio_preview_link" target="_blank" rel="noopener noreferrer">
-                            <img class="portfolio_preview" src="assets/portfolio/example-shop.svg" alt="" width="800" height="500" loading="lazy">
+                            <img class="portfolio_preview" src="assets/portfolio/previews/example-shop.jpg" alt="KORA store demo" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='assets/portfolio/example-shop.svg'">
                             <span class="portfolio_badge" data-i18n="case.demo">Demo</span>
                         </a>
                         <div class="portfolio_content">
@@ -271,7 +301,7 @@
 
                     <article class="portfolio_card portfolio_card_case reveal">
                         <a href="portfolio/example-wordpress.html" class="portfolio_preview_link" target="_blank" rel="noopener noreferrer">
-                            <img class="portfolio_preview" src="assets/portfolio/example-wordpress.svg" alt="" width="800" height="500" loading="lazy">
+                            <img class="portfolio_preview" src="assets/portfolio/previews/example-wordpress.jpg" alt="Harvest Table WordPress demo" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='assets/portfolio/example-wordpress.svg'">
                             <span class="portfolio_badge" data-i18n="case.demo">Demo</span>
                         </a>
                         <div class="portfolio_content">
@@ -289,7 +319,7 @@
 
                     <article class="portfolio_card portfolio_card_case reveal">
                         <a href="portfolio/example-telegram-bot.html" class="portfolio_preview_link" target="_blank" rel="noopener noreferrer">
-                            <img class="portfolio_preview" src="assets/portfolio/example-telegram-bot.svg" alt="" width="800" height="500" loading="lazy">
+                            <img class="portfolio_preview" src="assets/portfolio/previews/example-telegram-bot.jpg" alt="ServiceDesk Telegram bot demo" width="800" height="500" loading="lazy" onerror="this.onerror=null;this.src='assets/portfolio/example-telegram-bot.svg'">
                             <span class="portfolio_badge" data-i18n="case.demo">Demo</span>
                         </a>
                         <div class="portfolio_content">
@@ -304,6 +334,29 @@
                             <a href="portfolio/example-telegram-bot.html" class="portfolio_link" target="_blank" rel="noopener noreferrer" data-i18n="case.view">Open demo →</a>
                         </div>
                     </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="quiz" class="section section_quiz">
+            <div class="container container_narrow">
+                <p class="section_label reveal" data-i18n="quiz.label">Quiz</p>
+                <h2 class="section_title reveal" data-i18n="quiz.title">Which package fits you?</h2>
+                <p class="section_description reveal" data-i18n="quiz.desc">Answer 4 quick questions — we'll suggest a package and pre-fill the form.</p>
+                <div class="quiz_card reveal" id="quiz-card">
+                    <div class="quiz_progress" id="quiz-progress" aria-hidden="true">
+                        <span class="is-active"></span><span></span><span></span><span></span>
+                    </div>
+                    <div class="quiz_step" id="quiz-step"></div>
+                    <div class="quiz_actions">
+                        <button type="button" class="btn btn_secondary" id="quiz-back" hidden data-i18n="quiz.back">Back</button>
+                        <button type="button" class="btn btn_primary" id="quiz-next" data-i18n="quiz.next">Next</button>
+                    </div>
+                    <div class="quiz_result" id="quiz-result" hidden>
+                        <p class="quiz_result_label" data-i18n="quiz.resultLabel">Recommended</p>
+                        <p class="quiz_result_package" id="quiz-result-text"></p>
+                        <button type="button" class="btn btn_primary btn_full" id="quiz-to-form" data-i18n="quiz.resultBtn">Request this package</button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -328,7 +381,7 @@
                         </ul>
                         <div class="pricing_actions">
                             <a href="portfolio/example-vizitka.html" class="pricing_example" target="_blank" rel="noopener noreferrer" data-i18n="pr.example">View demo →</a>
-                            <a href="#contacts" class="btn btn_secondary btn_full" data-goal="pricing_vizitka" data-i18n="pr.choose">Get started</a>
+                            <a href="#contacts" class="btn btn_secondary btn_full" data-goal="pricing_vizitka" data-package="vizitka" data-i18n="pr.choose">Get started</a>
                         </div>
                     </article>
                     <article class="pricing_card pricing_card_featured reveal">
@@ -346,7 +399,7 @@
                         <div class="pricing_actions">
                             <a href="portfolio/example-landing.html" class="pricing_example" target="_blank" rel="noopener noreferrer" data-i18n="pr.example">View demo →</a>
                             <a href="portfolio/example-telegram-bot.html" class="pricing_example pricing_example_secondary" target="_blank" rel="noopener noreferrer" data-i18n="case.bot">Bot demo →</a>
-                            <a href="#contacts" class="btn btn_primary btn_full" data-goal="pricing_start" data-i18n="pr.choose">Get started</a>
+                            <a href="#contacts" class="btn btn_primary btn_full" data-goal="pricing_start" data-package="start" data-i18n="pr.choose">Get started</a>
                         </div>
                     </article>
                     <article class="pricing_card reveal">
@@ -363,7 +416,7 @@
                         <div class="pricing_actions">
                             <a href="portfolio/example-corporate.html" class="pricing_example" target="_blank" rel="noopener noreferrer" data-i18n="pr.example">View demo →</a>
                             <a href="portfolio/example-wordpress.html" class="pricing_example pricing_example_secondary" target="_blank" rel="noopener noreferrer" data-i18n="case.wp">WordPress →</a>
-                            <a href="#contacts" class="btn btn_secondary btn_full" data-goal="pricing_business" data-i18n="pr.choose">Get started</a>
+                            <a href="#contacts" class="btn btn_secondary btn_full" data-goal="pricing_business" data-package="business" data-i18n="pr.choose">Get started</a>
                         </div>
                     </article>
                     <article class="pricing_card reveal">
@@ -382,9 +435,96 @@
                                 <a href="portfolio/example-shop.html" class="pricing_example" target="_blank" rel="noopener noreferrer" data-i18n="case.shop">Store →</a>
                                 <a href="portfolio/example-shop-admin.html" class="pricing_example pricing_example_secondary" target="_blank" rel="noopener noreferrer" data-i18n="case.admin">Admin →</a>
                             </div>
-                            <a href="#contacts" class="btn btn_secondary btn_full" data-goal="pricing_premium" data-i18n="pr.choose">Get started</a>
+                            <a href="#contacts" class="btn btn_secondary btn_full" data-goal="pricing_premium" data-package="premium" data-i18n="pr.choose">Get started</a>
                         </div>
                     </article>
+                    <article class="pricing_card reveal">
+                        <h3 class="pricing_name" data-i18n="pr5.name">Telegram bot</h3>
+                        <p class="pricing_price" data-i18n="pr5.price">from $190</p>
+                        <p class="pricing_price_sub" data-i18n="pr5.priceSub">≈ 15 000 ₽</p>
+                        <p class="pricing_subtitle" data-i18n="pr5.sub">Leads & support 24/7</p>
+                        <ul class="pricing_list">
+                            <li data-i18n="pr5.l1">Menu + FAQ + booking flow</li>
+                            <li data-i18n="pr5.l2">Admin notifications</li>
+                            <li data-i18n="pr5.l3">Webhook / n8n ready</li>
+                            <li data-i18n="pr5.l4">Timeline: 3–5 days</li>
+                        </ul>
+                        <div class="pricing_actions">
+                            <a href="portfolio/example-telegram-bot.html" class="pricing_example" target="_blank" rel="noopener noreferrer" data-i18n="case.bot">Bot demo →</a>
+                            <a href="https://t.me/HVZEweb?start=site" class="pricing_example pricing_example_secondary" target="_blank" rel="noopener noreferrer" data-i18n="hero.tgBtn">Try in Telegram</a>
+                            <a href="#contacts" class="btn btn_secondary btn_full" data-goal="pricing_bot" data-package="bot" data-i18n="pr.choose">Get started</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="workflow" class="section section_workflow">
+            <div class="container">
+                <p class="section_label reveal" data-i18n="workflow.label">Process</p>
+                <h2 class="section_title reveal" data-i18n="workflow.title">From brief to live site</h2>
+                <p class="section_description reveal" data-i18n="workflow.desc">Typical project flow — with instant Telegram alerts at every step.</p>
+                <div class="workflow_layout reveal">
+                    <div class="workflow_tg">
+                        <p class="workflow_tg_label" data-i18n="workflow.tgLabel">Live notification example</p>
+                        <div class="workflow_tg_bubble">
+                            <pre class="workflow_tg_text" data-i18n="workflow.tgText">🆕 New request from site
+
+👤 Anna
+📬 @anna_cafe
+💬 Landing for café, need in 7 days</pre>
+                        </div>
+                    </div>
+                    <ol class="workflow_timeline">
+                        <li><strong data-i18n="workflow.t1">Day 1 — Brief</strong><span data-i18n="workflow.t1d">Call or chat, goals & references</span></li>
+                        <li><strong data-i18n="workflow.t2">Days 2–4 — Design</strong><span data-i18n="workflow.t2d">Structure, visuals, approval</span></li>
+                        <li><strong data-i18n="workflow.t3">Days 5–7 — Build</strong><span data-i18n="workflow.t3d">Code, mobile, form → Telegram</span></li>
+                        <li><strong data-i18n="workflow.t4">Launch</strong><span data-i18n="workflow.t4d">Deploy, handoff, support</span></li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section id="reviews" class="section section_reviews">
+            <div class="container">
+                <p class="section_label reveal" data-i18n="reviews.label">Reviews</p>
+                <h2 class="section_title reveal" data-i18n="reviews.title">What clients say</h2>
+                <p class="section_description reveal" data-i18n="reviews.desc">Replace with your real Avito / Telegram reviews as they come in.</p>
+                <div class="reviews_grid">
+                    <blockquote class="review_card reveal">
+                        <p class="review_text" data-i18n="reviews.r1.text">Made a landing in 6 days, form goes straight to Telegram. Clear price, no surprises.</p>
+                        <footer><cite data-i18n="reviews.r1.name">Anna K.</cite> · <span data-i18n="reviews.r1.role">Café owner</span></footer>
+                    </blockquote>
+                    <blockquote class="review_card reveal">
+                        <p class="review_text" data-i18n="reviews.r2.text">Corporate site for our construction company — looks solid, clients mention it on calls.</p>
+                        <footer><cite data-i18n="reviews.r2.name">Dmitry V.</cite> · <span data-i18n="reviews.r2.role">B2B</span></footer>
+                    </blockquote>
+                    <blockquote class="review_card reveal">
+                        <p class="review_text" data-i18n="reviews.r3.text">WordPress site + bot for bookings. I edit menu myself, requests ping me instantly.</p>
+                        <footer><cite data-i18n="reviews.r3.name">Elena M.</cite> · <span data-i18n="reviews.r3.role">HoReCa</span></footer>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section section_about">
+            <div class="container">
+                <div class="about_layout reveal">
+                    <div class="about_visual" aria-hidden="true">
+                        <div class="about_avatar">HVZE</div>
+                        <p class="about_badge">Est. 2024</p>
+                    </div>
+                    <div class="about_content">
+                        <p class="section_label" data-i18n="about.label">About</p>
+                        <h2 class="section_title" data-i18n="about.title">HVZEweb studio</h2>
+                        <p class="about_lead" data-i18n="about.lead">We build websites and Telegram automations for startups and small business.</p>
+                        <div class="about_points">
+                            <div><h3 data-i18n="about.p1.title">How we work</h3><p data-i18n="about.p1.text">One contact person, fixed packages, async updates in Telegram.</p></div>
+                            <div><h3 data-i18n="about.p2.title">Stack</h3><p data-i18n="about.p2.text">HTML, CSS, JavaScript, WordPress, Telegram Bot API, Netlify, n8n.</p></div>
+                            <div><h3 data-i18n="about.p3.title">Principles</h3><p data-i18n="about.p3.text">Mobile-first, clean code, honest deadlines. Two revision rounds included.</p></div>
+                        </div>
+                        <p class="about_note" data-i18n="about.domainNote">Custom domain (e.g. hvzeweb.ru) — we help connect DNS & SSL after launch.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -434,6 +574,17 @@
                     </div>
                     <form class="contact_form reveal" id="contact-form">
                         <label class="form_field">
+                            <span class="form_label" data-i18n="form.package">Package</span>
+                            <select class="form_input form_select" name="package" id="form-package">
+                                <option value="" data-i18n="form.packageDefault">Not sure yet</option>
+                                <option value="vizitka" data-i18n="form.packageVizitka">Business card</option>
+                                <option value="start" data-i18n="form.packageStart">Start (landing)</option>
+                                <option value="business" data-i18n="form.packageBusiness">Business (corporate)</option>
+                                <option value="premium" data-i18n="form.packagePremium">Premium (store)</option>
+                                <option value="bot" data-i18n="form.packageBot">Telegram bot</option>
+                            </select>
+                        </label>
+                        <label class="form_field">
                             <span class="form_label" data-i18n="form.name">Name</span>
                             <input class="form_input" type="text" name="name" data-i18n-placeholder="form.namePh" placeholder="Your name" required autocomplete="name">
                         </label>
@@ -462,6 +613,7 @@
             <a href="#hero" class="footer_logo">HVZE<span class="header_menu_logo_span">web</span></a>
             <nav class="footer_nav" aria-label="Footer">
                 <a href="privacy.html" data-i18n="footer.privacy">Privacy</a>
+                <a href="#about" data-i18n="nav.about">About</a>
                 <a href="#faq" data-i18n="footer.faq">FAQ</a>
             </nav>
             <p class="footer_copy">© 2026 HVZEweb</p>

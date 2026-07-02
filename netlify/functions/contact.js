@@ -20,19 +20,22 @@ exports.handler = async (event) => {
     const name = body.name?.toString().trim();
     const contact = body.contact?.toString().trim();
     const message = body.message?.toString().trim();
+    const pkg = body.package?.toString().trim();
 
     if (!name || !contact || !message) {
         return json(400, { error: 'Missing required fields' });
     }
+
+    const packageLine = pkg ? `📦 Пакет: ${pkg}\n` : '';
 
     const text = [
         '🆕 Новая заявка с сайта HVZEweb',
         '',
         `👤 Имя: ${name}`,
         `📬 Контакт: ${contact}`,
-        '',
+        packageLine,
         `💬 Сообщение:\n${message}`,
-    ].join('\n');
+    ].filter(Boolean).join('\n');
 
     try {
         const response = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {

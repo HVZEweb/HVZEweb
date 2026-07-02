@@ -216,9 +216,10 @@ function showFormError(message) {
     }
 }
 
-function openTelegramFallback(name, contact, message) {
+function openTelegramFallback(name, contact, message, pkg) {
+    const pkgLine = pkg ? `Пакет: ${pkg}\n` : '';
     const text = encodeURIComponent(
-        `Заявка с сайта HVZEweb\n\nИмя: ${name}\nКонтакт: ${contact}\n\n${message}`
+        `Заявка с сайта HVZEweb\n\nИмя: ${name}\nКонтакт: ${contact}\n${pkgLine}\n${message}`
     );
     const url = config.telegramUrl || 'https://t.me/HVZEweb';
     window.open(`${url}?text=${text}`, '_blank');
@@ -229,6 +230,7 @@ async function submitContactForm(formData) {
         name: formData.get('name')?.toString().trim(),
         contact: formData.get('contact')?.toString().trim(),
         message: formData.get('message')?.toString().trim(),
+        package: formData.get('package')?.toString().trim() || '',
     };
 
     try {
@@ -261,6 +263,7 @@ if (contactForm) {
         const name = formData.get('name')?.toString().trim() || '';
         const contact = formData.get('contact')?.toString().trim() || '';
         const message = formData.get('message')?.toString().trim() || '';
+        const pkg = formData.get('package')?.toString().trim() || '';
 
         if (formSubmitBtn) {
             formSubmitBtn.disabled = true;
@@ -274,7 +277,7 @@ if (contactForm) {
             showFormSuccess(false);
             trackGoal('form_submit');
         } else if (result.fallback) {
-            openTelegramFallback(name, contact, message);
+            openTelegramFallback(name, contact, message, pkg);
             showFormSuccess(true);
             contactForm.reset();
         } else {
@@ -285,6 +288,189 @@ if (contactForm) {
             formSubmitBtn.disabled = false;
             formSubmitBtn.textContent = t('form.submit');
         }
+    });
+}
+
+const formPackageSelect = document.getElementById('form-package');
+
+function setFormPackage(value) {
+    if (!formPackageSelect || !value) return;
+    formPackageSelect.value = value;
+}
+
+document.querySelectorAll('[data-package]').forEach((el) => {
+    el.addEventListener('click', () => {
+        const pkg = el.getAttribute('data-package');
+        if (pkg) {
+            window.setTimeout(() => setFormPackage(pkg), 350);
+        }
+    });
+});
+
+const QUIZ_STEPS = [
+    {
+        key: 'need',
+        question: 'quiz.q1',
+        options: [
+            { value: 'vizitka', label: 'quiz.o1a' },
+            { value: 'start', label: 'quiz.o1b' },
+            { value: 'business', label: 'quiz.o1c' },
+            { value: 'premium', label: 'quiz.o1d' },
+            { value: 'business', label: 'quiz.o1e' },
+            { value: 'bot', label: 'quiz.o1f' },
+        ],
+    },
+    {
+        key: 'timeline',
+        question: 'quiz.q2',
+        options: [
+            { value: 'fast', label: 'quiz.o2a' },
+            { value: 'normal', label: 'quiz.o2b' },
+            { value: 'flex', label: 'quiz.o2c' },
+        ],
+    },
+    {
+        key: 'budget',
+        question: 'quiz.q3',
+        options: [
+            { value: 'low', label: 'quiz.o3a' },
+            { value: 'mid', label: 'quiz.o3b' },
+            { value: 'high', label: 'quiz.o3c' },
+        ],
+    },
+    {
+        key: 'content',
+        question: 'quiz.q4',
+        options: [
+            { value: 'yes', label: 'quiz.o4a' },
+            { value: 'partial', label: 'quiz.o4b' },
+            { value: 'no', label: 'quiz.o4c' },
+        ],
+    },
+];
+
+const quizStepEl = document.getElementById('quiz-step');
+const quizNextBtn = document.getElementById('quiz-next');
+const quizBackBtn = document.getElementById('quiz-back');
+const quizProgress = document.getElementById('quiz-progress');
+const quizResultEl = document.getElementById('quiz-result');
+const quizResultText = document.getElementById('quiz-result-text');
+const quizToFormBtn = document.getElementById('quiz-to-form');
+const quizActions = document.querySelector('.quiz_actions');
+
+let quizIndex = 0;
+const quizAnswers = {};
+let quizRecommended = 'start';
+
+function computeQuizPackage() {
+    let pkg = quizAnswers.need || 'start';
+
+    if (quizAnswers.budget === 'low') {
+        if (pkg === 'premium' || pkg === 'business') pkg = 'start';
+        if (pkg === 'bot') pkg = 'start';
+    }
+    if (quizAnswers.budget === 'mid' && pkg === 'premium') pkg = 'business';
+    if (quizAnswers.budget === 'high' && pkg === 'vizitka') pkg = 'start';
+
+    if (quizAnswers.need === 'bot') pkg = 'bot';
+
+    return pkg;
+}
+
+function updateQuizProgress() {
+    if (!quizProgress) return;
+    [...quizProgress.children].forEach((dot, i) => {
+        dot.classList.toggle('is-active', i === quizIndex);
+        dot.classList.toggle('is-done', i < quizIndex);
+    });
+}
+
+function renderQuizStep() {
+    if (!quizStepEl) return;
+
+    const step = QUIZ_STEPS[quizIndex];
+    const selected = quizAnswers[step.key] || '';
+
+    quizStepEl.innerHTML = `
+        <p class="quiz_question">${t(step.question)}</p>
+        <div class="quiz_options" role="radiogroup">
+            ${step.options.map((opt, i) => `
+                <label class="quiz_option${selected === opt.value ? ' is-selected' : ''}">
+                    <input type="radio" name="quiz-${step.key}" value="${opt.value}" ${selected === opt.value ? 'checked' : ''}>
+                    <span data-quiz-label="${opt.label}">${t(opt.label)}</span>
+                </label>
+            `).join('')}
+        </div>
+    `;
+
+    quizStepEl.querySelectorAll('.quiz_option input').forEach((input) => {
+        input.addEventListener('change', () => {
+            quizAnswers[step.key] = input.value;
+            quizStepEl.querySelectorAll('.quiz_option').forEach((l) => l.classList.remove('is-selected'));
+            input.closest('.quiz_option')?.classList.add('is-selected');
+        });
+    });
+
+    updateQuizProgress();
+    if (quizBackBtn) quizBackBtn.hidden = quizIndex === 0;
+    if (quizNextBtn) quizNextBtn.textContent = t('quiz.next');
+}
+
+function showQuizResult() {
+    quizRecommended = computeQuizPackage();
+    const resultKey = `quiz.result.${quizRecommended}`;
+
+    if (quizStepEl) quizStepEl.hidden = true;
+    if (quizActions) quizActions.hidden = true;
+    if (quizResultEl) quizResultEl.hidden = false;
+    if (quizResultText) quizResultText.textContent = t(resultKey);
+    if (quizProgress) {
+        [...quizProgress.children].forEach((dot) => dot.classList.add('is-done'));
+    }
+}
+
+function resetQuizView() {
+    if (quizStepEl) quizStepEl.hidden = false;
+    if (quizActions) quizActions.hidden = false;
+    if (quizResultEl) quizResultEl.hidden = true;
+}
+
+if (quizStepEl && quizNextBtn) {
+    renderQuizStep();
+
+    quizNextBtn.addEventListener('click', () => {
+        const step = QUIZ_STEPS[quizIndex];
+        if (!quizAnswers[step.key]) return;
+
+        if (quizIndex < QUIZ_STEPS.length - 1) {
+            quizIndex += 1;
+            renderQuizStep();
+            return;
+        }
+
+        showQuizResult();
+    });
+
+    quizBackBtn?.addEventListener('click', () => {
+        if (quizIndex === 0) return;
+        resetQuizView();
+        quizIndex -= 1;
+        renderQuizStep();
+    });
+
+    quizToFormBtn?.addEventListener('click', () => {
+        setFormPackage(quizRecommended);
+        scrollToSection('#contacts');
+        trackGoal('quiz_submit');
+    });
+
+    window.addEventListener('hvze:langchange', () => {
+        if (quizResultEl && !quizResultEl.hidden) {
+            if (quizResultText) quizResultText.textContent = t(`quiz.result.${quizRecommended}`);
+        } else {
+            renderQuizStep();
+        }
+        if (quizBackBtn) quizBackBtn.textContent = t('quiz.back');
     });
 }
 
