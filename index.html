@@ -1,34 +1,30 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="HVZEweb — разработка современных сайтов для бизнеса. Лендинги, корпоративные сайты, интернет-магазины. Быстрые сроки, прозрачные цены.">
-    <meta name="keywords" content="разработка сайтов, создание сайтов, лендинг, веб-студия, HVZEweb">
+    <meta name="description" content="HVZEweb — landing pages, corporate sites, e-commerce and Telegram automations for startups and small business. Fast delivery, transparent pricing.">
     <meta name="author" content="HVZEweb">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://hvzeweb.netlify.app/">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hvzeweb.netlify.app/">
-    <meta property="og:title" content="HVZEweb — Разработка сайтов">
-    <meta property="og:description" content="Создаём быстрые и стильные сайты для бизнеса. От лендинга до интернет-магазина.">
+    <meta property="og:title" content="HVZEweb — Websites & automations">
+    <meta property="og:description" content="Landing pages, stores and lead automation. Fast delivery for startups and small business.">
     <meta property="og:image" content="https://hvzeweb.netlify.app/assets/og-image.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:locale" content="ru_RU">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="ru_RU">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="HVZEweb — Разработка сайтов">
-    <meta name="twitter:description" content="Создаём быстрые и стильные сайты для бизнеса.">
+    <meta name="twitter:title" content="HVZEweb — Websites & automations">
+    <meta name="twitter:description" content="Landing pages, stores and lead automation for startups.">
     <meta name="twitter:image" content="https://hvzeweb.netlify.app/assets/og-image.png">
 
-    <title>HVZEweb — Разработка сайтов</title>
+    <title>HVZEweb — Websites, e-commerce & automations</title>
 
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="assets/favicon.svg">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap&subset=cyrillic,latin" rel="stylesheet">
@@ -39,43 +35,49 @@
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
         "name": "HVZEweb",
-        "description": "Разработка сайтов для бизнеса и частных клиентов",
+        "description": "Web development: landing pages, corporate sites, e-commerce, WordPress and automations",
         "url": "https://hvzeweb.netlify.app",
         "email": "hvzeweb@mail.ru",
-        "areaServed": "RU",
-        "priceRange": "₽₽",
-        "serviceType": ["Разработка сайтов", "Лендинги", "Интернет-магазины"]
+        "areaServed": ["US", "RU", "EU"],
+        "priceRange": "$$",
+        "serviceType": ["Landing pages", "E-commerce", "WordPress", "Telegram integrations"]
     }
     </script>
 </head>
 <body>
     <header class="header">
-        <nav class="header_nav" aria-label="Основное меню">
+        <nav class="header_nav" aria-label="Main menu">
             <div class="header_container">
                 <a href="#hero" class="header_menu_logo">HVZE<span class="header_menu_logo_span">web</span></a>
 
-                <nav class="header_menu_links" aria-label="Навигация">
-                    <a href="#services" class="header_menu_item">Разработка</a>
-                    <a href="#portfolio" class="header_menu_item">Портфолио</a>
-                    <a href="#pricing" class="header_menu_item">Цены</a>
-                    <a href="#contacts" class="header_menu_item">Контакты</a>
+                <nav class="header_menu_links" aria-label="Navigation">
+                    <a href="#services" class="header_menu_item" data-i18n="nav.services">Services</a>
+                    <a href="#portfolio" class="header_menu_item" data-i18n="nav.portfolio">Work</a>
+                    <a href="#pricing" class="header_menu_item" data-i18n="nav.pricing">Pricing</a>
+                    <a href="#contacts" class="header_menu_item" data-i18n="nav.contacts">Contact</a>
                 </nav>
 
-                <button class="header_burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-menu">
-                    <span class="header_burger_line"></span>
-                    <span class="header_burger_line"></span>
-                    <span class="header_burger_line"></span>
-                </button>
+                <div class="header_actions">
+                    <div class="lang_switch" role="group" aria-label="Language">
+                        <button type="button" class="lang_switch_btn is-active" data-lang="en">EN</button>
+                        <button type="button" class="lang_switch_btn" data-lang="ru">RU</button>
+                    </div>
+                    <button class="header_burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+                        <span class="header_burger_line"></span>
+                        <span class="header_burger_line"></span>
+                        <span class="header_burger_line"></span>
+                    </button>
+                </div>
             </div>
         </nav>
     </header>
 
     <div class="mobile_menu" id="mobile-menu" aria-hidden="true">
-        <nav class="mobile_menu_nav" aria-label="Мобильное меню">
-            <a href="#services" class="mobile_menu_item">Разработка</a>
-            <a href="#portfolio" class="mobile_menu_item">Портфолио</a>
-            <a href="#pricing" class="mobile_menu_item">Цены</a>
-            <a href="#contacts" class="mobile_menu_item">Контакты</a>
+        <nav class="mobile_menu_nav" aria-label="Mobile menu">
+            <a href="#services" class="mobile_menu_item" data-i18n="nav.services">Services</a>
+            <a href="#portfolio" class="mobile_menu_item" data-i18n="nav.portfolio">Work</a>
+            <a href="#pricing" class="mobile_menu_item" data-i18n="nav.pricing">Pricing</a>
+            <a href="#contacts" class="mobile_menu_item" data-i18n="nav.contacts">Contact</a>
         </nav>
     </div>
 
@@ -85,33 +87,28 @@
                 <div class="hero_glow"></div>
                 <div class="hero_grid"></div>
             </div>
-            <div class="container">
-                <p class="section_label reveal">Студия веб-разработки</p>
-                <h1 class="hero_title reveal">Разработка сайтов,<br>которые работают на бизнес</h1>
-                <p class="hero_description reveal">
-                    Создаём быстрые, современные и стильные сайты для компаний и частных клиентов.
-                    От идеи до запуска — с акцентом на результат и удобство.
+            <div class="container container_narrow">
+                <p class="section_label reveal" data-i18n="hero.label">Web development studio</p>
+                <h1 class="hero_title reveal" data-i18n-html="hero.title">Websites that turn<br>visitors into clients</h1>
+                <p class="hero_description reveal" data-i18n="hero.desc">
+                    Landing pages, corporate sites, e-commerce and Telegram integrations for startups and small business.
                 </p>
                 <div class="hero_actions reveal">
-                    <a href="#contacts" class="btn btn_primary" data-goal="cta_hero">Обсудить проект</a>
-                    <a href="#portfolio" class="btn btn_secondary">Смотреть работы</a>
+                    <a href="#contacts" class="btn btn_primary" data-goal="cta_hero" data-i18n="hero.cta1">Start a project</a>
+                    <a href="#portfolio" class="btn btn_secondary" data-i18n="hero.cta2">View work</a>
                 </div>
                 <ul class="hero_stats reveal">
                     <li class="hero_stat">
-                        <span class="hero_stat_value">от 7 000 ₽</span>
-                        <span class="hero_stat_label">прозрачная цена без скрытых доплат</span>
+                        <span class="hero_stat_value" data-i18n="hero.stat1.value">5–7 days</span>
+                        <span class="hero_stat_label" data-i18n="hero.stat1.label">typical landing delivery</span>
                     </li>
                     <li class="hero_stat">
-                        <span class="hero_stat_value">5–7 дней</span>
-                        <span class="hero_stat_label">запуск лендинга под ключ</span>
+                        <span class="hero_stat_value" data-i18n="hero.stat2.value">from $130</span>
+                        <span class="hero_stat_label" data-i18n="hero.stat2.label">transparent pricing</span>
                     </li>
                     <li class="hero_stat">
-                        <span class="hero_stat_value">100%</span>
-                        <span class="hero_stat_label">адаптив под все устройства</span>
-                    </li>
-                    <li class="hero_stat">
-                        <span class="hero_stat_value">Бесплатно</span>
-                        <span class="hero_stat_label">консультация и смета проекта</span>
+                        <span class="hero_stat_value" data-i18n="hero.stat3.value">100%</span>
+                        <span class="hero_stat_label" data-i18n="hero.stat3.label">mobile-ready layouts</span>
                     </li>
                 </ul>
             </div>
@@ -119,402 +116,253 @@
 
         <section id="services" class="section">
             <div class="container">
-                <p class="section_label reveal">Разработка</p>
-                <h2 class="section_title reveal">Что мы делаем</h2>
-                <p class="section_description reveal">
-                    Подбираем формат под вашу задачу — от простого лендинга до полноценного корпоративного сайта.
-                </p>
+                <p class="section_label reveal" data-i18n="services.label">Services</p>
+                <h2 class="section_title reveal" data-i18n="services.title">What we build</h2>
+                <p class="section_description reveal" data-i18n="services.desc">One clear offer per format — no noise.</p>
 
                 <div class="services_grid">
                     <article class="service_card reveal">
                         <span class="service_number">01</span>
-                        <h3 class="service_title">Лендинги</h3>
-                        <p class="service_text">Одностраничные сайты для продаж, услуг и рекламных кампаний. Быстрый запуск и высокая конверсия.</p>
+                        <h3 class="service_title" data-i18n="s1.title">Landing pages & SaaS MVPs</h3>
+                        <p class="service_text" data-i18n="s1.text">Single-page sites for leads and product launches.</p>
                         <ul class="service_list">
-                            <li>Уникальный дизайн</li>
-                            <li>Форма заявки</li>
-                            <li>SEO-база</li>
+                            <li data-i18n="s1.l1">Conversion-focused structure</li>
+                            <li data-i18n="s1.l2">Contact form + Telegram</li>
+                            <li data-i18n="s1.l3">SEO basics</li>
                         </ul>
                     </article>
                     <article class="service_card reveal">
                         <span class="service_number">02</span>
-                        <h3 class="service_title">Корпоративные сайты</h3>
-                        <p class="service_text">Многостраничные сайты для компаний: услуги, о компании, портфолио, контакты и интеграции.</p>
+                        <h3 class="service_title" data-i18n="s2.title">Corporate websites</h3>
+                        <p class="service_text" data-i18n="s2.text">Multi-page sites that build B2B trust.</p>
                         <ul class="service_list">
-                            <li>До 7 страниц</li>
-                            <li>CMS или статика</li>
-                            <li>Аналитика</li>
+                            <li data-i18n="s2.l1">Up to 7 pages</li>
+                            <li data-i18n="s2.l2">CMS or static</li>
+                            <li data-i18n="s2.l3">Analytics setup</li>
                         </ul>
                     </article>
                     <article class="service_card reveal">
                         <span class="service_number">03</span>
-                        <h3 class="service_title">Интернет-магазины</h3>
-                        <p class="service_text">Каталог, корзина, оплата и личный кабинет. Готовое решение для продажи товаров онлайн.</p>
+                        <h3 class="service_title" data-i18n="s3.title">E-commerce & dashboards</h3>
+                        <p class="service_text" data-i18n="s3.text">Catalog, cart and admin for online sales.</p>
                         <ul class="service_list">
-                            <li>Каталог товаров</li>
-                            <li>Онлайн-оплата</li>
-                            <li>Админ-панель</li>
+                            <li data-i18n="s3.l1">Product catalog</li>
+                            <li data-i18n="s3.l2">Cart & checkout flow</li>
+                            <li data-i18n="s3.l3">Admin / KPI view</li>
                         </ul>
                     </article>
                     <article class="service_card reveal">
                         <span class="service_number">04</span>
-                        <h3 class="service_title">Редизайн и доработка</h3>
-                        <p class="service_text">Обновим устаревший сайт: новый дизайн, скорость, мобильная версия и современный код.</p>
+                        <h3 class="service_title" data-i18n="s4.title">WordPress & automation</h3>
+                        <p class="service_text" data-i18n="s4.text">Blog-ready WP plus form → Telegram workflows.</p>
                         <ul class="service_list">
-                            <li>Аудит текущего сайта</li>
-                            <li>Ускорение загрузки</li>
-                            <li>Новый UI</li>
+                            <li data-i18n="s4.l1">WordPress setup</li>
+                            <li data-i18n="s4.l2">Theme customization</li>
+                            <li data-i18n="s4.l3">Lead automation</li>
                         </ul>
                     </article>
                 </div>
 
                 <div class="process reveal">
-                    <h3 class="process_title">Как мы работаем</h3>
+                    <h3 class="process_title" data-i18n="process.title">How we work</h3>
                     <ol class="process_steps">
                         <li class="process_step">
-                            <span class="process_step_name">Бриф</span>
-                            <span class="process_step_text">Обсуждаем задачу, цели и сроки</span>
+                            <span class="process_step_name" data-i18n="p1.name">Brief</span>
+                            <span class="process_step_text" data-i18n="p1.text">Goals, audience, timeline</span>
                         </li>
                         <li class="process_step">
-                            <span class="process_step_name">Дизайн</span>
-                            <span class="process_step_text">Согласовываем макет и структуру</span>
+                            <span class="process_step_name" data-i18n="p2.name">Design</span>
+                            <span class="process_step_text" data-i18n="p2.text">Structure and visual direction</span>
                         </li>
                         <li class="process_step">
-                            <span class="process_step_name">Разработка</span>
-                            <span class="process_step_text">Вёрстка, адаптив, тестирование</span>
+                            <span class="process_step_name" data-i18n="p3.name">Build</span>
+                            <span class="process_step_text" data-i18n="p3.text">Code, responsive, QA</span>
                         </li>
                         <li class="process_step">
-                            <span class="process_step_name">Запуск</span>
-                            <span class="process_step_text">Публикация и передача проекта</span>
+                            <span class="process_step_name" data-i18n="p4.name">Launch</span>
+                            <span class="process_step_text" data-i18n="p4.text">Deploy and handoff</span>
                         </li>
                     </ol>
                 </div>
             </div>
         </section>
 
-        <section id="portfolio" class="section">
+        <section id="portfolio" class="section section_portfolio">
             <div class="container">
-                <p class="section_label reveal">Портфолио</p>
-                <h2 class="section_title reveal">Примеры проектов</h2>
-                <p class="section_description reveal">
-                    Демонстрация того, как может выглядеть ваш сайт — не реальные заказы,
-                    а ориентир по структуре и стилю для каждого формата.
-                </p>
+                <p class="section_label reveal" data-i18n="portfolio.label">Selected work</p>
+                <h2 class="section_title reveal" data-i18n="portfolio.title">Case studies</h2>
+                <p class="section_description reveal" data-i18n="portfolio.desc">Five demos — one per service type.</p>
 
                 <div class="portfolio_grid" id="portfolio-grid">
-                    <article class="portfolio_card reveal">
+                    <article class="portfolio_card portfolio_card_case reveal">
                         <a href="portfolio/example-vizitka.html" class="portfolio_preview_link" target="_blank" rel="noopener noreferrer">
-                            <img class="portfolio_preview" src="assets/portfolio/example-vizitka.svg" alt="Пример сайта-визитки" width="800" height="500" loading="lazy">
-                            <span class="portfolio_badge">Пример</span>
+                            <img class="portfolio_preview" src="assets/portfolio/example-vizitka.svg" alt="" width="800" height="500" loading="lazy">
+                            <span class="portfolio_badge" data-i18n="case.demo">Demo</span>
                         </a>
                         <div class="portfolio_content">
-                            <span class="portfolio_tag">Визитка · от 7 000 ₽</span>
-                            <h3 class="portfolio_title">Maison &amp; Partners</h3>
-                            <p class="portfolio_text">Премиальная одностраничная визитка — serif-типографика, анимации и акцент на статус.</p>
-                            <a href="portfolio/example-vizitka.html" class="portfolio_link" target="_blank" rel="noopener noreferrer">Смотреть пример →</a>
+                            <span class="portfolio_tag" data-i18n="c1.tag">Business card · from $90</span>
+                            <h3 class="portfolio_title" data-i18n="c1.title">Maison &amp; Partners</h3>
+                            <dl class="portfolio_case">
+                                <div><dt data-i18n="case.problem">Challenge</dt><dd data-i18n="c1.problem">Law firm needed premium presence without a heavy site.</dd></div>
+                                <div><dt data-i18n="case.solution">Solution</dt><dd data-i18n="c1.solution">Single-screen layout with serif typography and clear CTA.</dd></div>
+                                <div><dt data-i18n="case.stack">Stack</dt><dd data-i18n="c1.stack">HTML · CSS · responsive</dd></div>
+                                <div><dt data-i18n="case.result">Outcome</dt><dd data-i18n="c1.result">Status-led design, mobile-first, fast load</dd></div>
+                            </dl>
+                            <a href="portfolio/example-vizitka.html" class="portfolio_link" target="_blank" rel="noopener noreferrer" data-i18n="case.view">Open demo →</a>
                         </div>
                     </article>
-                    <article class="portfolio_card reveal">
+
+                    <article class="portfolio_card portfolio_card_case reveal">
                         <a href="portfolio/example-landing.html" class="portfolio_preview_link" target="_blank" rel="noopener noreferrer">
-                            <img class="portfolio_preview" src="assets/portfolio/example-landing.svg" alt="Пример лендинга" width="800" height="500" loading="lazy">
-                            <span class="portfolio_badge">Пример</span>
+                            <img class="portfolio_preview" src="assets/portfolio/example-landing.svg" alt="" width="800" height="500" loading="lazy">
+                            <span class="portfolio_badge" data-i18n="case.demo">Demo</span>
                         </a>
                         <div class="portfolio_content">
-                            <span class="portfolio_tag">Лендинг · от 10 000 ₽</span>
-                            <h3 class="portfolio_title">Pulse — fitness app</h3>
-                            <p class="portfolio_text">Яркий SaaS-лендинг: градиенты, mockup приложения, bento-сетка и блок тарифов.</p>
-                            <a href="portfolio/example-landing.html" class="portfolio_link" target="_blank" rel="noopener noreferrer">Смотреть пример →</a>
+                            <span class="portfolio_tag" data-i18n="c2.tag">Landing / SaaS · from $130</span>
+                            <h3 class="portfolio_title" data-i18n="c2.title">Pulse — fitness app</h3>
+                            <dl class="portfolio_case">
+                                <div><dt data-i18n="case.problem">Challenge</dt><dd data-i18n="c2.problem">App needed a landing that sells trials fast.</dd></div>
+                                <div><dt data-i18n="case.solution">Solution</dt><dd data-i18n="c2.solution">Hero + mockup, bento features, pricing block.</dd></div>
+                                <div><dt data-i18n="case.stack">Stack</dt><dd data-i18n="c2.stack">HTML · CSS · JS animations</dd></div>
+                                <div><dt data-i18n="case.result">Outcome</dt><dd data-i18n="c2.result">Conversion layout ready for ad traffic</dd></div>
+                            </dl>
+                            <a href="portfolio/example-landing.html" class="portfolio_link" target="_blank" rel="noopener noreferrer" data-i18n="case.view">Open demo →</a>
                         </div>
                     </article>
-                    <article class="portfolio_card reveal">
+
+                    <article class="portfolio_card portfolio_card_case reveal">
                         <a href="portfolio/example-corporate.html" class="portfolio_preview_link" target="_blank" rel="noopener noreferrer">
-                            <img class="portfolio_preview" src="assets/portfolio/example-corporate.svg" alt="Пример корпоративного сайта" width="800" height="500" loading="lazy">
-                            <span class="portfolio_badge">Пример</span>
+                            <img class="portfolio_preview" src="assets/portfolio/example-corporate.svg" alt="" width="800" height="500" loading="lazy">
+                            <span class="portfolio_badge" data-i18n="case.demo">Demo</span>
                         </a>
                         <div class="portfolio_content">
-                            <span class="portfolio_tag">Корпоративный · от 28 000 ₽</span>
-                            <h3 class="portfolio_title">ATLAS Build</h3>
-                            <p class="portfolio_text">Индустриальный стиль: split-hero, услуги, горизонтальные проекты, команда и форма.</p>
-                            <a href="portfolio/example-corporate.html" class="portfolio_link" target="_blank" rel="noopener noreferrer">Смотреть пример →</a>
+                            <span class="portfolio_tag" data-i18n="c3.tag">Corporate · from $350</span>
+                            <h3 class="portfolio_title" data-i18n="c3.title">ATLAS Build</h3>
+                            <dl class="portfolio_case">
+                                <div><dt data-i18n="case.problem">Challenge</dt><dd data-i18n="c3.problem">Construction company had to look credible to B2B buyers.</dd></div>
+                                <div><dt data-i18n="case.solution">Solution</dt><dd data-i18n="c3.solution">Split hero, services, projects, team, lead form.</dd></div>
+                                <div><dt data-i18n="case.stack">Stack</dt><dd data-i18n="c3.stack">HTML · CSS · scroll UX</dd></div>
+                                <div><dt data-i18n="case.result">Outcome</dt><dd data-i18n="c3.result">Industrial brand feel, structured lead flow</dd></div>
+                            </dl>
+                            <a href="portfolio/example-corporate.html" class="portfolio_link" target="_blank" rel="noopener noreferrer" data-i18n="case.view">Open demo →</a>
                         </div>
                     </article>
-                    <article class="portfolio_card reveal">
+
+                    <article class="portfolio_card portfolio_card_case reveal">
                         <a href="portfolio/example-shop.html" class="portfolio_preview_link" target="_blank" rel="noopener noreferrer">
-                            <img class="portfolio_preview" src="assets/portfolio/example-shop.svg" alt="Пример интернет-магазина" width="800" height="500" loading="lazy">
-                            <span class="portfolio_badge">Пример</span>
+                            <img class="portfolio_preview" src="assets/portfolio/example-shop.svg" alt="" width="800" height="500" loading="lazy">
+                            <span class="portfolio_badge" data-i18n="case.demo">Demo</span>
                         </a>
                         <div class="portfolio_content">
-                            <span class="portfolio_tag">Магазин · от 55 000 ₽</span>
-                            <h3 class="portfolio_title">KŌRA — organic store</h3>
-                            <p class="portfolio_text">Удобная витрина: поиск, фильтры, корзина и checkout. Плюс демо админ-панели с заказами, KPI и аналитикой.</p>
+                            <span class="portfolio_tag" data-i18n="c4.tag">E-commerce · from $690</span>
+                            <h3 class="portfolio_title" data-i18n="c4.title">KŌRA — organic store</h3>
+                            <dl class="portfolio_case">
+                                <div><dt data-i18n="case.problem">Challenge</dt><dd data-i18n="c4.problem">Brand needed online sales with cart and filters.</dd></div>
+                                <div><dt data-i18n="case.solution">Solution</dt><dd data-i18n="c4.solution">Storefront with search, filters, cart and checkout flow.</dd></div>
+                                <div><dt data-i18n="case.stack">Stack</dt><dd data-i18n="c4.stack">HTML · CSS · JS cart</dd></div>
+                                <div><dt data-i18n="case.result">Outcome</dt><dd data-i18n="c4.result">Full e-commerce UX demo</dd></div>
+                            </dl>
                             <div class="portfolio_links">
-                                <a href="portfolio/example-shop.html" class="portfolio_link" target="_blank" rel="noopener noreferrer">Магазин →</a>
-                                <a href="portfolio/example-shop-admin.html" class="portfolio_link portfolio_link_secondary" target="_blank" rel="noopener noreferrer">Админка →</a>
+                                <a href="portfolio/example-shop.html" class="portfolio_link" target="_blank" rel="noopener noreferrer" data-i18n="case.shop">Store →</a>
+                                <a href="portfolio/example-shop-admin.html" class="portfolio_link portfolio_link_secondary" target="_blank" rel="noopener noreferrer" data-i18n="case.admin">Admin →</a>
                             </div>
                         </div>
                     </article>
-                    <article class="portfolio_card portfolio_card_extra reveal">
-                        <a href="portfolio/example-restaurant.html" class="portfolio_preview_link" target="_blank" rel="noopener noreferrer">
-                            <img class="portfolio_preview" src="assets/portfolio/example-restaurant.svg" alt="Пример сайта ресторана" width="800" height="500" loading="lazy">
-                            <span class="portfolio_badge">Пример</span>
-                        </a>
-                        <div class="portfolio_content">
-                            <span class="portfolio_tag">Лендинг · от 10 000 ₽</span>
-                            <h3 class="portfolio_title">NOVA — restaurant</h3>
-                            <p class="portfolio_text">Тёплая гастрономическая эстетика: hero, статистика, меню, цитата шефа и блок бронирования.</p>
-                            <a href="portfolio/example-restaurant.html" class="portfolio_link" target="_blank" rel="noopener noreferrer">Смотреть пример →</a>
-                        </div>
-                    </article>
-                    <article class="portfolio_card portfolio_card_extra reveal">
-                        <a href="portfolio/example-barber.html" class="portfolio_preview_link" target="_blank" rel="noopener noreferrer">
-                            <img class="portfolio_preview" src="assets/portfolio/example-barber.svg" alt="Пример сайта барбершопа" width="800" height="500" loading="lazy">
-                            <span class="portfolio_badge">Пример</span>
-                        </a>
-                        <div class="portfolio_content">
-                            <span class="portfolio_tag">Визитка · от 7 000 ₽</span>
-                            <h3 class="portfolio_title">FRAME — barbershop</h3>
-                            <p class="portfolio_text">Мужской премиум-стиль: галерея, прайс-лист, команда мастеров и запись в строгой рамке.</p>
-                            <a href="portfolio/example-barber.html" class="portfolio_link" target="_blank" rel="noopener noreferrer">Смотреть пример →</a>
-                        </div>
-                    </article>
-                    <article class="portfolio_card portfolio_card_extra reveal">
-                        <a href="portfolio/example-clinic.html" class="portfolio_preview_link" target="_blank" rel="noopener noreferrer">
-                            <img class="portfolio_preview" src="assets/portfolio/example-clinic.svg" alt="Пример сайта клиники" width="800" height="500" loading="lazy">
-                            <span class="portfolio_badge">Пример</span>
-                        </a>
-                        <div class="portfolio_content">
-                            <span class="portfolio_tag">Лендинг · от 10 000 ₽</span>
-                            <h3 class="portfolio_title">LUMEN — dental clinic</h3>
-                            <p class="portfolio_text">Светлый медицинский дизайн: онлайн-запись, услуги, команда врачей и пошаговый процесс визита.</p>
-                            <a href="portfolio/example-clinic.html" class="portfolio_link" target="_blank" rel="noopener noreferrer">Смотреть пример →</a>
-                        </div>
-                    </article>
-                    <article class="portfolio_card portfolio_card_extra reveal">
-                        <a href="portfolio/example-realestate.html" class="portfolio_preview_link" target="_blank" rel="noopener noreferrer">
-                            <img class="portfolio_preview" src="assets/portfolio/example-realestate.svg" alt="Пример сайта недвижимости" width="800" height="500" loading="lazy">
-                            <span class="portfolio_badge">Пример</span>
-                        </a>
-                        <div class="portfolio_content">
-                            <span class="portfolio_tag">Корпоратив · от 28 000 ₽</span>
-                            <h3 class="portfolio_title">STERLING — real estate</h3>
-                            <p class="portfolio_text">Премиальная недвижимость: cinematic hero, каталог объектов, статистика агентства и элегантная типографика.</p>
-                            <a href="portfolio/example-realestate.html" class="portfolio_link" target="_blank" rel="noopener noreferrer">Смотреть пример →</a>
-                        </div>
-                    </article>
-                    <article class="portfolio_card portfolio_card_extra reveal">
-                        <a href="portfolio/example-photo.html" class="portfolio_preview_link" target="_blank" rel="noopener noreferrer">
-                            <img class="portfolio_preview" src="assets/portfolio/example-photo.svg" alt="Пример сайта фотографа" width="800" height="500" loading="lazy">
-                            <span class="portfolio_badge">Пример</span>
-                        </a>
-                        <div class="portfolio_content">
-                            <span class="portfolio_tag">Визитка · от 7 000 ₽</span>
-                            <h3 class="portfolio_title">LUMINA — photographer</h3>
-                            <p class="portfolio_text">Editorial-стиль для фотографа: галерея, пакеты съёмок, serif-типографика и минималистичная подача.</p>
-                            <a href="portfolio/example-photo.html" class="portfolio_link" target="_blank" rel="noopener noreferrer">Смотреть пример →</a>
-                        </div>
-                    </article>
-                    <article class="portfolio_card portfolio_card_extra reveal">
-                        <a href="portfolio/example-course.html" class="portfolio_preview_link" target="_blank" rel="noopener noreferrer">
-                            <img class="portfolio_preview" src="assets/portfolio/example-course.svg" alt="Пример лендинга онлайн-курса" width="800" height="500" loading="lazy">
-                            <span class="portfolio_badge">Пример</span>
-                        </a>
-                        <div class="portfolio_content">
-                            <span class="portfolio_tag">Лендинг · от 10 000 ₽</span>
-                            <h3 class="portfolio_title">MENTOR — online course</h3>
-                            <p class="portfolio_text">EdTech-лендинг: программа курса, тарифы, social proof и акцент на конверсию в заявку.</p>
-                            <a href="portfolio/example-course.html" class="portfolio_link" target="_blank" rel="noopener noreferrer">Смотреть пример →</a>
-                        </div>
-                    </article>
-                    <article class="portfolio_card portfolio_card_extra reveal">
-                        <a href="portfolio/example-hotel.html" class="portfolio_preview_link" target="_blank" rel="noopener noreferrer">
-                            <img class="portfolio_preview" src="assets/portfolio/example-hotel.svg" alt="Пример сайта отеля" width="800" height="500" loading="lazy">
-                            <span class="portfolio_badge">Пример</span>
-                        </a>
-                        <div class="portfolio_content">
-                            <span class="portfolio_tag">Лендинг · от 10 000 ₽</span>
-                            <h3 class="portfolio_title">AMBER — boutique hotel</h3>
-                            <p class="portfolio_text">Бутик-отель: cinematic hero, каталог номеров, amenities и премиальная serif-эстетика.</p>
-                            <a href="portfolio/example-hotel.html" class="portfolio_link" target="_blank" rel="noopener noreferrer">Смотреть пример →</a>
-                        </div>
-                    </article>
-                    <article class="portfolio_card portfolio_card_extra reveal">
-                        <a href="portfolio/example-salon.html" class="portfolio_preview_link" target="_blank" rel="noopener noreferrer">
-                            <img class="portfolio_preview" src="assets/portfolio/example-salon.svg" alt="Пример сайта салона красоты" width="800" height="500" loading="lazy">
-                            <span class="portfolio_badge">Пример</span>
-                        </a>
-                        <div class="portfolio_content">
-                            <span class="portfolio_tag">Визитка · от 7 000 ₽</span>
-                            <h3 class="portfolio_title">GLOW — beauty studio</h3>
-                            <p class="portfolio_text">Женский beauty-салон: blush-палитра, прайс-лист, Italiana-типографика и онлайн-запись.</p>
-                            <a href="portfolio/example-salon.html" class="portfolio_link" target="_blank" rel="noopener noreferrer">Смотреть пример →</a>
-                        </div>
-                    </article>
-                    <article class="portfolio_card portfolio_card_extra reveal">
-                        <a href="portfolio/example-finance.html" class="portfolio_preview_link" target="_blank" rel="noopener noreferrer">
-                            <img class="portfolio_preview" src="assets/portfolio/example-finance.svg" alt="Пример сайта бухгалтерии" width="800" height="500" loading="lazy">
-                            <span class="portfolio_badge">Пример</span>
-                        </a>
-                        <div class="portfolio_content">
-                            <span class="portfolio_tag">Корпоратив · от 28 000 ₽</span>
-                            <h3 class="portfolio_title">LEDGER — accounting</h3>
-                            <p class="portfolio_text">Финансовая компания: доверие, dashboard-карточка, услуги и строгая corporate-эстетика.</p>
-                            <a href="portfolio/example-finance.html" class="portfolio_link" target="_blank" rel="noopener noreferrer">Смотреть пример →</a>
-                        </div>
-                    </article>
-                    <article class="portfolio_card portfolio_card_extra reveal">
-                        <a href="portfolio/example-agency.html" class="portfolio_preview_link" target="_blank" rel="noopener noreferrer">
-                            <img class="portfolio_preview" src="assets/portfolio/example-agency.svg" alt="Пример сайта digital-агентства" width="800" height="500" loading="lazy">
-                            <span class="portfolio_badge">Пример</span>
-                        </a>
-                        <div class="portfolio_content">
-                            <span class="portfolio_tag">Корпоратив · от 28 000 ₽</span>
-                            <h3 class="portfolio_title">NEXUS — digital agency</h3>
-                            <p class="portfolio_text">IT-агентство: bold-типографика, lime-акцент, сетка кейсов и stats — стиль стартапов.</p>
-                            <a href="portfolio/example-agency.html" class="portfolio_link" target="_blank" rel="noopener noreferrer">Смотреть пример →</a>
-                        </div>
-                    </article>
-                    <article class="portfolio_card portfolio_card_extra reveal">
-                        <a href="portfolio/example-yoga.html" class="portfolio_preview_link" target="_blank" rel="noopener noreferrer">
-                            <img class="portfolio_preview" src="assets/portfolio/example-yoga.svg" alt="Пример сайта йога-студии" width="800" height="500" loading="lazy">
-                            <span class="portfolio_badge">Пример</span>
-                        </a>
-                        <div class="portfolio_content">
-                            <span class="portfolio_tag">Лендинг · от 10 000 ₽</span>
-                            <h3 class="portfolio_title">AURA — yoga studio</h3>
-                            <p class="portfolio_text">Wellness-студия: sage-палитра, расписание занятий, круговой hero и спокойная атмосфера.</p>
-                            <a href="portfolio/example-yoga.html" class="portfolio_link" target="_blank" rel="noopener noreferrer">Смотреть пример →</a>
-                        </div>
-                    </article>
-                    <article class="portfolio_card portfolio_card_extra reveal">
-                        <a href="portfolio/example-industrial.html" class="portfolio_preview_link" target="_blank" rel="noopener noreferrer">
-                            <img class="portfolio_preview" src="assets/portfolio/example-industrial.svg" alt="Пример промышленного корпоративного сайта" width="800" height="500" loading="lazy">
-                            <span class="portfolio_badge">Пример</span>
-                        </a>
-                        <div class="portfolio_content">
-                            <span class="portfolio_tag">Корпоратив · от 28 000 ₽</span>
-                            <h3 class="portfolio_title">FORGE — industrial</h3>
-                            <p class="portfolio_text">Промышленная компания: steel-палитра, каталог продукции, статистика завода и B2B-эстетика.</p>
-                            <a href="portfolio/example-industrial.html" class="portfolio_link" target="_blank" rel="noopener noreferrer">Смотреть пример →</a>
-                        </div>
-                    </article>
-                    <article class="portfolio_card portfolio_card_extra reveal">
-                        <a href="portfolio/example-electronics.html" class="portfolio_preview_link" target="_blank" rel="noopener noreferrer">
-                            <img class="portfolio_preview" src="assets/portfolio/example-electronics.svg" alt="Пример магазина электроники" width="800" height="500" loading="lazy">
-                            <span class="portfolio_badge">Пример</span>
-                        </a>
-                        <div class="portfolio_content">
-                            <span class="portfolio_tag">Магазин · от 55 000 ₽</span>
-                            <h3 class="portfolio_title">VOLT — electronics</h3>
-                            <p class="portfolio_text">Dark-tech магазин гаджетов: каталог, фильтры, корзина и cyan-акценты в стиле Apple Store.</p>
-                            <a href="portfolio/example-electronics.html" class="portfolio_link" target="_blank" rel="noopener noreferrer">Смотреть пример →</a>
-                        </div>
-                    </article>
-                    <article class="portfolio_card portfolio_card_extra reveal">
-                        <a href="portfolio/example-wine.html" class="portfolio_preview_link" target="_blank" rel="noopener noreferrer">
-                            <img class="portfolio_preview" src="assets/portfolio/example-wine.svg" alt="Пример винного магазина" width="800" height="500" loading="lazy">
-                            <span class="portfolio_badge">Пример</span>
-                        </a>
-                        <div class="portfolio_content">
-                            <span class="portfolio_tag">Магазин · от 55 000 ₽</span>
-                            <h3 class="portfolio_title">VINUM — wine shop</h3>
-                            <p class="portfolio_text">Премиальный винный магазин: burgundy-палитра, serif-типографика, фильтры и каталог сомелье.</p>
-                            <a href="portfolio/example-wine.html" class="portfolio_link" target="_blank" rel="noopener noreferrer">Смотреть пример →</a>
-                        </div>
-                    </article>
-                    <article class="portfolio_card portfolio_card_extra reveal">
-                        <a href="portfolio/example-pets.html" class="portfolio_preview_link" target="_blank" rel="noopener noreferrer">
-                            <img class="portfolio_preview" src="assets/portfolio/example-pets.svg" alt="Пример зоомагазина" width="800" height="500" loading="lazy">
-                            <span class="portfolio_badge">Пример</span>
-                        </a>
-                        <div class="portfolio_content">
-                            <span class="portfolio_tag">Магазин · от 55 000 ₽</span>
-                            <h3 class="portfolio_title">PAWS — pet store</h3>
-                            <p class="portfolio_text">Зоомагазин: дружелюбный UI, категории по питомцам, яркие карточки товаров и программа лояльности.</p>
-                            <a href="portfolio/example-pets.html" class="portfolio_link" target="_blank" rel="noopener noreferrer">Смотреть пример →</a>
-                        </div>
-                    </article>
-                </div>
 
-                <div class="portfolio_actions reveal">
-                    <button type="button" class="btn btn_secondary" id="portfolio-toggle" aria-expanded="false" aria-controls="portfolio-grid">
-                        Показать ещё
-                    </button>
+                    <article class="portfolio_card portfolio_card_case reveal portfolio_card_full">
+                        <a href="portfolio/example-shop-admin.html" class="portfolio_preview_link" target="_blank" rel="noopener noreferrer">
+                            <img class="portfolio_preview" src="assets/portfolio/example-shop.svg" alt="" width="800" height="500" loading="lazy">
+                            <span class="portfolio_badge" data-i18n="case.demo">Demo</span>
+                        </a>
+                        <div class="portfolio_content">
+                            <span class="portfolio_tag" data-i18n="c5.tag">Dashboard · from $690</span>
+                            <h3 class="portfolio_title" data-i18n="c5.title">KŌRA Admin</h3>
+                            <dl class="portfolio_case">
+                                <div><dt data-i18n="case.problem">Challenge</dt><dd data-i18n="c5.problem">Owner needs order overview without complex ERP.</dd></div>
+                                <div><dt data-i18n="case.solution">Solution</dt><dd data-i18n="c5.solution">Dashboard: orders, filters, revenue chart.</dd></div>
+                                <div><dt data-i18n="case.stack">Stack</dt><dd data-i18n="c5.stack">HTML · CSS · JS charts</dd></div>
+                                <div><dt data-i18n="case.result">Outcome</dt><dd data-i18n="c5.result">Premium operations panel showcase</dd></div>
+                            </dl>
+                            <a href="portfolio/example-shop-admin.html" class="portfolio_link" target="_blank" rel="noopener noreferrer" data-i18n="case.view">Open demo →</a>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
 
         <section id="pricing" class="section">
             <div class="container">
-                <p class="section_label reveal">Цены</p>
-                <h2 class="section_title reveal">Пакеты услуг</h2>
-                <p class="section_description reveal">Прозрачные цены без скрытых платежей. Точная стоимость — после обсуждения задачи.</p>
+                <p class="section_label reveal" data-i18n="pricing.label">Pricing</p>
+                <h2 class="section_title reveal" data-i18n="pricing.title">Packages</h2>
+                <p class="section_description reveal" data-i18n="pricing.desc">Fixed starting prices. Final quote after a brief.</p>
 
                 <div class="pricing_grid">
                     <article class="pricing_card reveal">
-                        <h3 class="pricing_name">Визитка</h3>
-                        <p class="pricing_price">от 7 000 ₽</p>
-                        <p class="pricing_subtitle">Минимум для старта онлайн</p>
+                        <h3 class="pricing_name" data-i18n="pr1.name">Business card</h3>
+                        <p class="pricing_price" data-i18n="pr1.price">from $90</p>
+                        <p class="pricing_price_sub" data-i18n="pr1.priceSub">≈ 7 000 ₽</p>
+                        <p class="pricing_subtitle" data-i18n="pr1.sub">Minimum online presence</p>
                         <ul class="pricing_list">
-                            <li>1 экран + контакты</li>
-                            <li>Адаптив под телефон</li>
-                            <li>Кнопка / форма связи</li>
-                            <li>Срок: 2–3 дня</li>
+                            <li data-i18n="pr1.l1">1 screen + contacts</li>
+                            <li data-i18n="pr1.l2">Mobile responsive</li>
+                            <li data-i18n="pr1.l3">Form or messenger CTA</li>
+                            <li data-i18n="pr1.l4">Timeline: 2–3 days</li>
                         </ul>
                         <div class="pricing_actions">
-                            <a href="portfolio/example-vizitka.html" class="pricing_example" target="_blank" rel="noopener noreferrer">Смотреть пример →</a>
-                            <a href="#contacts" class="btn btn_secondary btn_full" data-goal="pricing_vizitka">Выбрать</a>
+                            <a href="portfolio/example-vizitka.html" class="pricing_example" target="_blank" rel="noopener noreferrer" data-i18n="pr.example">View demo →</a>
+                            <a href="#contacts" class="btn btn_secondary btn_full" data-goal="pricing_vizitka" data-i18n="pr.choose">Get started</a>
                         </div>
                     </article>
                     <article class="pricing_card pricing_card_featured reveal">
-                        <span class="pricing_badge">Популярный</span>
-                        <h3 class="pricing_name">Старт</h3>
-                        <p class="pricing_price">от 10 000 ₽</p>
-                        <p class="pricing_subtitle">Лендинг для быстрого старта</p>
+                        <span class="pricing_badge" data-i18n="pr2.badge">Popular</span>
+                        <h3 class="pricing_name" data-i18n="pr2.name">Start</h3>
+                        <p class="pricing_price" data-i18n="pr2.price">from $130</p>
+                        <p class="pricing_price_sub" data-i18n="pr2.priceSub">≈ 10 000 ₽</p>
+                        <p class="pricing_subtitle" data-i18n="pr2.sub">Landing for quick launch</p>
                         <ul class="pricing_list">
-                            <li>1 страница, до 6 блоков</li>
-                            <li>Адаптивный дизайн</li>
-                            <li>Форма обратной связи</li>
-                            <li>Базовая SEO-настройка</li>
-                            <li>Срок: 5–7 дней</li>
+                            <li data-i18n="pr2.l1">1 page, up to 6 blocks</li>
+                            <li data-i18n="pr2.l2">Contact form + Telegram</li>
+                            <li data-i18n="pr2.l3">Basic SEO</li>
+                            <li data-i18n="pr2.l4">Timeline: 5–7 days</li>
                         </ul>
                         <div class="pricing_actions">
-                            <a href="portfolio/example-landing.html" class="pricing_example" target="_blank" rel="noopener noreferrer">Смотреть пример →</a>
-                            <a href="#contacts" class="btn btn_primary btn_full" data-goal="pricing_start">Выбрать</a>
+                            <a href="portfolio/example-landing.html" class="pricing_example" target="_blank" rel="noopener noreferrer" data-i18n="pr.example">View demo →</a>
+                            <a href="#contacts" class="btn btn_primary btn_full" data-goal="pricing_start" data-i18n="pr.choose">Get started</a>
                         </div>
                     </article>
                     <article class="pricing_card reveal">
-                        <h3 class="pricing_name">Бизнес</h3>
-                        <p class="pricing_price">от 28 000 ₽</p>
-                        <p class="pricing_subtitle">Сайт для компании</p>
+                        <h3 class="pricing_name" data-i18n="pr3.name">Business</h3>
+                        <p class="pricing_price" data-i18n="pr3.price">from $350</p>
+                        <p class="pricing_price_sub" data-i18n="pr3.priceSub">≈ 28 000 ₽</p>
+                        <p class="pricing_subtitle" data-i18n="pr3.sub">Company website</p>
                         <ul class="pricing_list">
-                            <li>До 7 страниц</li>
-                            <li>Уникальный дизайн</li>
-                            <li>Интеграция с мессенджерами</li>
-                            <li>Яндекс.Метрика / Analytics</li>
-                            <li>Срок: 10–14 дней</li>
+                            <li data-i18n="pr3.l1">Up to 7 pages</li>
+                            <li data-i18n="pr3.l2">Custom design</li>
+                            <li data-i18n="pr3.l3">Analytics integration</li>
+                            <li data-i18n="pr3.l4">Timeline: 10–14 days</li>
                         </ul>
                         <div class="pricing_actions">
-                            <a href="portfolio/example-corporate.html" class="pricing_example" target="_blank" rel="noopener noreferrer">Смотреть пример →</a>
-                            <a href="#contacts" class="btn btn_secondary btn_full" data-goal="pricing_business">Выбрать</a>
+                            <a href="portfolio/example-corporate.html" class="pricing_example" target="_blank" rel="noopener noreferrer" data-i18n="pr.example">View demo →</a>
+                            <a href="#contacts" class="btn btn_secondary btn_full" data-goal="pricing_business" data-i18n="pr.choose">Get started</a>
                         </div>
                     </article>
                     <article class="pricing_card reveal">
-                        <h3 class="pricing_name">Премиум</h3>
-                        <p class="pricing_price">от 55 000 ₽</p>
-                        <p class="pricing_subtitle">Магазин или сложный проект</p>
+                        <h3 class="pricing_name" data-i18n="pr4.name">Premium</h3>
+                        <p class="pricing_price" data-i18n="pr4.price">from $690</p>
+                        <p class="pricing_price_sub" data-i18n="pr4.priceSub">≈ 55 000 ₽</p>
+                        <p class="pricing_subtitle" data-i18n="pr4.sub">Store or complex build</p>
                         <ul class="pricing_list">
-                            <li>Интернет-магазин или CMS</li>
-                            <li>Личный кабинет / оплата</li>
-                            <li>Админ-панель</li>
-                            <li>Техподдержка 30 дней</li>
-                            <li>Срок: от 3 недель</li>
+                            <li data-i18n="pr4.l1">E-commerce or CMS</li>
+                            <li data-i18n="pr4.l2">Admin panel</li>
+                            <li data-i18n="pr4.l3">30-day support</li>
+                            <li data-i18n="pr4.l4">Timeline: 3+ weeks</li>
                         </ul>
                         <div class="pricing_actions">
                             <div class="pricing_examples">
-                                <a href="portfolio/example-shop.html" class="pricing_example" target="_blank" rel="noopener noreferrer">Магазин →</a>
-                                <a href="portfolio/example-shop-admin.html" class="pricing_example pricing_example_secondary" target="_blank" rel="noopener noreferrer">Админка →</a>
+                                <a href="portfolio/example-shop.html" class="pricing_example" target="_blank" rel="noopener noreferrer" data-i18n="case.shop">Store →</a>
+                                <a href="portfolio/example-shop-admin.html" class="pricing_example pricing_example_secondary" target="_blank" rel="noopener noreferrer" data-i18n="case.admin">Admin →</a>
                             </div>
-                            <a href="#contacts" class="btn btn_secondary btn_full" data-goal="pricing_premium">Выбрать</a>
+                            <a href="#contacts" class="btn btn_secondary btn_full" data-goal="pricing_premium" data-i18n="pr.choose">Get started</a>
                         </div>
                     </article>
                 </div>
@@ -523,25 +371,24 @@
 
         <section id="faq" class="section section_faq">
             <div class="container">
-                <p class="section_label reveal">FAQ</p>
-                <h2 class="section_title reveal">Частые вопросы</h2>
-
+                <p class="section_label reveal" data-i18n="faq.label">FAQ</p>
+                <h2 class="section_title reveal" data-i18n="faq.title">Common questions</h2>
                 <div class="faq_list reveal">
                     <details class="faq_item">
-                        <summary class="faq_question">Сколько времени занимает разработка?</summary>
-                        <p class="faq_answer">Визитка — 2–3 дня, лендинг — 5–7 дней, корпоративный сайт — 10–14 дней, интернет-магазин — от 3 недель. Точный срок зависит от объёма и согласований.</p>
+                        <summary class="faq_question" data-i18n="faq.q1">How long does a project take?</summary>
+                        <p class="faq_answer" data-i18n="faq.a1">Business card — 2–3 days, landing — 5–7 days.</p>
                     </details>
                     <details class="faq_item">
-                        <summary class="faq_question">Нужна ли предоплата?</summary>
-                        <p class="faq_answer">Да, обычно 50% перед началом работ и 50% после сдачи проекта. Для небольших лендингов возможна другая схема — обсудим индивидуально.</p>
+                        <summary class="faq_question" data-i18n="faq.q2">Do you require a deposit?</summary>
+                        <p class="faq_answer" data-i18n="faq.a2">Yes — typically 50% to start and 50% on delivery.</p>
                     </details>
                     <details class="faq_item">
-                        <summary class="faq_question">Что входит в стоимость?</summary>
-                        <p class="faq_answer">Дизайн, вёрстка, адаптив, базовая SEO-настройка, подключение формы и аналитики. Хостинг и домен оплачиваются отдельно или помогаем с выбором.</p>
+                        <summary class="faq_question" data-i18n="faq.q3">What is included?</summary>
+                        <p class="faq_answer" data-i18n="faq.a3">Design, development, responsive layout, basic SEO, form setup.</p>
                     </details>
                     <details class="faq_item">
-                        <summary class="faq_question">Можно ли вносить правки после запуска?</summary>
-                        <p class="faq_answer">В каждый пакет входит 2 раунда правок на этапе разработки. После запуска — техподдержка 30 дней (в пакете Премиум) или почасовая доработка.</p>
+                        <summary class="faq_question" data-i18n="faq.q4">Revisions after launch?</summary>
+                        <p class="faq_answer" data-i18n="faq.a4">Two revision rounds during development.</p>
                     </details>
                 </div>
             </div>
@@ -551,40 +398,38 @@
             <div class="container">
                 <div class="contacts_layout">
                     <div class="contacts_info">
-                        <p class="section_label reveal">Контакты</p>
-                        <h2 class="section_title reveal">Обсудим ваш проект</h2>
-                        <p class="section_description reveal">Оставьте заявку — ответим в течение рабочего дня.</p>
-
+                        <p class="section_label reveal" data-i18n="contacts.label">Contact</p>
+                        <h2 class="section_title reveal" data-i18n="contacts.title">Let's work together</h2>
+                        <p class="section_description reveal" data-i18n="contacts.desc">Tell us about your project.</p>
                         <ul class="contacts_list reveal">
                             <li class="contacts_item">
-                                <span class="contacts_item_label">Email</span>
+                                <span class="contacts_item_label" data-i18n="contacts.email">Email</span>
                                 <a href="mailto:hvzeweb@mail.ru" class="contacts_item_value">hvzeweb@mail.ru</a>
                             </li>
                             <li class="contacts_item">
-                                <span class="contacts_item_label">Telegram</span>
+                                <span class="contacts_item_label" data-i18n="contacts.tg">Telegram</span>
                                 <a href="https://t.me/HVZEweb" class="contacts_item_value" target="_blank" rel="noopener noreferrer">@HVZEweb</a>
                             </li>
                         </ul>
                     </div>
-
                     <form class="contact_form reveal" id="contact-form">
                         <label class="form_field">
-                            <span class="form_label">Имя</span>
-                            <input class="form_input" type="text" name="name" placeholder="Как к вам обращаться" required autocomplete="name">
+                            <span class="form_label" data-i18n="form.name">Name</span>
+                            <input class="form_input" type="text" name="name" data-i18n-placeholder="form.namePh" placeholder="Your name" required autocomplete="name">
                         </label>
                         <label class="form_field">
-                            <span class="form_label">Email или Telegram</span>
-                            <input class="form_input" type="text" name="contact" placeholder="email@example.com или @username" required autocomplete="email">
+                            <span class="form_label" data-i18n="form.contact">Email or Telegram</span>
+                            <input class="form_input" type="text" name="contact" data-i18n-placeholder="form.contactPh" placeholder="email@example.com" required autocomplete="email">
                         </label>
                         <label class="form_field">
-                            <span class="form_label">О проекте</span>
-                            <textarea class="form_input form_textarea" name="message" rows="4" placeholder="Кратко опишите задачу, сроки и бюджет" required></textarea>
+                            <span class="form_label" data-i18n="form.message">About the project</span>
+                            <textarea class="form_input form_textarea" name="message" rows="4" data-i18n-placeholder="form.messagePh" placeholder="Goal, timeline, budget" required></textarea>
                         </label>
                         <label class="form_checkbox">
                             <input type="checkbox" name="privacy" required>
-                            <span>Согласен с <a href="privacy.html" target="_blank">политикой конфиденциальности</a></span>
+                            <span><span data-i18n="form.privacy">I agree to the</span> <a href="privacy.html" target="_blank" data-i18n="form.privacyLink">privacy policy</a></span>
                         </label>
-                        <button type="submit" class="btn btn_primary btn_full" id="form-submit">Отправить заявку</button>
+                        <button type="submit" class="btn btn_primary btn_full" id="form-submit" data-i18n="form.submit">Send message</button>
                         <p class="form_note form_note_error" id="form-note-error" hidden></p>
                     </form>
                 </div>
@@ -595,22 +440,22 @@
     <footer class="footer">
         <div class="container footer_container">
             <a href="#hero" class="footer_logo">HVZE<span class="header_menu_logo_span">web</span></a>
-            <nav class="footer_nav" aria-label="Дополнительно">
-                <a href="privacy.html">Конфиденциальность</a>
-                <a href="#faq">FAQ</a>
+            <nav class="footer_nav" aria-label="Footer">
+                <a href="privacy.html" data-i18n="footer.privacy">Privacy</a>
+                <a href="#faq" data-i18n="footer.faq">FAQ</a>
             </nav>
             <p class="footer_copy">© 2026 HVZEweb</p>
         </div>
     </footer>
 
-    <a href="#contacts" class="floating_cta" aria-label="Написать нам" data-goal="floating_cta">
-        <span>Написать</span>
+    <a href="#contacts" class="floating_cta" data-goal="floating_cta">
+        <span data-i18n="floating">Contact</span>
     </a>
 
     <div class="form_modal" id="form-success-modal" hidden aria-hidden="true">
         <div class="form_modal_overlay" data-modal-close tabindex="-1"></div>
         <div class="form_modal_dialog" role="dialog" aria-modal="true" aria-labelledby="form-success-title">
-            <button type="button" class="form_modal_close" data-modal-close aria-label="Закрыть">
+            <button type="button" class="form_modal_close" data-modal-close aria-label="Close">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
                     <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                 </svg>
@@ -620,15 +465,14 @@
                     <path d="M8 16.5l5 5 11-11.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </div>
-            <h3 class="form_modal_title" id="form-success-title">Заявка отправлена</h3>
-            <p class="form_modal_text" id="form-success-text">
-                Спасибо! Мы получили ваше сообщение и свяжемся с вами в течение рабочего дня.
-            </p>
-            <button type="button" class="btn btn_primary btn_full" data-modal-close>Отлично</button>
+            <h3 class="form_modal_title" id="form-success-title" data-i18n="form.successTitle">Message sent</h3>
+            <p class="form_modal_text" id="form-success-text" data-i18n="form.successText">Thanks!</p>
+            <button type="button" class="btn btn_primary btn_full" data-modal-close data-i18n="form.successBtn">Great</button>
         </div>
     </div>
 
     <script src="js/config.js"></script>
+    <script src="js/i18n.js"></script>
     <script src="js/index.js"></script>
 </body>
 </html>

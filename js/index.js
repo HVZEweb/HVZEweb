@@ -15,6 +15,56 @@ const goalElements = document.querySelectorAll('[data-goal]');
 
 const MENU_ANIMATION_MS = 550;
 const config = window.SITE_CONFIG || {};
+const i18nDict = window.SITE_I18N || { en: {}, ru: {} };
+
+function getStoredLang() {
+    const saved = localStorage.getItem('hvze_lang');
+    if (saved === 'en' || saved === 'ru') return saved;
+    return config.defaultLang === 'ru' ? 'ru' : 'en';
+}
+
+let currentLang = getStoredLang();
+
+function t(key) {
+    return i18nDict[currentLang]?.[key] ?? i18nDict.en?.[key] ?? key;
+}
+
+function applyLanguage(lang) {
+    currentLang = lang === 'ru' ? 'ru' : 'en';
+    localStorage.setItem('hvze_lang', currentLang);
+    document.documentElement.lang = currentLang;
+
+    document.querySelectorAll('[data-i18n]').forEach((el) => {
+        const key = el.getAttribute('data-i18n');
+        if (key) el.textContent = t(key);
+    });
+
+    document.querySelectorAll('[data-i18n-html]').forEach((el) => {
+        const key = el.getAttribute('data-i18n-html');
+        if (key) el.innerHTML = t(key);
+    });
+
+    document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (key) el.placeholder = t(key);
+    });
+
+    document.title = t('meta.title');
+
+    document.querySelectorAll('.lang_switch_btn').forEach((btn) => {
+        btn.classList.toggle('is-active', btn.dataset.lang === currentLang);
+    });
+
+    if (burger && !mobileMenu?.classList.contains('is-open')) {
+        burger.setAttribute('aria-label', t('burger.open'));
+    }
+}
+
+document.querySelectorAll('.lang_switch_btn').forEach((btn) => {
+    btn.addEventListener('click', () => applyLanguage(btn.dataset.lang));
+});
+
+applyLanguage(currentLang);
 
 function openMenu() {
     if (!burger || !mobileMenu) return;
@@ -23,7 +73,7 @@ function openMenu() {
     mobileMenu.classList.add('is-open');
     burger.classList.add('is-open');
     burger.setAttribute('aria-expanded', 'true');
-    burger.setAttribute('aria-label', 'Закрыть меню');
+    burger.setAttribute('aria-label', t('burger.close'));
     mobileMenu.setAttribute('aria-hidden', 'false');
     document.body.classList.add('menu-open');
 }
@@ -40,7 +90,7 @@ function closeMenu(callback) {
     mobileMenu.classList.remove('is-open');
     burger.classList.remove('is-open');
     burger.setAttribute('aria-expanded', 'false');
-    burger.setAttribute('aria-label', 'Открыть меню');
+    burger.setAttribute('aria-label', t('burger.open'));
 
     window.setTimeout(() => {
         mobileMenu.classList.remove('is-closing');
@@ -124,30 +174,6 @@ if (revealElements.length) {
     revealElements.forEach((el) => revealObserver.observe(el));
 }
 
-const portfolioGrid = document.getElementById('portfolio-grid');
-const portfolioToggle = document.getElementById('portfolio-toggle');
-const portfolioExtraCount = document.querySelectorAll('.portfolio_card_extra').length;
-
-function getPortfolioToggleLabel(expanded) {
-    if (expanded) return 'Скрыть';
-    return portfolioExtraCount > 0 ? `Показать ещё · ${portfolioExtraCount} проектов` : 'Показать ещё';
-}
-
-if (portfolioGrid && portfolioToggle) {
-    portfolioToggle.textContent = getPortfolioToggleLabel(false);
-
-    portfolioToggle.addEventListener('click', () => {
-        const expanded = portfolioGrid.classList.toggle('is-expanded');
-        portfolioToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-        portfolioToggle.textContent = getPortfolioToggleLabel(expanded);
-
-        if (expanded) {
-            portfolioGrid.querySelectorAll('.portfolio_card_extra.reveal').forEach((el) => {
-                el.classList.add('is-visible');
-            });
-        }
-    });
-}
 
 function trackGoal(goalName) {
     if (typeof ym === 'function' && config.yandexMetrikaId) {
@@ -214,17 +240,11 @@ function showFormSuccess(isTelegramFallback = false) {
     hideFormMessages();
 
     if (isTelegramFallback) {
-        openSuccessModal(
-            'Откройте Telegram',
-            'Мы подготовили сообщение с вашей заявкой — отправьте его в чат, и мы ответим в ближайшее время.'
-        );
+        openSuccessModal(t('form.tgTitle'), t('form.tgText'));
         return;
     }
 
-    openSuccessModal(
-        'Заявка отправлена',
-        'Спасибо! Мы получили ваше сообщение и свяжемся с вами в течение рабочего дня.'
-    );
+    openSuccessModal(t('form.successTitle'), t('form.successText'));
 }
 
 function showFormError(message) {
@@ -283,7 +303,7 @@ if (contactForm) {
 
         if (formSubmitBtn) {
             formSubmitBtn.disabled = true;
-            formSubmitBtn.textContent = 'Отправка…';
+            formSubmitBtn.textContent = t('form.sending');
         }
 
         const result = await submitContactForm(formData);
@@ -297,12 +317,12 @@ if (contactForm) {
             showFormSuccess(true);
             contactForm.reset();
         } else {
-            showFormError(`Не удалось отправить. Напишите нам в Telegram: ${config.telegram || '@HVZEweb'}`);
+            showFormError(`${t('form.errorGeneric')} ${config.telegram || '@HVZEweb'}`);
         }
 
         if (formSubmitBtn) {
             formSubmitBtn.disabled = false;
-            formSubmitBtn.textContent = 'Отправить заявку';
+            formSubmitBtn.textContent = t('form.submit');
         }
     });
 }

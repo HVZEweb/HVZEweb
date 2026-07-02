@@ -336,12 +336,12 @@ body.menu-open {
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
-    margin-bottom: 64px;
+    margin-bottom: 48px;
 }
 
 .hero_stats {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 32px 24px;
     list-style: none;
     padding-top: 40px;
@@ -1507,5 +1507,108 @@ body.form-modal-open {
         display: inline-flex;
         align-items: center;
         justify-content: center;
+    }
+}
+
+/* Repositioning refresh */
+
+.header_actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: auto;
+}
+
+.lang_switch {
+    display: flex;
+    padding: 3px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+}
+
+.lang_switch_btn {
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: inherit;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+    background: transparent;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: color 0.2s ease, background 0.2s ease;
+}
+
+.lang_switch_btn.is-active {
+    color: var(--text-heading);
+    background-color: var(--border);
+}
+
+.container_narrow {
+    max-width: 880px;
+}
+
+.section_portfolio {
+    min-height: auto;
+}
+
+.section_hero .hero_title {
+    letter-spacing: -0.03em;
+    line-height: 1.08;
+}
+
+.section_hero .hero_description {
+    font-size: 18px;
+}
+
+.portfolio_card_full {
+    grid-column: 1 / -1;
+}
+
+.portfolio_card_case .portfolio_content {
+    padding: 24px 28px 28px;
+}
+
+.portfolio_case {
+    display: grid;
+    gap: 12px;
+    margin: 16px 0 20px;
+}
+
+.portfolio_case div {
+    display: grid;
+    gap: 4px;
+}
+
+.portfolio_case dt {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.portfolio_case dd {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.pricing_price_sub {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-top: -4px;
+    margin-bottom: 8px;
+}
+
+@media (max-width: 900px) {
+    .lang_switch {
+        display: none;
+    }
+
+    .portfolio_card_full {
+        grid-column: auto;
     }
 }
