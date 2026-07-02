@@ -19,8 +19,6 @@
 - Базовая SEO-настройка
 - Бесплатная консультация и смета
 
-**Сайт:** [hvzeweb.netlify.app](https://hvzeweb.netlify.app)
-
 ---
 
 ## Услуги и цены
@@ -33,24 +31,11 @@
 | **Премиум** | Интернет-магазин, CMS, админка | от 55 000 ₽ | от 3 недель |
 | **Telegram-бот** | Меню, FAQ, заявки 24/7 | от 15 000 ₽ | 3–5 дней |
 
-### Свой домен
-
-После покупки домена (например `hvzeweb.ru`):
-
-1. В Netlify: Domain settings → Add custom domain.
-2. У регистратора: A/CNAME на Netlify.
-3. В `js/config.js` укажите `customDomain: 'https://hvzeweb.ru'`.
-4. Почту на домене настройте у регистратора или через Yandex/Mail.ru для Business.
-
-### Превью портфолио
-
-Скриншоты карточек: `node scripts/capture-previews.mjs` (нужен `npm install playwright` локально).
-
 ---
 
 ## Примеры работ
 
-Демо-версии доступны прямо на сайте:
+Демо-версии доступны на сайте:
 
 | Проект | Описание |
 |--------|----------|
@@ -58,60 +43,15 @@
 | [Лендинг](https://hvzeweb.netlify.app/portfolio/example-landing.html) | Продающая страница / SaaS MVP |
 | [Корпоратив](https://hvzeweb.netlify.app/portfolio/example-corporate.html) | Многостраничный сайт компании |
 | [Магазин](https://hvzeweb.netlify.app/portfolio/example-shop.html) | Интернет-магазин с каталогом и корзиной |
-| [Админ-панель](https://hvzeweb.netlify.app/portfolio/example-shop-admin.html) | Панель заказов и KPI (часть магазина) |
+| [Админ-панель](https://hvzeweb.netlify.app/portfolio/example-shop-admin.html) | Панель заказов и KPI (демо магазина) |
 | [WordPress](https://hvzeweb.netlify.app/portfolio/example-wordpress.html) | Сайт на WP + автоматизация заявок |
 | [Telegram-бот](https://hvzeweb.netlify.app/portfolio/example-telegram-bot.html) | Интерактивное демо бота с уведомлениями |
 
 ---
 
-## Стек технологий
+## Стек
 
-```
-HTML5 · CSS3 · JavaScript (Vanilla)
-Netlify Functions · Telegram Bot API
-```
-
-| Категория | Технологии |
-|-----------|------------|
-| Frontend | HTML, CSS, JavaScript без фреймворков |
-| Backend | Netlify Serverless Functions |
-| Интеграции | Telegram (уведомления о заявках) |
-| Деплой | [Netlify](https://hvzeweb.netlify.app) · [GitHub](https://github.com/HVZEweb/HVZEweb) |
-
----
-
-## Структура проекта
-
-```
-portfolio/
-├── index.html          # Главная страница
-├── css/                # Стили
-├── js/                 # Скрипты и конфиг
-├── assets/             # Изображения, favicon, OG
-├── portfolio/          # Демо-проекты
-├── netlify/
-│   └── functions/      # Serverless: форма → Telegram
-├── netlify.toml        # Конфиг Netlify (headers, redirects)
-└── privacy.html        # Политика конфиденциальности
-```
-
----
-
-## Локальный запуск
-
-Клонировать репозиторий и открыть `index.html` в браузере или через локальный сервер:
-
-```bash
-git clone https://github.com/HVZEweb/HVZEweb.git
-cd HVZEweb
-```
-
-Для формы обратной связи на Netlify нужны переменные окружения (см. `.env.example`):
-
-| Переменная | Описание |
-|------------|----------|
-| `TELEGRAM_BOT_TOKEN` | Токен бота от [@BotFather](https://t.me/BotFather) |
-| `TELEGRAM_CHAT_ID` | ID чата для получения заявок |
+HTML · CSS · JavaScript · WordPress · Telegram Bot API · Netlify
 
 ---
 
