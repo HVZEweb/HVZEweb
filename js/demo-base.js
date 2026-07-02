@@ -1,6 +1,25 @@
 (function () {
     'use strict';
 
+    const DEMO_TYPE_KEYS = {
+        vizitka: 'demo.type.vizitka',
+        landing: 'demo.type.landing',
+        corporate: 'demo.type.corporate',
+        shop: 'demo.type.shop',
+        'shop-admin': 'demo.type.shopAdmin',
+        wordpress: 'demo.type.wordpress',
+    };
+
+    function dt(key, vars) {
+        let text = window.HVZE_LANG?.t(key) || key;
+        if (vars) {
+            Object.entries(vars).forEach(([name, value]) => {
+                text = text.replace(`{${name}}`, value);
+            });
+        }
+        return text;
+    }
+
     function ensureToast() {
         let el = document.getElementById('demo-toast');
         if (!el) {
@@ -22,6 +41,62 @@
         el._timer = setTimeout(() => el.classList.remove('is-visible'), 2400);
     };
 
+    function injectLangSwitch(chrome) {
+        if (chrome.querySelector('.demo_lang_switch')) return;
+
+        const wrap = document.createElement('div');
+        wrap.className = 'demo_lang_switch lang_switch';
+        wrap.setAttribute('role', 'group');
+        wrap.setAttribute('aria-label', 'Language');
+        wrap.innerHTML = '<button type="button" class="lang_switch_btn" data-lang="en">EN</button><button type="button" class="lang_switch_btn" data-lang="ru">RU</button>';
+
+        const actions = chrome.querySelector('.shop_chrome_actions');
+        const cta = chrome.querySelector('[class*="_chrome_cta"]');
+        if (actions) {
+            actions.insertBefore(wrap, actions.firstChild);
+        } else if (cta) {
+            cta.parentElement.insertBefore(wrap, cta);
+        } else {
+            chrome.appendChild(wrap);
+        }
+
+        window.HVZE_LANG?.bindLangSwitch(wrap);
+    }
+
+    function initChromeI18n() {
+        const L = window.HVZE_LANG;
+        if (!L) return;
+
+        const chrome = document.querySelector('.demo_chrome, .corp_chrome, .landing_chrome, .shop_chrome, .admin_chrome, .wp_chrome');
+        if (!chrome) return;
+
+        const slug = (location.pathname.split('/').pop() || '').replace(/\.html$/, '').replace(/^example-/, '');
+
+        const back = chrome.querySelector('a[href*="index"], a[href*="example-shop"]');
+        if (back) {
+            back.dataset.i18n = back.getAttribute('href')?.includes('example-shop') ? 'demo.backShop' : 'demo.back';
+        }
+
+        const label = chrome.querySelector('[class*="_chrome_label"]');
+        if (label && DEMO_TYPE_KEYS[slug]) {
+            label.dataset.i18n = DEMO_TYPE_KEYS[slug];
+        }
+
+        const adminLink = chrome.querySelector('.shop_chrome_admin');
+        if (adminLink) adminLink.dataset.i18n = 'demo.adminLink';
+
+        const cta = chrome.querySelector('[class*="_chrome_cta"]');
+        if (cta) cta.dataset.i18n = 'demo.cta';
+
+        if (chrome.classList.contains('admin_chrome')) {
+            const orderLink = chrome.querySelector('a[href*="contacts"]');
+            if (orderLink) orderLink.dataset.i18n = 'demo.orderDev';
+        }
+
+        injectLangSwitch(chrome);
+        L.applyLanguage(L.getLang());
+    }
+
     function initSkipLink() {
         const target = document.querySelector('[data-demo-main], main, .corp, .landing, .agency, .fin, .hotel, .salon, .yoga, .ind, .volt_main, .wine_main, .paws_main, .shop_layout, .vizitka, .barber, .clinic, .restaurant, .realestate, .photo, .course');
         if (!target) return;
@@ -29,7 +104,8 @@
         const skip = document.createElement('a');
         skip.href = '#main-content';
         skip.className = 'demo_skip';
-        skip.textContent = 'Перейти к содержимому';
+        skip.dataset.i18n = 'demo.skip';
+        skip.textContent = dt('demo.skip');
         document.body.insertBefore(skip, document.body.firstChild);
     }
 
@@ -77,10 +153,10 @@
                 if (!addBtn || !catalog.contains(addBtn)) return;
 
                 const card = addBtn.closest('[data-demo-card]');
-                const name = card?.querySelector('h3')?.textContent?.trim() || 'Товар';
+                const name = card?.querySelector('h3')?.textContent?.trim() || dt('demo.toast.productDefault');
                 cartCount += 1;
                 if (cartEl) cartEl.textContent = cartCount;
-                demoToast('«' + name + '» добавлен в корзину');
+                demoToast(dt('demo.toast.cart', { name }));
             });
         });
     }
@@ -105,11 +181,11 @@
             form.querySelectorAll('[readonly]').forEach((el) => el.removeAttribute('readonly'));
             form.addEventListener('submit', (e) => {
                 e.preventDefault();
-                demoToast('Заявка отправлена — это демо-сайт');
+                demoToast(dt('demo.toast.form'));
             });
             form.querySelectorAll('button[type="button"]').forEach((btn) => {
                 if (btn.closest('.corp_form, .landing_form, [data-demo-form], .fin_contact_form, .hotel_booking_form')) {
-                    btn.addEventListener('click', () => demoToast('Заявка отправлена — это демо-сайт'));
+                    btn.addEventListener('click', () => demoToast(dt('demo.toast.form')));
                 }
             });
         });
@@ -139,8 +215,8 @@
     function initListingCards() {
         document.querySelectorAll('[data-demo-listing]').forEach((card) => {
             card.addEventListener('click', () => {
-                const title = card.querySelector('h3')?.textContent?.trim() || 'Объект';
-                demoToast('«' + title + '» — демо-карточка. Свяжитесь с нами для деталей.');
+                const title = card.querySelector('h3')?.textContent?.trim() || dt('demo.toast.listingDefault');
+                demoToast(dt('demo.toast.listing', { title }));
             });
         });
     }
@@ -149,11 +225,12 @@
         document.querySelectorAll('[data-demo-wishlist]').forEach((btn) => {
             btn.addEventListener('click', () => {
                 btn.classList.toggle('is-active');
-                demoToast(btn.classList.contains('is-active') ? 'Добавлено в избранное' : 'Удалено из избранного');
+                demoToast(btn.classList.contains('is-active') ? dt('demo.toast.wishlistAdd') : dt('demo.toast.wishlistRemove'));
             });
         });
     }
 
+    initChromeI18n();
     initSkipLink();
     initCatalog();
     initSlots();

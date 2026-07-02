@@ -15,56 +15,17 @@ const goalElements = document.querySelectorAll('[data-goal]');
 
 const MENU_ANIMATION_MS = 550;
 const config = window.SITE_CONFIG || {};
-const i18nDict = window.SITE_I18N || { en: {}, ru: {} };
+const L = window.HVZE_LANG;
+const t = (key) => L.t(key);
 
-function getStoredLang() {
-    const saved = localStorage.getItem('hvze_lang');
-    if (saved === 'en' || saved === 'ru') return saved;
-    return config.defaultLang === 'ru' ? 'ru' : 'en';
+function updateBurgerLabel() {
+    if (!burger) return;
+    const open = mobileMenu?.classList.contains('is-open');
+    burger.setAttribute('aria-label', t(open ? 'burger.close' : 'burger.open'));
 }
 
-let currentLang = getStoredLang();
-
-function t(key) {
-    return i18nDict[currentLang]?.[key] ?? i18nDict.en?.[key] ?? key;
-}
-
-function applyLanguage(lang) {
-    currentLang = lang === 'ru' ? 'ru' : 'en';
-    localStorage.setItem('hvze_lang', currentLang);
-    document.documentElement.lang = currentLang;
-
-    document.querySelectorAll('[data-i18n]').forEach((el) => {
-        const key = el.getAttribute('data-i18n');
-        if (key) el.textContent = t(key);
-    });
-
-    document.querySelectorAll('[data-i18n-html]').forEach((el) => {
-        const key = el.getAttribute('data-i18n-html');
-        if (key) el.innerHTML = t(key);
-    });
-
-    document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
-        const key = el.getAttribute('data-i18n-placeholder');
-        if (key) el.placeholder = t(key);
-    });
-
-    document.title = t('meta.title');
-
-    document.querySelectorAll('.lang_switch_btn').forEach((btn) => {
-        btn.classList.toggle('is-active', btn.dataset.lang === currentLang);
-    });
-
-    if (burger && !mobileMenu?.classList.contains('is-open')) {
-        burger.setAttribute('aria-label', t('burger.open'));
-    }
-}
-
-document.querySelectorAll('.lang_switch_btn').forEach((btn) => {
-    btn.addEventListener('click', () => applyLanguage(btn.dataset.lang));
-});
-
-applyLanguage(currentLang);
+window.addEventListener('hvze:langchange', updateBurgerLabel);
+updateBurgerLabel();
 
 function openMenu() {
     if (!burger || !mobileMenu) return;

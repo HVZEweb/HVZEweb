@@ -41,10 +41,11 @@
 | Проект | Описание |
 |--------|----------|
 | [Визитка](https://hvzeweb.netlify.app/portfolio/example-vizitka.html) | Премиальная одностраничная визитка |
-| [Лендинг](https://hvzeweb.netlify.app/portfolio/example-landing.html) | Продающая страница с акцентом на конверсию |
+| [Лендинг](https://hvzeweb.netlify.app/portfolio/example-landing.html) | Продающая страница / SaaS MVP |
 | [Корпоратив](https://hvzeweb.netlify.app/portfolio/example-corporate.html) | Многостраничный сайт компании |
-| [Магазин](https://hvzeweb.netlify.app/portfolio/example-shop.html) | Интернет-магазин с каталогом |
-| [Админ-панель](https://hvzeweb.netlify.app/portfolio/example-shop-admin.html) | Панель управления магазином |
+| [Магазин](https://hvzeweb.netlify.app/portfolio/example-shop.html) | Интернет-магазин с каталогом и корзиной |
+| [Админ-панель](https://hvzeweb.netlify.app/portfolio/example-shop-admin.html) | Панель заказов и KPI (часть магазина) |
+| [WordPress](https://hvzeweb.netlify.app/portfolio/example-wordpress.html) | Сайт на WP + автоматизация заявок |
 
 ---
 

@@ -103,3 +103,44 @@ select:focus-visible,
         transition-duration: 0.01ms !important;
     }
 }
+
+.demo_lang_switch {
+    display: flex;
+    flex-shrink: 0;
+    padding: 2px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 100px;
+}
+
+.demo_lang_switch .lang_switch_btn {
+    padding: 4px 10px;
+    font-size: 11px;
+    font-weight: 600;
+    font-family: inherit;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.65);
+    background: transparent;
+    border: none;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+.demo_lang_switch .lang_switch_btn.is-active {
+    color: #111;
+    background: #fff;
+}
+
+.demo_chrome .demo_lang_switch,
+.corp_chrome .demo_lang_switch,
+.landing_chrome .demo_lang_switch,
+.shop_chrome .demo_lang_switch,
+.admin_chrome .demo_lang_switch,
+.wp_chrome .demo_lang_switch {
+    margin-left: auto;
+}
+
+.shop_chrome_actions .demo_lang_switch {
+    margin-left: 0;
+    margin-right: 8px;
+}

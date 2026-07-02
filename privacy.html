@@ -1,97 +1,98 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, follow">
-    <title>Политика конфиденциальности — HVZEweb</title>
+    <title>Privacy policy — HVZEweb</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap&subset=cyrillic,latin" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
 </head>
-<body class="page_legal">
+<body class="page_legal" data-i18n-title="privacy.meta.title">
     <header class="header">
-        <nav class="header_nav" aria-label="Основное меню">
+        <nav class="header_nav" aria-label="Main menu">
             <div class="header_container">
                 <a href="index.html" class="header_menu_logo">HVZE<span class="header_menu_logo_span">web</span></a>
+                <div class="header_actions">
+                    <div class="lang_switch" role="group" aria-label="Language">
+                        <button type="button" class="lang_switch_btn is-active" data-lang="en">EN</button>
+                        <button type="button" class="lang_switch_btn" data-lang="ru">RU</button>
+                    </div>
+                </div>
             </div>
         </nav>
     </header>
 
     <main class="legal">
         <div class="container legal_header">
-            <a href="index.html" class="legal_back">← На главную</a>
-            <p class="legal_label">Документы</p>
-            <h1 class="legal_title">Политика конфиденциальности</h1>
-            <p class="legal_meta">Дата обновления: 20 июня 2026</p>
+            <a href="index.html" class="legal_back" data-i18n="privacy.back">← Back to home</a>
+            <p class="legal_label" data-i18n="privacy.label">Legal</p>
+            <h1 class="legal_title" data-i18n="privacy.title">Privacy policy</h1>
+            <p class="legal_meta" data-i18n="privacy.updated">Last updated: June 20, 2026</p>
         </div>
 
         <div class="container legal_body">
-            <p class="legal_lead">
-                Настоящая политика описывает, как HVZEweb обрабатывает персональные данные
-                пользователей сайта hvzeweb.netlify.app.
+            <p class="legal_lead" data-i18n="privacy.lead">
+                This policy describes how HVZEweb processes personal data of visitors to hvzeweb.netlify.app.
             </p>
 
             <article class="legal_section">
-                <h2 class="legal_section_title">Какие данные мы собираем</h2>
-                <p class="legal_section_text">При отправке формы обратной связи вы можете указать:</p>
+                <h2 class="legal_section_title" data-i18n="privacy.s1.title">What data we collect</h2>
+                <p class="legal_section_text" data-i18n="privacy.s1.text">When you submit the contact form, you may provide:</p>
                 <ul class="legal_list">
-                    <li>имя;</li>
-                    <li>email или Telegram;</li>
-                    <li>текст сообщения о проекте.</li>
+                    <li data-i18n="privacy.s1.l1">name;</li>
+                    <li data-i18n="privacy.s1.l2">email or Telegram;</li>
+                    <li data-i18n="privacy.s1.l3">message about your project.</li>
                 </ul>
             </article>
 
             <article class="legal_section">
-                <h2 class="legal_section_title">Зачем мы используем данные</h2>
-                <p class="legal_section_text">
-                    Данные нужны только для связи с вами по вашему запросу: обсуждение проекта,
-                    расчёт стоимости и ответ на вопросы.
+                <h2 class="legal_section_title" data-i18n="privacy.s2.title">Why we use the data</h2>
+                <p class="legal_section_text" data-i18n="privacy.s2.text">
+                    We use it only to respond to your request: discuss the project, estimate cost and answer questions.
                 </p>
             </article>
 
             <article class="legal_section">
-                <h2 class="legal_section_title">Как долго храним</h2>
-                <p class="legal_section_text">
-                    Данные хранятся до завершения переписки по заявке или до вашего запроса на удаление.
+                <h2 class="legal_section_title" data-i18n="privacy.s3.title">How long we keep it</h2>
+                <p class="legal_section_text" data-i18n="privacy.s3.text">
+                    Data is kept until the conversation about your request is finished or until you ask us to delete it.
                 </p>
             </article>
 
             <article class="legal_section">
-                <h2 class="legal_section_title">Кому передаём</h2>
-                <p class="legal_section_text">
-                    Мы не продаём и не передаём данные третьим лицам, за исключением технических
-                    сервисов для доставки заявки (Telegram, email).
+                <h2 class="legal_section_title" data-i18n="privacy.s4.title">Who we share it with</h2>
+                <p class="legal_section_text" data-i18n="privacy.s4.text">
+                    We do not sell or share data with third parties, except technical services to deliver your message (Telegram, email).
                 </p>
             </article>
 
             <article class="legal_section">
-                <h2 class="legal_section_title">Аналитика</h2>
-                <p class="legal_section_text">
-                    На сайте может использоваться Яндекс.Метрика для анализа посещаемости.
-                    Сервис собирает обезличенные данные о визитах.
+                <h2 class="legal_section_title" data-i18n="privacy.s5.title">Analytics</h2>
+                <p class="legal_section_text" data-i18n="privacy.s5.text">
+                    The site may use Yandex.Metrica for traffic analytics. The service collects anonymized visit data.
                 </p>
             </article>
 
             <article class="legal_section">
-                <h2 class="legal_section_title">Ваши права</h2>
-                <p class="legal_section_text">
-                    Вы можете запросить удаление или уточнение своих данных, написав на
-                    <a href="mailto:hvzeweb@mail.ru" class="legal_link">hvzeweb@mail.ru</a>.
+                <h2 class="legal_section_title" data-i18n="privacy.s6.title">Your rights</h2>
+                <p class="legal_section_text" data-i18n-html="privacy.s6.text">
+                    You may request deletion or correction of your data by emailing <a href="mailto:hvzeweb@mail.ru" class="legal_link">hvzeweb@mail.ru</a>.
                 </p>
             </article>
 
             <aside class="legal_contacts">
-                <h2 class="legal_contacts_title">Контакты</h2>
+                <h2 class="legal_contacts_title" data-i18n="privacy.contacts.title">Contact</h2>
                 <ul class="legal_contacts_list">
                     <li>
-                        <span class="legal_contacts_label">Email</span>
+                        <span class="legal_contacts_label" data-i18n="contacts.email">Email</span>
                         <a href="mailto:hvzeweb@mail.ru" class="legal_link">hvzeweb@mail.ru</a>
                     </li>
                     <li>
-                        <span class="legal_contacts_label">Telegram</span>
+                        <span class="legal_contacts_label" data-i18n="contacts.tg">Telegram</span>
                         <a href="https://t.me/HVZEweb" class="legal_link" target="_blank" rel="noopener noreferrer">@HVZEweb</a>
                     </li>
                 </ul>
@@ -102,12 +103,16 @@
     <footer class="footer">
         <div class="container footer_container">
             <a href="index.html" class="footer_logo">HVZE<span class="header_menu_logo_span">web</span></a>
-            <nav class="footer_nav" aria-label="Дополнительно">
-                <a href="privacy.html" aria-current="page">Конфиденциальность</a>
-                <a href="index.html#faq">FAQ</a>
+            <nav class="footer_nav" aria-label="Footer">
+                <a href="privacy.html" aria-current="page" data-i18n="footer.privacy">Privacy</a>
+                <a href="index.html#faq" data-i18n="footer.faq">FAQ</a>
             </nav>
             <p class="footer_copy">© 2026 HVZEweb</p>
         </div>
     </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/lang-core.js"></script>
 </body>
 </html>

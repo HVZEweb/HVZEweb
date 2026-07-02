@@ -1608,6 +1608,10 @@ body.form-modal-open {
         display: none;
     }
 
+    .page_legal .header_actions .lang_switch {
+        display: flex;
+    }
+
     .portfolio_card_full {
         grid-column: auto;
     }
