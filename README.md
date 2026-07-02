@@ -46,6 +46,7 @@
 | [Магазин](https://hvzeweb.netlify.app/portfolio/example-shop.html) | Интернет-магазин с каталогом и корзиной |
 | [Админ-панель](https://hvzeweb.netlify.app/portfolio/example-shop-admin.html) | Панель заказов и KPI (часть магазина) |
 | [WordPress](https://hvzeweb.netlify.app/portfolio/example-wordpress.html) | Сайт на WP + автоматизация заявок |
+| [Telegram-бот](https://hvzeweb.netlify.app/portfolio/example-telegram-bot.html) | Интерактивное демо бота с уведомлениями |
 
 ---
 

@@ -86,9 +86,9 @@ a {
 
 .header_container {
     position: relative;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    justify-content: space-between;
     gap: 24px;
     max-width: 1200px;
     margin: 0 auto;
@@ -102,6 +102,7 @@ a {
     color: var(--text-heading);
     text-decoration: none;
     flex-shrink: 0;
+    justify-self: start;
 }
 
 .header_menu_logo_span {
@@ -112,40 +113,37 @@ a {
 .header_menu_links {
     display: flex;
     align-items: center;
-    gap: 28px;
+    gap: 2px;
+    padding: 3px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    justify-self: center;
 }
 
 .header_menu_item {
-    font-size: 15px;
-    font-weight: 500;
-    letter-spacing: 0.01em;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
     text-decoration: none;
-    color: var(--text);
-    transition: color 0.2s ease;
-    position: relative;
-    padding-bottom: 3px;
+    color: var(--text-muted);
+    transition: color 0.2s ease, background 0.2s ease;
+    padding: 7px 14px;
+    border-radius: 100px;
+    white-space: nowrap;
 }
 
 .header_menu_item::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 1.5px;
-    background-color: var(--accent);
-    transform: scaleX(0);
-    transition: transform 0.25s ease;
+    display: none;
 }
 
-.header_menu_item:hover,
-.header_menu_item.is_active {
+.header_menu_item:hover {
     color: var(--text-heading);
 }
 
-.header_menu_item.is_active::after,
-.header_menu_item:hover::after {
-    transform: scaleX(1);
+.header_menu_item.is_active {
+    color: var(--text-heading);
+    background-color: var(--border);
 }
 
 .header_burger {
@@ -1516,7 +1514,7 @@ body.form-modal-open {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-left: auto;
+    justify-self: end;
 }
 
 .lang_switch {

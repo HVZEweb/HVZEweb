@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, follow">
+    <title>ServiceDesk Bot — Telegram demo · HVZEweb</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/demo-telegram-bot.css">
+    <link rel="stylesheet" href="../css/demo-base.css">
+</head>
+<body>
+    <div class="tg_chrome">
+        <a href="../index.html#portfolio">← К портфолио</a>
+        <span class="tg_chrome_label">Демо · Telegram-бот</span>
+        <a href="../index.html#contacts" class="tg_chrome_cta">Хочу такую же</a>
+    </div>
+
+    <main class="tg_page" data-demo-main>
+        <div class="tg_intro">
+            <div>
+                <div class="tg_intro_badge">
+                    <span class="tg_intro_badge_dot"></span>
+                    Telegram Bot API
+                </div>
+                <h1 class="tg_intro_title">ServiceDesk Bot — заявки без пропусков</h1>
+                <p class="tg_intro_text">
+                    Интерактивное демо: нажимайте кнопки в «Telegram», пройдите сценарий заявки
+                    и посмотрите, как уведомление приходит менеджеру в реальном времени.
+                </p>
+                <div class="tg_stack">
+                    <span>Telegram Bot API</span>
+                    <span>Webhook / n8n</span>
+                    <span>Inline keyboard</span>
+                    <span>Lead routing</span>
+                </div>
+            </div>
+            <div class="tg_features">
+                <div class="tg_feature">
+                    <p class="tg_feature_title">Меню и FAQ</p>
+                    <p class="tg_feature_text">Кнопки вместо длинных текстов — клиент быстрее доходит до заявки.</p>
+                </div>
+                <div class="tg_feature">
+                    <p class="tg_feature_title">Сбор заявки по шагам</p>
+                    <p class="tg_feature_text">Имя → задача → контакт. Диалог можно расширить под ваш процесс.</p>
+                </div>
+                <div class="tg_feature">
+                    <p class="tg_feature_title">Уведомление админу</p>
+                    <p class="tg_feature_text">Заявка уходит в Telegram-чат команды или CRM через webhook.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tg_demo_grid">
+            <section class="tg_phone" aria-label="Демо чата Telegram">
+                <div class="tg_phone_header">
+                    <div class="tg_phone_avatar" aria-hidden="true">S</div>
+                    <div class="tg_phone_meta">
+                        <strong>ServiceDesk Bot</strong>
+                        <span>online · demo</span>
+                    </div>
+                </div>
+                <div class="tg_chat" id="tg-chat" aria-live="polite"></div>
+                <div class="tg_keyboard" id="tg-keyboard"></div>
+                <div class="tg_input_row">
+                    <input type="text" id="tg-input" placeholder="Сообщение…" disabled autocomplete="off">
+                    <button type="button" class="tg_send" id="tg-send" disabled aria-label="Отправить">↑</button>
+                </div>
+            </section>
+
+            <aside class="tg_admin" aria-label="Панель менеджера">
+                <div class="tg_admin_head">
+                    <h2>Уведомления менеджера</h2>
+                    <p>Так выглядит входящая заявка в рабочем чате</p>
+                </div>
+                <div class="tg_admin_feed" id="tg-admin-feed">
+                    <p class="tg_admin_empty">Здесь появятся уведомления, когда клиент оставит заявку в боте.</p>
+                </div>
+                <button type="button" class="tg_reset" id="tg-reset">↺ Начать сценарий заново</button>
+            </aside>
+        </div>
+
+        <p class="tg_note">
+            <strong>Демо-сайт.</strong> На реальном проекте бот работает в Telegram через BotFather-токен,
+            webhook на сервер или n8n, плюс связка с сайтом и CRM. Напишите нам — соберём под ваш сценарий.
+        </p>
+    </main>
+
+    <script src="../js/config.js"></script>
+    <script src="../js/i18n.js"></script>
+    <script src="../js/lang-core.js"></script>
+    <script src="../js/demo-telegram-bot.js"></script>
+    <script src="../js/demo-base.js" defer></script>
+</body>
+</html>

@@ -8,6 +8,7 @@
         shop: 'demo.type.shop',
         'shop-admin': 'demo.type.shopAdmin',
         wordpress: 'demo.type.wordpress',
+        'telegram-bot': 'demo.type.telegramBot',
     };
 
     function dt(key, vars) {
@@ -67,7 +68,7 @@
         const L = window.HVZE_LANG;
         if (!L) return;
 
-        const chrome = document.querySelector('.demo_chrome, .corp_chrome, .landing_chrome, .shop_chrome, .admin_chrome, .wp_chrome');
+        const chrome = document.querySelector('.demo_chrome, .corp_chrome, .landing_chrome, .shop_chrome, .admin_chrome, .wp_chrome, .tg_chrome');
         if (!chrome) return;
 
         const slug = (location.pathname.split('/').pop() || '').replace(/\.html$/, '').replace(/^example-/, '');

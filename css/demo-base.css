@@ -136,7 +136,8 @@ select:focus-visible,
 .landing_chrome .demo_lang_switch,
 .shop_chrome .demo_lang_switch,
 .admin_chrome .demo_lang_switch,
-.wp_chrome .demo_lang_switch {
+.wp_chrome .demo_lang_switch,
+.tg_chrome .demo_lang_switch {
     margin-left: auto;
 }
 
