@@ -8,88 +8,197 @@
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/demo-telegram-bot.css">
     <link rel="stylesheet" href="../css/demo-base.css">
 </head>
-<body>
-    <div class="tg_chrome">
-        <a href="../index.html#portfolio">← К портфолио</a>
+<body class="tg_body">
+    <header class="tg_chrome">
+        <a href="../index.html#portfolio" class="tg_chrome_back">← Портфолио</a>
         <span class="tg_chrome_label">Живой пример · <span id="tg-chrome-handle">@HVZEwebDemoBot</span></span>
-        <a href="https://t.me/HVZEwebDemoBot?start=portfolio_demo" id="tg-chrome-cta" class="tg_chrome_cta" target="_blank" rel="noopener noreferrer">Открыть в Telegram</a>
-    </div>
+        <a href="https://t.me/HVZEwebDemoBot?start=portfolio_demo" id="tg-chrome-cta" class="tg_chrome_cta" target="_blank" rel="noopener noreferrer">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
+            Открыть в Telegram
+        </a>
+    </header>
 
     <main class="tg_page" data-demo-main>
-        <div class="tg_intro">
-            <div>
-                <div class="tg_intro_badge tg_intro_badge_live">
-                    <span class="tg_intro_badge_dot"></span>
-                    Live · portfolio example
-                </div>
-                <h1 class="tg_intro_title">ServiceDesk Bot — заявки без пропусков</h1>
-                <p class="tg_intro_text">
-                    Это не макет: бот <strong id="tg-intro-handle">@HVZEwebDemoBot</strong> работает на Cloudflare Workers.
-                    Слева — интерактивная копия сценария, справа — как заявка выглядит у менеджера.
-                    Откройте бота в Telegram и оставьте тестовую заявку — она придёт в реальный чат.
-                </p>
-                <div class="tg_stack">
-                    <span>Telegram Bot API</span>
-                    <span>Cloudflare Workers</span>
-                    <span>Reply keyboard</span>
-                    <span>Lead routing</span>
-                </div>
-                <a class="tg_live_btn" id="tg-live-link" href="https://t.me/HVZEwebDemoBot?start=portfolio_demo" target="_blank" rel="noopener noreferrer">Открыть живого бота в Telegram →</a>
+        <section class="tg_hero">
+            <div class="tg_hero_bg" aria-hidden="true">
+                <span class="tg_hero_orb tg_hero_orb_1"></span>
+                <span class="tg_hero_orb tg_hero_orb_2"></span>
+                <span class="tg_hero_grid"></span>
             </div>
-            <div class="tg_features">
-                <div class="tg_feature">
-                    <p class="tg_feature_title">Меню и FAQ</p>
-                    <p class="tg_feature_text">Кнопки вместо длинных текстов — клиент быстрее доходит до заявки.</p>
-                </div>
-                <div class="tg_feature">
-                    <p class="tg_feature_title">Сбор заявки по шагам</p>
-                    <p class="tg_feature_text">Имя → задача → контакт. Диалог можно расширить под ваш процесс.</p>
-                </div>
-                <div class="tg_feature">
-                    <p class="tg_feature_title">Уведомление админу</p>
-                    <p class="tg_feature_text">Заявка уходит в Telegram-чат команды через webhook — без n8n и сервера.</p>
-                </div>
-            </div>
-        </div>
 
-        <div class="tg_demo_grid">
-            <section class="tg_phone" aria-label="Демо чата Telegram">
-                <div class="tg_phone_header">
-                    <div class="tg_phone_avatar" aria-hidden="true">S</div>
-                    <div class="tg_phone_meta">
-                        <strong>ServiceDesk Bot</strong>
-                        <span><span class="tg_online_dot" aria-hidden="true"></span> <span id="tg-phone-handle">@HVZEwebDemoBot</span> · live</span>
+            <div class="tg_hero_inner">
+                <div class="tg_hero_copy">
+                    <div class="tg_intro_badge tg_intro_badge_live">
+                        <span class="tg_intro_badge_dot"></span>
+                        Live · portfolio example
+                    </div>
+                    <h1 class="tg_intro_title">ServiceDesk Bot<br><span>заявки без пропусков</span></h1>
+                    <p class="tg_intro_text">
+                        Не макет — живой бот <strong id="tg-intro-handle">@HVZEwebDemoBot</strong> на Cloudflare Workers.
+                        Пройдите сценарий ниже или откройте Telegram — заявка придёт менеджеру в реальном чат.
+                    </p>
+                    <div class="tg_stack">
+                        <span>Telegram Bot API</span>
+                        <span>Cloudflare Workers</span>
+                        <span>Reply keyboard</span>
+                        <span>Lead routing</span>
+                    </div>
+                    <div class="tg_hero_actions">
+                        <a class="tg_live_btn" id="tg-live-link" href="https://t.me/HVZEwebDemoBot?start=portfolio_demo" target="_blank" rel="noopener noreferrer">
+                            Открыть живого бота
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                        </a>
+                        <a href="#tg-workspace" class="tg_ghost_btn">Попробовать на сайте</a>
                     </div>
                 </div>
-                <div class="tg_chat" id="tg-chat" aria-live="polite"></div>
-                <div class="tg_keyboard" id="tg-keyboard"></div>
-                <div class="tg_input_row">
-                    <input type="text" id="tg-input" placeholder="Сообщение…" disabled autocomplete="off">
-                    <button type="button" class="tg_send" id="tg-send" disabled aria-label="Отправить">↑</button>
-                </div>
-            </section>
 
-            <aside class="tg_admin" aria-label="Панель менеджера">
-                <div class="tg_admin_head">
-                    <h2>Уведомления менеджера</h2>
-                    <p>Так выглядит входящая заявка в рабочем чате — формат совпадает с живым ботом</p>
+                <div class="tg_hero_panel">
+                    <ul class="tg_stats">
+                        <li class="tg_stat">
+                            <span class="tg_stat_value">24/7</span>
+                            <span class="tg_stat_label">приём заявок</span>
+                        </li>
+                        <li class="tg_stat">
+                            <span class="tg_stat_value">3–5</span>
+                            <span class="tg_stat_label">дней на запуск</span>
+                        </li>
+                        <li class="tg_stat">
+                            <span class="tg_stat_value">&lt;1s</span>
+                            <span class="tg_stat_label">алерт менеджеру</span>
+                        </li>
+                    </ul>
+                    <ul class="tg_features">
+                        <li class="tg_feature">
+                            <span class="tg_feature_icon" aria-hidden="true">📋</span>
+                            <div>
+                                <p class="tg_feature_title">Меню и FAQ</p>
+                                <p class="tg_feature_text">Кнопки вместо простыней текста — клиент быстрее доходит до заявки.</p>
+                            </div>
+                        </li>
+                        <li class="tg_feature">
+                            <span class="tg_feature_icon" aria-hidden="true">📅</span>
+                            <div>
+                                <p class="tg_feature_title">Заявка по шагам</p>
+                                <p class="tg_feature_text">Имя → задача → контакт. Сценарий легко расширить под ваш процесс.</p>
+                            </div>
+                        </li>
+                        <li class="tg_feature">
+                            <span class="tg_feature_icon" aria-hidden="true">⚡</span>
+                            <div>
+                                <p class="tg_feature_title">Webhook без сервера</p>
+                                <p class="tg_feature_text">Cloudflare Workers — без VPS, n8n и долгой настройки.</p>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-                <div class="tg_admin_feed" id="tg-admin-feed">
-                    <p class="tg_admin_empty">Здесь появятся уведомления, когда клиент оставит заявку в боте.</p>
-                </div>
-                <button type="button" class="tg_reset" id="tg-reset">↺ Начать сценарий заново</button>
-            </aside>
-        </div>
+            </div>
+        </section>
 
-        <p class="tg_note">
-            <strong>Интерактивное демо</strong> слева повторяет сценарий живого бота.
-            <a id="tg-live-link-note" href="https://t.me/HVZEwebDemoBot?start=portfolio_demo" target="_blank" rel="noopener noreferrer">Откройте @HVZEwebDemoBot в Telegram</a>
-            — те же кнопки, заявки приходят менеджеру мгновенно (Cloudflare Workers + webhook).
-        </p>
+        <section class="tg_workspace" id="tg-workspace">
+            <div class="tg_workspace_head">
+                <div>
+                    <p class="tg_workspace_label">Interactive demo</p>
+                    <h2 class="tg_workspace_title">Пройдите сценарий клиента</h2>
+                    <p class="tg_workspace_desc">Нажимайте кнопки в чате — справа увидите, как заявка выглядит у менеджера.</p>
+                </div>
+                <div class="tg_steps" id="tg-steps" aria-label="Прогресс сценария">
+                    <span class="tg_step is-active" data-step="menu">Меню</span>
+                    <span class="tg_step" data-step="name">Имя</span>
+                    <span class="tg_step" data-step="service">Задача</span>
+                    <span class="tg_step" data-step="contact">Контакт</span>
+                    <span class="tg_step" data-step="done">Готово</span>
+                </div>
+            </div>
+
+            <div class="tg_demo_grid">
+                <div class="tg_phone_col">
+                    <div class="tg_phone_shell">
+                        <div class="tg_phone_status" aria-hidden="true">
+                            <span>9:41</span>
+                            <span class="tg_phone_status_icons">
+                                <svg width="16" height="12" viewBox="0 0 16 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="4.5" y="5" width="3" height="7" rx="1"/><rect x="9" y="2" width="3" height="10" rx="1"/><rect x="13" y="0" width="3" height="12" rx="1"/></svg>
+                                <svg width="16" height="12" viewBox="0 0 24 16" fill="currentColor"><path d="M12 3C7.03 3 2.47 5.11 0 8.5c2.47 3.39 7.03 5.5 12 5.5s9.53-2.11 12-5.5C21.53 5.11 16.97 3 12 3z"/></svg>
+                                <svg width="22" height="11" viewBox="0 0 28 14" fill="currentColor"><rect x="1" y="1" width="22" height="12" rx="3" stroke="currentColor" fill="none" stroke-width="1.5"/><rect x="3.5" y="3.5" width="16" height="7" rx="1.5"/><rect x="25" y="4.5" width="2.5" height="5" rx="1"/></svg>
+                            </span>
+                        </div>
+                        <section class="tg_phone" aria-label="Демо чата Telegram">
+                            <div class="tg_phone_header">
+                                <button type="button" class="tg_phone_back" aria-hidden="true">‹</button>
+                                <div class="tg_phone_avatar" aria-hidden="true">S</div>
+                                <div class="tg_phone_meta">
+                                    <strong>ServiceDesk Bot</strong>
+                                    <span><span class="tg_online_dot" aria-hidden="true"></span> <span id="tg-phone-handle">@HVZEwebDemoBot</span></span>
+                                </div>
+                                <span class="tg_phone_menu" aria-hidden="true">⋮</span>
+                            </div>
+                            <div class="tg_chat" id="tg-chat" aria-live="polite"></div>
+                            <div class="tg_keyboard" id="tg-keyboard"></div>
+                            <div class="tg_input_row">
+                                <button type="button" class="tg_attach" aria-hidden="true">📎</button>
+                                <input type="text" id="tg-input" placeholder="Сообщение…" disabled autocomplete="off">
+                                <button type="button" class="tg_send" id="tg-send" disabled aria-label="Отправить">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                                </button>
+                            </div>
+                        </section>
+                    </div>
+                    <p class="tg_col_label">Чат клиента</p>
+                </div>
+
+                <div class="tg_connector" aria-hidden="true">
+                    <span class="tg_connector_line"></span>
+                    <span class="tg_connector_badge">webhook</span>
+                    <span class="tg_connector_line"></span>
+                </div>
+
+                <div class="tg_admin_col">
+                    <aside class="tg_admin" aria-label="Панель менеджера">
+                        <div class="tg_admin_head">
+                            <div class="tg_admin_head_icon" aria-hidden="true">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                            </div>
+                            <div>
+                                <h2>Уведомления менеджера</h2>
+                                <p>Формат совпадает с живым ботом в Telegram</p>
+                            </div>
+                        </div>
+                        <div class="tg_admin_feed" id="tg-admin-feed">
+                            <div class="tg_admin_empty">
+                                <span class="tg_admin_empty_icon" aria-hidden="true">📭</span>
+                                <p>Здесь появятся уведомления, когда клиент оставит заявку.</p>
+                            </div>
+                        </div>
+                        <button type="button" class="tg_reset" id="tg-reset">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+                            Начать сценарий заново
+                        </button>
+                    </aside>
+                    <p class="tg_col_label">Чат команды</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="tg_cta_band">
+            <div class="tg_cta_inner">
+                <div>
+                    <p class="tg_cta_label">Live bot</p>
+                    <h2 class="tg_cta_title">Проверьте в настоящем Telegram</h2>
+                    <p class="tg_cta_text">
+                        <strong>Интерактивное демо</strong> повторяет сценарий живого бота.
+                        <a id="tg-live-link-note" href="https://t.me/HVZEwebDemoBot?start=portfolio_demo" target="_blank" rel="noopener noreferrer">Откройте @HVZEwebDemoBot</a>
+                        — те же кнопки, заявки приходят мгновенно.
+                    </p>
+                </div>
+                <a class="tg_live_btn tg_live_btn_light" id="tg-live-link-bottom" href="https://t.me/HVZEwebDemoBot?start=portfolio_demo" target="_blank" rel="noopener noreferrer">
+                    Открыть в Telegram
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                </a>
+            </div>
+        </section>
     </main>
 
     <script src="../js/config.js"></script>
@@ -102,7 +211,7 @@
             var url = cfg.telegramPortfolioStartUrl || cfg.telegramStartUrl || cfg.telegramUrl;
             var handle = cfg.telegram || '@HVZEwebDemoBot';
             if (url) {
-                document.querySelectorAll('#tg-live-link, #tg-live-link-note, #tg-chrome-cta').forEach(function (el) {
+                document.querySelectorAll('#tg-live-link, #tg-live-link-note, #tg-live-link-bottom, #tg-chrome-cta').forEach(function (el) {
                     el.href = url;
                 });
             }

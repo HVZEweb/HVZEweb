@@ -7,11 +7,14 @@
     const input = document.getElementById('tg-input');
     const sendBtn = document.getElementById('tg-send');
     const resetBtn = document.getElementById('tg-reset');
+    const stepsEl = document.getElementById('tg-steps');
 
     if (!chat || !keyboard) return;
 
     let step = 'menu';
     let lead = { name: '', service: '', contact: '' };
+
+    const STEP_ORDER = ['menu', 'name', 'service', 'contact', 'done'];
 
     function nowTime() {
         const d = new Date();
@@ -22,7 +25,29 @@
         chat.scrollTop = chat.scrollHeight;
     }
 
+    function updateSteps() {
+        if (!stepsEl) return;
+        const idx = STEP_ORDER.indexOf(step);
+        stepsEl.querySelectorAll('.tg_step').forEach((el) => {
+            const s = el.dataset.step;
+            const sIdx = STEP_ORDER.indexOf(s);
+            el.classList.toggle('is-active', s === step);
+            el.classList.toggle('is-done', sIdx >= 0 && sIdx < idx);
+        });
+    }
+
     function addMessage(text, type, isHtml) {
+        const row = document.createElement('div');
+        row.className = `tg_msg_row tg_msg_row_${type}`;
+
+        if (type === 'in') {
+            const avatar = document.createElement('span');
+            avatar.className = 'tg_msg_avatar';
+            avatar.setAttribute('aria-hidden', 'true');
+            avatar.textContent = 'S';
+            row.appendChild(avatar);
+        }
+
         const el = document.createElement('div');
         el.className = `tg_msg tg_msg_${type}`;
         const time = `<span class="tg_msg_time">${nowTime()}</span>`;
@@ -32,19 +57,23 @@
             el.appendChild(document.createTextNode(text));
             el.insertAdjacentHTML('beforeend', time);
         }
-        chat.appendChild(el);
+        row.appendChild(el);
+        chat.appendChild(row);
         scrollChat();
     }
 
     function showTyping(ms) {
         return new Promise((resolve) => {
-            const el = document.createElement('div');
-            el.className = 'tg_typing';
-            el.innerHTML = '<span></span><span></span><span></span>';
-            chat.appendChild(el);
+            const row = document.createElement('div');
+            row.className = 'tg_typing_row';
+            row.innerHTML = `
+                <span class="tg_msg_avatar" aria-hidden="true">S</span>
+                <div class="tg_typing"><span></span><span></span><span></span></div>
+            `;
+            chat.appendChild(row);
             scrollChat();
             setTimeout(() => {
-                el.remove();
+                row.remove();
                 resolve();
             }, ms);
         });
@@ -111,6 +140,7 @@
 
             case 'book':
                 step = 'name';
+                updateSteps();
                 await botReply('Отлично! Как к вам обращаться?', 600);
                 setKeyboard([]);
                 setInputMode(true, 'Ваше имя');
@@ -118,6 +148,7 @@
 
             case 'contact':
                 step = 'contact_only';
+                updateSteps();
                 await botReply('Напишите email или @username в Telegram — менеджер ответит в рабочий день.', 600);
                 setKeyboard([]);
                 setInputMode(true, 'Email или @username');
@@ -130,6 +161,7 @@
 
     function showMenu() {
         step = 'menu';
+        updateSteps();
         setInputMode(false);
         setKeyboard([
             { label: '📋 Услуги', action: 'services' },
@@ -150,7 +182,8 @@
         if (step === 'name') {
             lead.name = value;
             step = 'service';
-            await botReply(`Приятно познакомиться, ${value}! Какая задача у вас?`, 650);
+            updateSteps();
+            await botReply(`Приятно познакомиться, <b>${value}</b>! Какая задача у вас?`, 650);
             setInputMode(true, 'Опишите задачу');
             return;
         }
@@ -158,16 +191,19 @@
         if (step === 'service') {
             lead.service = value;
             step = 'contact';
-            await botReply('Куда отправить ответ — email или Telegram?', 600);
+            updateSteps();
+            await botReply('Куда отправить ответ — email или Telegram (@username)?', 600);
             setInputMode(true, 'email@… или @username');
             return;
         }
 
         if (step === 'contact' || step === 'contact_only') {
             lead.contact = value;
+            const isQuick = step === 'contact_only';
+            step = 'done';
+            updateSteps();
             await botReply('✅ Заявка принята! Менеджер свяжется в течение рабочего дня.\n\nСпасибо, что написали в <b>ServiceDesk Bot</b> — демо HVZEweb.', 800);
 
-            const isQuick = step === 'contact_only';
             pushAdminAlert(
                 isQuick ? '✉️ Сообщение из Telegram-бота' : '🆕 Новая заявка из Telegram-бота',
                 isQuick
@@ -193,11 +229,17 @@
 
     function resetDemo() {
         chat.innerHTML = '';
-        adminFeed.innerHTML = '<p class="tg_admin_empty">Здесь появятся уведомления, когда клиент оставит заявку в боте.</p>';
+        adminFeed.innerHTML = `
+            <div class="tg_admin_empty">
+                <span class="tg_admin_empty_icon" aria-hidden="true">📭</span>
+                <p>Здесь появятся уведомления, когда клиент оставит заявку.</p>
+            </div>
+        `;
         lead = { name: '', service: '', contact: '' };
         step = 'menu';
         input.value = '';
         setInputMode(false);
+        updateSteps();
         initChat();
     }
 
@@ -207,5 +249,6 @@
     });
     resetBtn?.addEventListener('click', resetDemo);
 
+    updateSteps();
     initChat();
 })();
