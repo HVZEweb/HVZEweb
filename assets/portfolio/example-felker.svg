@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <rect width="800" height="500" fill="#081422"/>
+  <rect x="0" y="0" width="800" height="56" fill="#0f2137"/>
+  <rect x="40" y="18" width="120" height="20" rx="2" fill="#f8fafc" opacity="0.9"/>
+  <rect x="620" y="16" width="140" height="24" rx="4" fill="#ea580c"/>
+  <text x="40" y="140" fill="#f8fafc" font-family="Arial,sans-serif" font-size="48" font-weight="700">STAINLESS STEEL</text>
+  <text x="40" y="190" fill="#ea580c" font-family="Arial,sans-serif" font-size="48" font-weight="700">PIPING SYSTEMS</text>
+  <rect x="40" y="220" width="420" height="8" fill="#64748b" opacity="0.4"/>
+  <rect x="40" y="250" width="140" height="40" rx="4" fill="#ea580c"/>
+  <rect x="196" y="250" width="140" height="40" rx="4" stroke="#64748b" stroke-width="2"/>
+  <rect x="40" y="340" width="360" height="120" rx="6" fill="#162a45"/>
+  <rect x="420" y="340" width="360" height="120" rx="6" fill="#162a45"/>
+  <rect x="40" y="340" width="4" height="120" fill="#ea580c"/>
+  <rect x="420" y="340" width="4" height="120" fill="#ea580c"/>
+</svg>

@@ -33,10 +33,11 @@
                 </p>
                 <div class="tg_stack">
                     <span>Telegram Bot API</span>
-                    <span>Webhook / n8n</span>
+                    <span>Cloudflare Workers</span>
                     <span>Inline keyboard</span>
                     <span>Lead routing</span>
                 </div>
+                <a class="tg_live_btn" id="tg-live-link" href="https://t.me/HVZEweb?start=portfolio_demo" target="_blank" rel="noopener noreferrer">Открыть живого бота в Telegram →</a>
             </div>
             <div class="tg_features">
                 <div class="tg_feature">
@@ -84,8 +85,9 @@
         </div>
 
         <p class="tg_note">
-            <strong>Демо-сайт.</strong> На реальном проекте бот работает в Telegram через BotFather-токен,
-            webhook на сервер или n8n, плюс связка с сайтом и CRM. Напишите нам — соберём под ваш сценарий.
+            <strong>Интерактивное демо</strong> слева повторяет сценарий живого бота.
+            <a id="tg-live-link-note" href="https://t.me/HVZEweb?start=portfolio_demo" target="_blank" rel="noopener noreferrer">Откройте бота в Telegram</a>
+            — те же кнопки, заявки приходят менеджеру мгновенно (Cloudflare Workers + webhook).
         </p>
     </main>
 
@@ -93,6 +95,16 @@
     <script src="../js/i18n.js"></script>
     <script src="../js/lang-core.js"></script>
     <script src="../js/demo-telegram-bot.js"></script>
+    <script>
+        (function () {
+            var cfg = window.SITE_CONFIG || {};
+            var url = cfg.telegramPortfolioStartUrl || cfg.telegramStartUrl || cfg.telegramUrl;
+            if (!url) return;
+            document.querySelectorAll('#tg-live-link, #tg-live-link-note').forEach(function (el) {
+                el.href = url;
+            });
+        })();
+    </script>
     <script src="../js/demo-base.js" defer></script>
 </body>
 </html>

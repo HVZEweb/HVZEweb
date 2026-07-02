@@ -18,6 +18,18 @@ const config = window.SITE_CONFIG || {};
 const L = window.HVZE_LANG;
 const t = (key) => L.t(key);
 
+(function initFelkerCaseLinks() {
+    const isLocal = /localhost|127\.0\.0\.1/.test(location.hostname);
+    const base = isLocal
+        ? 'felker-pitch/index.html'
+        : (config.felkerPitchUrl || 'https://felker-redesign.netlify.app').replace(/\/$/, '');
+    const pitch = isLocal ? 'felker-pitch/pitch-one-pager.html' : `${base}/pitch-one-pager.html`;
+
+    document.getElementById('felker-case-link')?.setAttribute('href', base);
+    document.getElementById('felker-demo-link')?.setAttribute('href', base);
+    document.getElementById('felker-pitch-link')?.setAttribute('href', pitch);
+})();
+
 function updateBurgerLabel() {
     if (!burger) return;
     const open = mobileMenu?.classList.contains('is-open');
