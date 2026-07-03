@@ -1,14 +1,15 @@
 (function () {
     'use strict';
 
-    const TOTAL_MS = 15000;
+    const TOTAL_MS = 23000;
     const SCENES = [
-        { id: 's1', start: 0, end: 2000 },
-        { id: 's2', start: 2000, end: 5000 },
-        { id: 's3', start: 5000, end: 12000 },
-        { id: 's4', start: 12000, end: 15000 },
+        { id: 's1', start: 0, end: 3500 },
+        { id: 's2', start: 3500, end: 7000 },
+        { id: 's3', start: 7000, end: 18000 },
+        { id: 's4', start: 18000, end: 23000 },
     ];
 
+    const shell = document.getElementById('shorts-shell');
     const stage = document.getElementById('shorts-stage');
     const progress = document.getElementById('shorts-progress');
     const sceneEls = {};
@@ -20,10 +21,13 @@
     let rafId = null;
     let phoneDemoStarted = false;
     let activeSceneId = null;
+    let phoneTimers = [];
 
     function scaleStage() {
-        if (!stage) return;
-        const scale = Math.min(window.innerWidth / 1080, window.innerHeight / 1920) * 0.98;
+        if (!stage || !shell) return;
+        const sw = shell.clientWidth;
+        const sh = shell.clientHeight;
+        const scale = Math.min(sw / 1080, sh / 1920);
         stage.style.transform = `scale(${scale})`;
     }
 
@@ -34,14 +38,21 @@
         sceneEls[id]?.classList.add('is-active');
     }
 
-    function resetPhoneDemo() {
-        phoneDemoStarted = false;
-        document.querySelectorAll('.shorts_bubble').forEach((b) => {
-            b.classList.remove('show');
-        });
+    function clearPhoneTimers() {
+        phoneTimers.forEach(clearTimeout);
+        phoneTimers = [];
+    }
+
+    function resetPhoneVisuals() {
+        clearPhoneTimers();
+        document.querySelectorAll('.shorts_bubble').forEach((b) => b.classList.remove('show'));
         document.querySelectorAll('.shorts_key').forEach((k) => k.classList.remove('is-pulse'));
         document.getElementById('shorts-alert')?.classList.remove('show');
-        document.getElementById('shorts-connector')?.classList.remove('show');
+    }
+
+    function resetPhoneDemo() {
+        phoneDemoStarted = false;
+        resetPhoneVisuals();
     }
 
     function fullReset() {
@@ -50,43 +61,39 @@
         setScene('s1');
     }
 
+    function later(fn, ms) {
+        phoneTimers.push(setTimeout(fn, ms));
+    }
+
     function showBubble(id, delay) {
-        setTimeout(() => {
-            document.getElementById(id)?.classList.add('show');
-        }, delay);
+        later(() => document.getElementById(id)?.classList.add('show'), delay);
     }
 
     function runPhoneDemo() {
         if (phoneDemoStarted) return;
         phoneDemoStarted = true;
-        resetPhoneDemo();
+        resetPhoneVisuals();
 
-        showBubble('b-welcome', 100);
-        showBubble('b-user-book', 900);
+        showBubble('b-welcome', 200);
+        showBubble('b-user-book', 1400);
+        later(() => document.getElementById('k-book')?.classList.add('is-pulse'), 1600);
 
-        setTimeout(() => {
-            document.getElementById('k-book')?.classList.add('is-pulse');
-        }, 1100);
+        showBubble('b-step1', 2600);
+        showBubble('b-user-name', 3800);
+        showBubble('b-step2', 4800);
+        showBubble('b-user-task', 6000);
+        showBubble('b-step3', 7200);
+        showBubble('b-user-contact', 8400);
+        showBubble('b-success', 9600);
 
-        showBubble('b-step1', 1800);
-        showBubble('b-user-name', 2600);
-        showBubble('b-step2', 3200);
-        showBubble('b-user-task', 3900);
-        showBubble('b-step3', 4500);
-        showBubble('b-user-contact', 5100);
-        showBubble('b-success', 5700);
-
-        setTimeout(() => {
-            document.getElementById('shorts-connector')?.classList.add('show');
-            document.getElementById('shorts-alert')?.classList.add('show');
-        }, 6200);
+        later(() => document.getElementById('shorts-alert')?.classList.add('show'), 10200);
     }
 
     function tick(now) {
         if (!startTime) startTime = now;
         const elapsed = now - startTime;
 
-        if (elapsed >= TOTAL_MS + 600) {
+        if (elapsed >= TOTAL_MS + 800) {
             startTime = now;
             fullReset();
             rafId = requestAnimationFrame(tick);
@@ -118,6 +125,7 @@
         startTime = null;
         fullReset();
         cancelAnimationFrame(rafId);
+        scaleStage();
         rafId = requestAnimationFrame(tick);
     }
 
@@ -126,6 +134,9 @@
     }
 
     window.addEventListener('resize', scaleStage);
+    if (document.fonts?.ready) {
+        document.fonts.ready.then(scaleStage);
+    }
     scaleStage();
     start();
 

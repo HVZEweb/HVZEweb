@@ -12,84 +12,110 @@
 </head>
 <body>
     <div class="shorts_viewport">
-        <div class="shorts_stage" id="shorts-stage">
-            <!-- 0–2 сек -->
-            <section class="shorts_scene is-active" id="s1" aria-hidden="true">
-                <div class="shorts_night_glow"></div>
-                <h1 class="shorts_headline">
-                    Вы платите менеджеру.<br><em>Он спит.</em>
-                </h1>
-            </section>
+        <div class="shorts_shell" id="shorts-shell">
+            <div class="shorts_stage" id="shorts-stage">
+                <div class="shorts_grain" aria-hidden="true"></div>
 
-            <!-- 2–5 сек -->
-            <section class="shorts_scene" id="s2" aria-hidden="true">
-                <div class="shorts_moon" aria-hidden="true">🌙</div>
-                <p class="shorts_subline">А заявки приходят <strong>ночью</strong></p>
-                <div class="shorts_pings">
-                    <span class="shorts_ping shorts_ping_1">Новая заявка 23:12</span>
-                    <span class="shorts_ping shorts_ping_2">Сколько стоит? 01:47</span>
-                    <span class="shorts_ping shorts_ping_3">Запишите на завтра 02:03</span>
-                </div>
-            </section>
-
-            <!-- 5–12 сек -->
-            <section class="shorts_scene shorts_scene_phone" id="s3" aria-hidden="true">
-                <p class="shorts_phone_label">@HVZEwebDemoBot · live</p>
-                <div class="shorts_phone_wrap">
-                    <div class="shorts_phone">
-                        <div class="shorts_phone_top">
-                            <div class="shorts_phone_avatar">S</div>
-                            <div class="shorts_phone_meta">
-                                <strong>ServiceDesk Bot</strong>
-                                <span>online · 24/7</span>
-                            </div>
-                        </div>
-                        <div class="shorts_chat" id="shorts-chat">
-                            <div class="shorts_bubble shorts_bubble_in" id="b-welcome">
-                                ✨ <b>ServiceDesk Bot</b><br>Принимаю заявки 24/7 👇
-                            </div>
-                            <div class="shorts_bubble shorts_bubble_out" id="b-user-book">📅 Оставить заявку</div>
-                            <div class="shorts_bubble shorts_bubble_in" id="b-step1">📝 <b>Шаг 1 из 3</b><br>Как к вам обращаться?</div>
-                            <div class="shorts_bubble shorts_bubble_out" id="b-user-name">Анна</div>
-                            <div class="shorts_bubble shorts_bubble_in" id="b-step2">📝 <b>Шаг 2 из 3</b><br>Опишите задачу</div>
-                            <div class="shorts_bubble shorts_bubble_out" id="b-user-task">Лендинг для кафе</div>
-                            <div class="shorts_bubble shorts_bubble_in" id="b-step3">📝 <b>Шаг 3 из 3</b><br>Email или @username</div>
-                            <div class="shorts_bubble shorts_bubble_out" id="b-user-contact">@anna_cafe</div>
-                            <div class="shorts_bubble shorts_bubble_in" id="b-success">✅ <b>Заявка принята!</b><br>Менеджер свяжется в рабочий день</div>
-                        </div>
-                        <div class="shorts_keys">
-                            <span class="shorts_key">📋 Услуги</span>
-                            <span class="shorts_key">💰 Цены</span>
-                            <span class="shorts_key shorts_key_full" id="k-book">📅 Оставить заявку</span>
+                <!-- 0–3.5 сек -->
+                <section class="shorts_scene is-active" id="s1">
+                    <div class="shorts_bg_orb shorts_bg_orb_1"></div>
+                    <div class="shorts_scene_inner">
+                        <span class="shorts_tag">Проблема</span>
+                        <h1 class="shorts_headline">
+                            Вы платите менеджеру.<br><em>Он спит.</em>
+                        </h1>
+                        <div class="shorts_stat_card">
+                            <span class="shorts_stat_label">Зарплата админа</span>
+                            <span class="shorts_stat_value">~60 000 ₽</span>
+                            <span class="shorts_stat_note">ответ — только днём</span>
                         </div>
                     </div>
-                    <aside class="shorts_admin">
-                        <div class="shorts_admin_head">Уведомление менеджеру</div>
-                        <div class="shorts_admin_body">
-                            <article class="shorts_alert" id="shorts-alert">
-                                <p class="shorts_alert_title">🆕 Новая заявка</p>
-                                <p class="shorts_alert_line">👤 Анна<br>📋 Лендинг для кафе<br>📬 @anna_cafe<br>🔗 Источник: youtube_shorts</p>
-                            </article>
+                </section>
+
+                <!-- 3.5–7 сек -->
+                <section class="shorts_scene" id="s2">
+                    <div class="shorts_bg_orb shorts_bg_orb_2"></div>
+                    <div class="shorts_scene_inner">
+                        <div class="shorts_clock">23:47</div>
+                        <p class="shorts_subline">А заявки приходят <strong>ночью</strong></p>
+                        <p class="shorts_subline2">Пока вы спите — клиент уходит к конкуренту</p>
+                    </div>
+                    <div class="shorts_pings">
+                        <span class="shorts_ping shorts_ping_1">🔔 Новая заявка · 23:12</span>
+                        <span class="shorts_ping shorts_ping_2">💬 Сколько стоит? · 01:47</span>
+                        <span class="shorts_ping shorts_ping_3">📅 Запишите · 02:03</span>
+                        <span class="shorts_ping shorts_ping_4">❓ Ещё на связи? · 02:41</span>
+                    </div>
+                </section>
+
+                <!-- 7–18 сек -->
+                <section class="shorts_scene shorts_scene_phone" id="s3">
+                    <div class="shorts_scene_inner shorts_scene_inner_top">
+                        <span class="shorts_tag shorts_tag_live">Решение · live</span>
+                        <p class="shorts_phone_label">@HVZEwebDemoBot</p>
+                    </div>
+
+                    <div class="shorts_phone_stack">
+                        <div class="shorts_phone">
+                            <div class="shorts_phone_status" aria-hidden="true">
+                                <span>9:41</span>
+                                <span>●●●</span>
+                            </div>
+                            <div class="shorts_phone_top">
+                                <div class="shorts_phone_avatar">S</div>
+                                <div class="shorts_phone_meta">
+                                    <strong>ServiceDesk Bot</strong>
+                                    <span><span class="shorts_dot"></span> online · 24/7</span>
+                                </div>
+                            </div>
+                            <div class="shorts_chat" id="shorts-chat">
+                                <div class="shorts_bubble shorts_bubble_in" id="b-welcome">✨ <b>ServiceDesk Bot</b><br>Принимаю заявки 24/7 👇</div>
+                                <div class="shorts_bubble shorts_bubble_out" id="b-user-book">📅 Оставить заявку</div>
+                                <div class="shorts_bubble shorts_bubble_in" id="b-step1">📝 <b>Шаг 1 из 3</b><br>Как к вам обращаться?</div>
+                                <div class="shorts_bubble shorts_bubble_out" id="b-user-name">Анна</div>
+                                <div class="shorts_bubble shorts_bubble_in" id="b-step2">📝 <b>Шаг 2 из 3</b><br>Опишите задачу</div>
+                                <div class="shorts_bubble shorts_bubble_out" id="b-user-task">Лендинг для кафе</div>
+                                <div class="shorts_bubble shorts_bubble_in" id="b-step3">📝 <b>Шаг 3 из 3</b><br>Email или @username</div>
+                                <div class="shorts_bubble shorts_bubble_out" id="b-user-contact">@anna_cafe</div>
+                                <div class="shorts_bubble shorts_bubble_in" id="b-success">✅ <b>Заявка принята!</b><br>Менеджер свяжется в рабочий день</div>
+                            </div>
+                            <div class="shorts_keys">
+                                <span class="shorts_key">📋 Услуги</span>
+                                <span class="shorts_key">💰 Цены</span>
+                                <span class="shorts_key shorts_key_full" id="k-book">📅 Оставить заявку</span>
+                            </div>
                         </div>
-                    </aside>
-                </div>
-                <span class="shorts_connector" id="shorts-connector" aria-hidden="true"></span>
-            </section>
 
-            <!-- 12–15 сек -->
-            <section class="shorts_scene shorts_scene_cta" id="s4" aria-hidden="true">
-                <p class="shorts_logo">HVZEweb</p>
-                <p class="shorts_cta_line">Бот 24/7.<br>Ссылка в описании.</p>
-                <p class="shorts_cta_sub">Сайты · Лендинги · Telegram-боты</p>
-                <span class="shorts_cta_bot">@HVZEwebDemoBot</span>
-            </section>
+                        <article class="shorts_alert" id="shorts-alert">
+                            <p class="shorts_alert_title">🆕 Новая заявка · мгновенно</p>
+                            <p class="shorts_alert_line">👤 Анна · 📋 Лендинг для кафе<br>📬 @anna_cafe · 🔗 youtube_shorts</p>
+                        </article>
+                    </div>
+                </section>
 
-            <div class="shorts_progress" id="shorts-progress" aria-hidden="true"></div>
+                <!-- 18–23 сек -->
+                <section class="shorts_scene shorts_scene_cta" id="s4">
+                    <div class="shorts_bg_orb shorts_bg_orb_3"></div>
+                    <div class="shorts_scene_inner">
+                        <p class="shorts_logo">HVZEweb</p>
+                        <p class="shorts_cta_line">Бот 24/7.<br>Ссылка в описании.</p>
+                        <div class="shorts_price_row">
+                            <span>Бот от <b>15 000 ₽</b></span>
+                            <span>·</span>
+                            <span>3–5 дней</span>
+                        </div>
+                        <span class="shorts_cta_bot">@HVZEwebDemoBot</span>
+                        <p class="shorts_cta_sub">hvzeweb.netlify.app</p>
+                    </div>
+                </section>
+
+                <div class="shorts_progress" id="shorts-progress" aria-hidden="true"></div>
+            </div>
         </div>
     </div>
 
     <p class="shorts_hint">
-        Запись: откройте <strong>?record=1</strong> · F11 полный экран · 15 сек цикл · <kbd>Space</kbd> — перезапуск
+        <strong>?record=1</strong> — без подсказок · F11 · цикл <strong>23 сек</strong> · <kbd>Space</kbd> — сначала
     </p>
 
     <script src="../js/shorts-manager-vs-bot.js"></script>
