@@ -9,5 +9,5 @@ window.SITE_CONFIG = {
     telegramStartUrl: 'https://t.me/HVZEwebDemoBot?start=site',
     telegramPortfolioStartUrl: 'https://t.me/HVZEwebDemoBot?start=portfolio_demo',
     customDomain: '',
-    felkerPitchUrl: 'https://felker-redesign.netlify.app',
+    felkerPitchUrl: 'https://hvzeweb.github.io/felker-redesign',
 };
