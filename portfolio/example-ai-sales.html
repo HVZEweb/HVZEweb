@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, follow">
+    <title>DealPilot AI — Sales assistant demo · HVZEweb</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/demo-product.css">
+    <link rel="stylesheet" href="../css/demo-base.css">
+</head>
+<body data-pd-mode="ai-sales">
+    <header class="pd_chrome">
+        <a href="../index.html#portfolio">← Портфолио</a>
+        <span class="pd_chrome_label">Демо · AI для продаж</span>
+        <a href="../index.html#contacts" class="pd_chrome_cta">Хочу такое →</a>
+    </header>
+    <div class="pd_layout">
+        <div class="pd_main">
+            <span class="pd_badge">OpenAI · RAG · CRM sync</span>
+            <h1 class="pd_title">DealPilot <span>AI</span></h1>
+            <p class="pd_lead">AI-помощник для отдела продаж: квалифицирует лиды, отвечает по базе знаний и готовит КП — 24/7 на сайте и в Telegram.</p>
+            <div class="pd_stack">
+                <span>OpenAI GPT</span><span>Vector DB</span><span>Google Sheets</span><span>Webhook → CRM</span>
+            </div>
+            <div class="pd_panel">
+                <div class="pd_panel_head">
+                    <div class="pd_panel_dots"><i></i><i></i><i></i></div>
+                    <span>Sales chat · demo</span>
+                </div>
+                <div class="pd_chat" id="pd-chat">
+                    <div class="pd_msg pd_msg_bot">Hi! I'm DealPilot — ask about pricing, timelines or integrations. Or tap a quick prompt below.</div>
+                </div>
+                <div class="pd_input_row">
+                    <input class="pd_input" id="pd-input" type="text" placeholder="e.g. How much for MVP with CRM?">
+                    <button class="pd_btn" id="pd-send" type="button">Send</button>
+                </div>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:14px">
+                <button class="pd_btn pd_btn_ghost" type="button" data-pd-prompt="What's the price for MVP?">Price</button>
+                <button class="pd_btn pd_btn_ghost" type="button" data-pd-prompt="Timeline for CRM integration?">Timeline</button>
+                <button class="pd_btn pd_btn_ghost" type="button" data-pd-prompt="Do you integrate with OpenAI and Stripe?">Integrations</button>
+            </div>
+        </div>
+        <aside class="pd_sidebar">
+            <div class="pd_kpi_row">
+                <div class="pd_kpi"><span class="pd_kpi_val">+34%</span><span class="pd_kpi_lbl">qualified leads</span></div>
+                <div class="pd_kpi"><span class="pd_kpi_val">&lt;3s</span><span class="pd_kpi_lbl">response</span></div>
+                <div class="pd_kpi"><span class="pd_kpi_val">24/7</span><span class="pd_kpi_lbl">coverage</span></div>
+            </div>
+            <div class="pd_features">
+                <div class="pd_feature"><p class="pd_feature_title">Knowledge base</p><p class="pd_feature_text">Upload PDFs, Notion, FAQ — bot answers only from your data.</p></div>
+                <div class="pd_feature"><p class="pd_feature_title">Lead scoring</p><p class="pd_feature_text">Hot leads → Telegram + CRM card with conversation history.</p></div>
+                <div class="pd_feature"><p class="pd_feature_title">Human handoff</p><p class="pd_feature_text">Manager joins chat when AI detects buying intent.</p></div>
+            </div>
+        </aside>
+    </div>
+    <script src="../js/demo-product.js"></script>
+</body>
+</html>

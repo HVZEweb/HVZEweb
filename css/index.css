@@ -416,6 +416,23 @@ body.menu-open {
     margin-bottom: 64px;
 }
 
+.services_grid_6 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 1024px) {
+    .services_grid_6 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .services_grid,
+    .services_grid_6 {
+        grid-template-columns: 1fr;
+    }
+}
+
 .service_card {
     padding: 32px;
     background-color: var(--bg-card);
@@ -523,6 +540,41 @@ body.menu-open {
 }
 
 /* Portfolio */
+
+.portfolio_filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 32px;
+}
+
+.portfolio_filter {
+    padding: 10px 18px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-muted);
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    cursor: pointer;
+    transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.portfolio_filter:hover {
+    color: var(--text-heading);
+    border-color: var(--border-hover);
+}
+
+.portfolio_filter.is-active {
+    color: #0A0A0A;
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+.portfolio_card.is-filtered-out {
+    display: none;
+}
 
 .portfolio_grid {
     display: grid;

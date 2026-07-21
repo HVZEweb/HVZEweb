@@ -4,7 +4,7 @@
 (function (global) {
     'use strict';
 
-    const SITE_URL = 'https://hvzeweb.netlify.app';
+    const SITE_URL = 'https://hvzeweb.github.io';
 
     const SOURCE_GREETING = {
         site: '🌐 Вы перешли с сайта HVZEweb',

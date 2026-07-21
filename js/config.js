@@ -1,6 +1,6 @@
-// Настройки сайта — замените значения на свои перед публикацией
+// Site config — GitHub Pages: https://hvzeweb.github.io/
 window.SITE_CONFIG = {
-    siteUrl: 'https://hvzeweb.netlify.app',
+    siteUrl: 'https://hvzeweb.github.io',
     telegram: '@HVZEwebDemoBot',
     telegramUrl: 'https://t.me/HVZEwebDemoBot',
     email: 'hvzeweb@mail.ru',
@@ -8,6 +8,8 @@ window.SITE_CONFIG = {
     defaultLang: 'en',
     telegramStartUrl: 'https://t.me/HVZEwebDemoBot?start=site',
     telegramPortfolioStartUrl: 'https://t.me/HVZEwebDemoBot?start=portfolio_demo',
+    telegramStudioDemoUrl: 'https://t.me/HVZEwebDemoBot?start=instagram',
     customDomain: '',
-    felkerPitchUrl: 'https://hvzeweb.github.io/felker-redesign',
+    // Static hosting (GitHub Pages): form opens Telegram. Set URL if you add Cloudflare Worker later.
+    contactApiUrl: '',
 };

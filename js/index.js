@@ -18,18 +18,6 @@ const config = window.SITE_CONFIG || {};
 const L = window.HVZE_LANG;
 const t = (key) => L.t(key);
 
-(function initFelkerCaseLinks() {
-    const isLocal = /localhost|127\.0\.0\.1/.test(location.hostname);
-    const base = isLocal
-        ? 'felker-pitch/index.html'
-        : (config.felkerPitchUrl || 'https://felker-redesign.netlify.app').replace(/\/$/, '');
-    const pitch = isLocal ? 'felker-pitch/pitch-one-pager.html' : `${base}/pitch-one-pager.html`;
-
-    document.getElementById('felker-case-link')?.setAttribute('href', base);
-    document.getElementById('felker-demo-link')?.setAttribute('href', base);
-    document.getElementById('felker-pitch-link')?.setAttribute('href', pitch);
-})();
-
 (function initSiteTelegramLinks() {
     const tgUrl = config.telegramUrl || 'https://t.me/HVZEwebDemoBot';
     const tgStart = config.telegramStartUrl || tgUrl;
@@ -267,8 +255,13 @@ async function submitContactForm(formData) {
         package: formData.get('package')?.toString().trim() || '',
     };
 
+    const apiUrl = config.contactApiUrl;
+    if (!apiUrl) {
+        return { ok: false, fallback: true };
+    }
+
     try {
-        const response = await fetch('/api/contact', {
+        const response = await fetch(apiUrl, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload),
@@ -538,3 +531,21 @@ function initYandexMetrika() {
 }
 
 initYandexMetrika();
+
+(function initPortfolioFilters() {
+    const filters = document.querySelectorAll('.portfolio_filter[data-filter]');
+    const cards = document.querySelectorAll('.portfolio_card[data-category]');
+    if (!filters.length || !cards.length) return;
+
+    filters.forEach((btn) => {
+        btn.addEventListener('click', () => {
+            const filter = btn.dataset.filter;
+            filters.forEach((b) => b.classList.toggle('is-active', b === btn));
+            cards.forEach((card) => {
+                const cats = card.dataset.category || '';
+                const show = filter === 'all' || cats.split(/\s+/).includes(filter);
+                card.classList.toggle('is-filtered-out', !show);
+            });
+        });
+    });
+})();

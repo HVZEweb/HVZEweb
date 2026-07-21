@@ -1,73 +1,80 @@
 # HVZEweb
 
-**Студия веб-разработки** — создаём современные сайты для бизнеса и частных клиентов.  
-От идеи до запуска: быстро, прозрачно, с акцентом на результат.
+**Product studio** — MVP, AI chatbots, CRM, Telegram bots and business automation for startups and SMB.
 
-[![Сайт](https://img.shields.io/badge/Сайт-hvzeweb.netlify.app-B8A88A?style=for-the-badge)](https://hvzeweb.netlify.app)
+[![Site](https://img.shields.io/badge/Site-hvzeweb.github.io-B8A88A?style=for-the-badge)](https://hvzeweb.github.io)
 [![Telegram](https://img.shields.io/badge/Telegram-@HVZEweb-26A5E4?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/HVZEweb)
 [![Email](https://img.shields.io/badge/Email-hvzeweb%40mail.ru-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:hvzeweb@mail.ru)
 
 ---
 
-## О нас
+## Live site
 
-Мы разрабатываем сайты, которые **работают на бизнес** — привлекают клиентов, удобны на телефоне и запускаются в понятные сроки.
+**https://hvzeweb.github.io**
 
-- Прозрачные цены без скрытых доплат
-- Адаптив под все устройства
-- Форма заявок с уведомлением в Telegram
-- Базовая SEO-настройка
-- Бесплатная консультация и смета
+Hosted on **GitHub Pages** (static). Contact form opens Telegram with prefilled message.
 
 ---
 
-## Услуги и цены
+## Deploy (GitHub Pages)
 
-| Пакет | Описание | Цена | Срок |
-|-------|----------|------|------|
-| **Визитка** | 1 экран + контакты | от 7 000 ₽ | 2–3 дня |
-| **Старт** | Лендинг до 6 блоков | от 10 000 ₽ | 5–7 дней |
-| **Бизнес** | Корпоративный сайт до 7 страниц | от 28 000 ₽ | 10–14 дней |
-| **Премиум** | Интернет-магазин, CMS, админка | от 55 000 ₽ | от 3 недель |
-| **Telegram-бот** | Меню, FAQ, заявки 24/7 | от 15 000 ₽ | 3–5 дней |
+1. Create repo **`HVZEweb.github.io`** (must match your GitHub username).
+2. Push this project to `main` or `master`.
+3. GitHub → **Settings → Pages → Source**: **GitHub Actions**.
+4. Push triggers `.github/workflows/pages.yml` automatically.
+5. **Disable/delete** the old Netlify site so only GitHub Pages serves the portfolio.
 
----
+```bash
+git add .
+git commit -m "Deploy portfolio on GitHub Pages"
+git push -u origin main
+```
 
-## Примеры работ
-
-Демо-версии доступны на сайте:
-
-| Проект | Описание |
-|--------|----------|
-| [Визитка](https://hvzeweb.netlify.app/portfolio/example-vizitka.html) | Премиальная одностраничная визитка |
-| [Лендинг](https://hvzeweb.netlify.app/portfolio/example-landing.html) | Продающая страница / SaaS MVP |
-| [Корпоратив](https://hvzeweb.netlify.app/portfolio/example-corporate.html) | Многостраничный сайт компании |
-| [Магазин](https://hvzeweb.netlify.app/portfolio/example-shop.html) | Интернет-магазин с каталогом и корзиной |
-| [Админ-панель](https://hvzeweb.netlify.app/portfolio/example-shop-admin.html) | Панель заказов и KPI (демо магазина) |
-| [WordPress](https://hvzeweb.netlify.app/portfolio/example-wordpress.html) | Сайт на WP + автоматизация заявок |
-| [Telegram-бот](https://hvzeweb.netlify.app/portfolio/example-telegram-bot.html) | Интерактивное демо бота с уведомлениями |
+Optional custom domain: Settings → Pages → Custom domain → add DNS records.
 
 ---
 
-## Стек
+## Product demos
 
-HTML · CSS · JavaScript · WordPress · Telegram Bot API · Netlify
+| Demo | URL |
+|------|-----|
+| AI Sales Assistant | [/portfolio/example-ai-sales.html](https://hvzeweb.github.io/portfolio/example-ai-sales.html) |
+| CRM Dashboard | [/portfolio/example-shop-admin.html](https://hvzeweb.github.io/portfolio/example-shop-admin.html) |
+| Booking system | [/portfolio/example-booking.html](https://hvzeweb.github.io/portfolio/example-booking.html) |
+| AI PDF Chat | [/portfolio/example-pdf-chat.html](https://hvzeweb.github.io/portfolio/example-pdf-chat.html) |
+| Document generator | [/portfolio/example-doc-gen.html](https://hvzeweb.github.io/portfolio/example-doc-gen.html) |
+| Telegram bot (live) | [/portfolio/example-telegram-bot.html](https://hvzeweb.github.io/portfolio/example-telegram-bot.html) |
+| SaaS MVP landing | [/portfolio/example-landing.html](https://hvzeweb.github.io/portfolio/example-landing.html) |
+| Store + admin | [/portfolio/example-shop.html](https://hvzeweb.github.io/portfolio/example-shop.html) |
 
 ---
 
-## Связаться
+## Stack
 
-| Канал | Ссылка |
-|-------|--------|
-| Сайт | [hvzeweb.netlify.app](https://hvzeweb.netlify.app) |
+HTML · CSS · JavaScript · OpenAI · Telegram Bot API · Cloudflare Workers · GitHub Pages
+
+---
+
+## Config
+
+| File | Purpose |
+|------|---------|
+| `js/config.js` | Site URL, Telegram, Metrika ID |
+| `js/i18n.js` | EN/RU translations |
+
+Form on static hosting: set `contactApiUrl` in `config.js` if you add a Cloudflare Worker; otherwise Telegram fallback is used.
+
+---
+
+## Contact
+
+| Channel | Link |
+|---------|------|
+| Site | [hvzeweb.github.io](https://hvzeweb.github.io) |
 | Telegram | [@HVZEweb](https://t.me/HVZEweb) |
 | Email | [hvzeweb@mail.ru](mailto:hvzeweb@mail.ru) |
 | GitHub | [@HVZEweb](https://github.com/HVZEweb) |
 
-Оставьте заявку на сайте — ответим в течение рабочего дня.
-
 ---
 
-<p align="center">
-  <sub>© 2026 HVZEweb · Разработка сайтов для бизнеса</sub>
-</p>
+<p align="center"><sub>© 2026 HVZEweb</sub></p>

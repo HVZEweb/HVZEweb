@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, follow">
+    <title>Slotly — Booking system demo · HVZEweb</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/demo-product.css">
+    <link rel="stylesheet" href="../css/demo-base.css">
+</head>
+<body data-pd-mode="booking">
+    <header class="pd_chrome">
+        <a href="../index.html#portfolio">← Портфолио</a>
+        <span class="pd_chrome_label">Демо · Бронирование</span>
+        <a href="../index.html#contacts" class="pd_chrome_cta">Хочу такое →</a>
+    </header>
+    <div class="pd_layout">
+        <div class="pd_main">
+            <span class="pd_badge">Calendar · SMS · Telegram</span>
+            <h1 class="pd_title">Slotly <span>Booking</span></h1>
+            <p class="pd_lead">Система записи для салонов, клиник и консультаций: слоты, напоминания, оплата депозита и синхронизация с Google Calendar.</p>
+            <div class="pd_stack">
+                <span>Google Calendar</span><span>Stripe deposit</span><span>Telegram notify</span><span>SMS reminder</span>
+            </div>
+            <div class="pd_panel">
+                <div class="pd_panel_head">
+                    <div class="pd_panel_dots"><i></i><i></i><i></i></div>
+                    <span>June 2026 · Consultation 45 min</span>
+                </div>
+                <div class="pd_calendar">
+                    <div class="pd_cal_head"><span>←</span><span>June 2026</span><span>→</span></div>
+                    <span class="pd_day">M</span><span class="pd_day">T</span><span class="pd_day">W</span><span class="pd_day">T</span><span class="pd_day">F</span><span class="pd_day">S</span><span class="pd_day">S</span>
+                    <span class="pd_day">1</span><span class="pd_day">2</span><span class="pd_day pd_day_avail">3</span><span class="pd_day pd_day_avail is-selected">4</span><span class="pd_day pd_day_avail">5</span><span class="pd_day">6</span><span class="pd_day">7</span>
+                    <span class="pd_day pd_day_avail">8</span><span class="pd_day pd_day_avail">9</span><span class="pd_day pd_day_avail">10</span><span class="pd_day">11</span><span class="pd_day pd_day_avail">12</span><span class="pd_day">13</span><span class="pd_day">14</span>
+                </div>
+                <div class="pd_slots">
+                    <button type="button" class="pd_slot">10:00</button>
+                    <button type="button" class="pd_slot is-selected">11:30</button>
+                    <button type="button" class="pd_slot">14:00</button>
+                    <button type="button" class="pd_slot">16:30</button>
+                </div>
+                <div class="pd_input_row">
+                    <input class="pd_input" type="text" placeholder="Your name & phone">
+                    <button class="pd_btn" id="pd-book" type="button">Book</button>
+                </div>
+            </div>
+        </div>
+        <aside class="pd_sidebar">
+            <div class="pd_features">
+                <div class="pd_feature"><p class="pd_feature_title">Admin dashboard</p><p class="pd_feature_text">Manage services, staff schedules and blackout dates.</p></div>
+                <div class="pd_feature"><p class="pd_feature_title">Auto reminders</p><p class="pd_feature_text">Telegram + email 24h and 1h before appointment.</p></div>
+                <div class="pd_feature"><p class="pd_feature_title">No-show protection</p><p class="pd_feature_text">Stripe deposit — charged only if client cancels late.</p></div>
+                <div class="pd_feature"><p class="pd_feature_title">Embed widget</p><p class="pd_feature_text">Iframe on site or link in Instagram bio.</p></div>
+            </div>
+        </aside>
+    </div>
+    <script src="../js/demo-product.js"></script>
+</body>
+</html>

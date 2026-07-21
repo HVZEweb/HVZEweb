@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, follow">
+    <title>DocMind — AI PDF Chat demo · HVZEweb</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../css/demo-product.css">
+    <link rel="stylesheet" href="../css/demo-base.css">
+</head>
+<body data-pd-mode="pdf-chat">
+    <header class="pd_chrome">
+        <a href="../index.html#portfolio">← Портфолио</a>
+        <span class="pd_chrome_label">Демо · AI PDF Chat</span>
+        <a href="../index.html#contacts" class="pd_chrome_cta">Хочу такое →</a>
+    </header>
+    <div class="pd_layout">
+        <div class="pd_main">
+            <span class="pd_badge">RAG · PDF · OpenAI</span>
+            <h1 class="pd_title">DocMind <span>PDF Chat</span></h1>
+            <p class="pd_lead">Загрузите договор, инструкцию или отчёт — задавайте вопросы на естественном языке. Ответы только из вашего документа, с указанием раздела.</p>
+            <div class="pd_stack">
+                <span>OpenAI</span><span>Embeddings</span><span>PDF parse</span><span>Private cloud</span>
+            </div>
+            <div class="pd_panel">
+                <div class="pd_panel_head">
+                    <div class="pd_panel_dots"><i></i><i></i><i></i></div>
+                    <span>Document workspace</span>
+                </div>
+                <div class="pd_upload" id="pd-upload">📎 Click to upload PDF (demo)</div>
+                <div class="pd_chat" id="pd-chat">
+                    <div class="pd_msg pd_msg_bot">Upload a PDF to start. Demo uses a sample contract.</div>
+                </div>
+                <div class="pd_input_row">
+                    <input class="pd_input" id="pd-input" type="text" placeholder="Ask about payment terms, deadlines…">
+                    <button class="pd_btn" id="pd-send" type="button">Ask</button>
+                </div>
+            </div>
+        </div>
+        <aside class="pd_sidebar">
+            <div class="pd_features">
+                <div class="pd_feature"><p class="pd_feature_title">Use cases</p><p class="pd_feature_text">Legal review, HR policies, technical specs, tender docs.</p></div>
+                <div class="pd_feature"><p class="pd_feature_title">Team access</p><p class="pd_feature_text">Roles: viewer, editor, admin. Audit log of queries.</p></div>
+                <div class="pd_feature"><p class="pd_feature_title">API ready</p><p class="pd_feature_text">Embed in your SaaS or internal portal via REST.</p></div>
+            </div>
+        </aside>
+    </div>
+    <script src="../js/demo-product.js"></script>
+</body>
+</html>

@@ -1,48 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://hvzeweb.netlify.app/</loc>
+    <loc>https://hvzeweb.github.io/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://hvzeweb.netlify.app/privacy.html</loc>
+    <loc>https://hvzeweb.github.io/privacy.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://hvzeweb.netlify.app/portfolio/example-vizitka.html</loc>
+    <loc>https://hvzeweb.github.io/portfolio/example-ai-sales.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hvzeweb.github.io/portfolio/example-booking.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hvzeweb.github.io/portfolio/example-pdf-chat.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hvzeweb.github.io/portfolio/example-doc-gen.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hvzeweb.github.io/portfolio/example-shop-admin.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://hvzeweb.netlify.app/portfolio/example-landing.html</loc>
+    <loc>https://hvzeweb.github.io/portfolio/example-shop.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://hvzeweb.netlify.app/portfolio/example-corporate.html</loc>
+    <loc>https://hvzeweb.github.io/portfolio/example-landing.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://hvzeweb.netlify.app/portfolio/example-shop.html</loc>
+    <loc>https://hvzeweb.github.io/portfolio/example-telegram-bot.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://hvzeweb.netlify.app/portfolio/example-shop-admin.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://hvzeweb.netlify.app/portfolio/example-wordpress.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://hvzeweb.netlify.app/portfolio/example-telegram-bot.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
 </urlset>
