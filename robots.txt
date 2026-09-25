@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://hvzeweb.github.io/sitemap.xml
